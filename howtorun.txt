@@ -1,0 +1,2 @@
+mvn clean install
+java -Dlog4j.configuration=file:C:\maven\project\id2210-vt16-master\src\main\resources\log4j.properties -Dconfig.file=C:\maven\project\id2210-vt16-master\src\main\resources\reference.conf -jar C:\maven\project\id2210-vt16-master\target\lselector-1.0-SNAPSHOT-shaded.jar
