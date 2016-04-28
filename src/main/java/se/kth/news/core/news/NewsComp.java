@@ -17,6 +17,8 @@
  */
 package se.kth.news.core.news;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -24,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import se.kth.news.core.leader.LeaderSelectPort;
 import se.kth.news.core.leader.LeaderUpdate;
 import se.kth.news.core.news.util.NewsView;
+import se.kth.news.play.News;
 import se.kth.news.play.Ping;
 import se.kth.news.play.Pong;
 import se.sics.kompics.ClassMatchedHandler;
@@ -68,7 +71,8 @@ public class NewsComp extends ComponentDefinition {
     private Identifier gradientOId;
     //*******************************INTERNAL_STATE*****************************
     private NewsView localNewsView;
-
+    private boolean hasSent = false;//TODO This is preliminary
+    
     public NewsComp(Init init) {
         selfAdr = init.selfAdr;
         logPrefix = "<nid:" + selfAdr.getId() + ">";
@@ -89,15 +93,17 @@ public class NewsComp extends ComponentDefinition {
         public void handle(Start event) {
             LOG.info("{}starting...", logPrefix);
             updateLocalNewsView();
+            
         }
     };
+	protected ArrayList<KAddress> peerlist = new ArrayList<KAddress>();
 
     private void updateLocalNewsView() {
         localNewsView = new NewsView(selfAdr.getId(), 0);
         LOG.debug("{}informing overlays of new view", logPrefix);
         trigger(new OverlayViewUpdate.Indication<>(gradientOId, false, localNewsView.copy()), viewUpdatePort);
     }
-    //TODO This function reacts to updated neighbour
+    //This function reacts to updated neighbour
     Handler handleCroupierSample = new Handler<CroupierSample<NewsView>>() {
         @Override
         public void handle(CroupierSample<NewsView> castSample) {
@@ -105,10 +111,31 @@ public class NewsComp extends ComponentDefinition {
                 return;
             }
             Iterator<Identifier> it = castSample.publicSample.keySet().iterator();
-            KAddress partner = castSample.publicSample.get(it.next()).getSource();
-            KHeader header = new BasicHeader(selfAdr, partner, Transport.UDP);
+            //KAddress partner = castSample.publicSample.get(it.next()).getSource();
+            peerlist = new ArrayList<KAddress>();
+            while(it.hasNext()){
+            	peerlist.add(castSample.publicSample.get(it.next()).getSource());
+            }
+            
+            //TODO Temporary send news
+            
+            if(hasSent==false){
+            	hasSent=true;
+            	News newNew = new News(selfAdr.getIp().toString()+"_1");
+            	newshash.add(newNew.getNewsId());
+            	for(KAddress address : peerlist){
+            		KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+                    KContentMsg msg = new BasicContentMsg(header, newNew);
+                    
+            		trigger(msg, networkPort);
+            	}
+            	
+            }
+            
+            
+            /*KHeader header = new BasicHeader(selfAdr, partner, Transport.UDP);
             KContentMsg msg = new BasicContentMsg(header, new Ping());
-            trigger(msg, networkPort);
+            trigger(msg, networkPort);*/
         }
     };
 
@@ -123,8 +150,34 @@ public class NewsComp extends ComponentDefinition {
         public void handle(LeaderUpdate event) {
         }
     };
+	protected HashSet<String> newshash = new HashSet<String>();
 
-    ClassMatchedHandler handlePing
+    ClassMatchedHandler handleNews
+            = new ClassMatchedHandler<News, KContentMsg<?, ?, News>>() {
+
+                @Override
+                public void handle(News news, KContentMsg<?, ?, News> container) {
+                    LOG.info("{}received news from:{}", logPrefix, container.getHeader().getSource());
+                    if(!newshash.contains(news.getNewsId())){
+                    	newshash.add(news.getNewsId());
+                    	News newNew = new News(news);
+                    	newNew.decreaseTTL();
+                    	if(newNew.getTTL()>0){
+                    		for(KAddress address : peerlist){
+                        		KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+                                KContentMsg msg = new BasicContentMsg(header, newNew);
+                        		trigger(container.answer(msg), networkPort);
+                        		
+                        	}
+                    	}
+                    	
+                    	
+                    }
+                    //trigger(container.answer(new Pong()), networkPort);
+                }
+            };
+            
+            ClassMatchedHandler handlePing
             = new ClassMatchedHandler<Ping, KContentMsg<?, ?, Ping>>() {
 
                 @Override
