@@ -86,6 +86,7 @@ public class NewsComp extends ComponentDefinition {
         subscribe(handleLeader, leaderPort);
         subscribe(handlePing, networkPort);
         subscribe(handlePong, networkPort);
+        subscribe(handleNews, networkPort);
     }
 
     Handler handleStart = new Handler<Start>() {
@@ -97,6 +98,7 @@ public class NewsComp extends ComponentDefinition {
         }
     };
 	protected ArrayList<KAddress> peerlist = new ArrayList<KAddress>();
+	protected HashSet<String> newshash = new HashSet<String>();
 
     private void updateLocalNewsView() {
         localNewsView = new NewsView(selfAdr.getId(), 0);
@@ -120,10 +122,12 @@ public class NewsComp extends ComponentDefinition {
             //TODO Temporary send news
             
             if(hasSent==false){
+				LOG.debug("{} about to send a news", logPrefix);
             	hasSent=true;
             	News newNew = new News(selfAdr.getIp().toString()+"_1");
             	newshash.add(newNew.getNewsId());
             	for(KAddress address : peerlist){
+					LOG.debug("{} sending news to {}", logPrefix, address.toString());
             		KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
                     KContentMsg msg = new BasicContentMsg(header, newNew);
                     
@@ -150,23 +154,24 @@ public class NewsComp extends ComponentDefinition {
         public void handle(LeaderUpdate event) {
         }
     };
-	protected HashSet<String> newshash = new HashSet<String>();
+	
 
     ClassMatchedHandler handleNews
             = new ClassMatchedHandler<News, KContentMsg<?, ?, News>>() {
 
                 @Override
                 public void handle(News news, KContentMsg<?, ?, News> container) {
-                    LOG.info("{}received news from:{}", logPrefix, container.getHeader().getSource());
                     if(!newshash.contains(news.getNewsId())){
+						LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
                     	newshash.add(news.getNewsId());
                     	News newNew = new News(news);
                     	newNew.decreaseTTL();
                     	if(newNew.getTTL()>0){
                     		for(KAddress address : peerlist){
+								LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
                         		KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
                                 KContentMsg msg = new BasicContentMsg(header, newNew);
-                        		trigger(container.answer(msg), networkPort);
+                        		trigger(msg, networkPort);
                         		
                         	}
                     	}
