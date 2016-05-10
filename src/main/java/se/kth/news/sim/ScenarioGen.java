@@ -139,7 +139,9 @@ public class ScenarioGen {
                 };
                 StochasticProcess startPeers = new StochasticProcess() {
                     {
-                        eventInterArrivalTime(uniform(1000, 1100));
+//                        eventInterArrivalTime(uniform(0, 0));
+                        eventInterArrivalTime(uniform(0, 5));
+//                        eventInterArrivalTime(uniform(1000, 1100));
                         raise(100, startNodeOp, new BasicIntSequentialDistribution(1));
                     }//How many peers are in the simulation
                 };
