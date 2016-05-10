@@ -32,6 +32,7 @@ import se.sics.kompics.Negative;
 import se.sics.kompics.Positive;
 import se.sics.kompics.Start;
 import se.sics.kompics.network.Network;
+import se.sics.kompics.timer.SchedulePeriodicTimeout;
 import se.sics.kompics.timer.Timer;
 import se.sics.ktoolbox.croupier.CroupierPort;
 import se.sics.ktoolbox.gradient.GradientPort;
@@ -82,6 +83,9 @@ public class AppMngrComp extends ComponentDefinition {
             pendingGradientConnReq = new OMngrTGradient.ConnectRequest(gradientOId,
                     new NewsViewComparator(), new NewsViewGradientFilter());
             trigger(pendingGradientConnReq, omngrPort);
+            
+            
+            
         }
     };
 

@@ -20,6 +20,7 @@ package se.kth.news.system;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.kth.news.core.AppMngrComp;
+import se.kth.news.core.LogTimeout;
 import se.sics.kompics.Channel;
 import se.sics.kompics.Component;
 import se.sics.kompics.ComponentDefinition;
@@ -27,6 +28,7 @@ import se.sics.kompics.Handler;
 import se.sics.kompics.Positive;
 import se.sics.kompics.Start;
 import se.sics.kompics.network.Network;
+import se.sics.kompics.timer.SchedulePeriodicTimeout;
 import se.sics.kompics.timer.Timer;
 import se.sics.ktoolbox.cc.heartbeat.CCHeartbeatPort;
 import se.sics.ktoolbox.croupier.CroupierPort;
@@ -61,6 +63,9 @@ public class HostMngrComp extends ComponentDefinition {
     private Component overlayMngrComp;
     private Component appMngrComp;
 
+    
+   
+    
     public HostMngrComp(Init init) {
         selfAdr = init.selfAdr;
         logPrefix = "<nid:" + selfAdr.getId() + ">";
@@ -83,6 +88,10 @@ public class HostMngrComp extends ComponentDefinition {
             trigger(Start.event, bootstrapClientComp.control());
             trigger(Start.event, overlayMngrComp.control());
             trigger(Start.event, appMngrComp.control());
+			/*SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(1000*10, 999999999);
+			LogTimeout timeout = new LogTimeout(spt);
+			spt.setTimeoutEvent(timeout);
+			trigger(spt, timerPort);*/
         }
     };
 
