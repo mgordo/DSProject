@@ -8,8 +8,9 @@ import os
 
 '''Change and add to the list as needed. Should contain path to archives'''
 auxroute='C:/maven/'
-archives = [auxroute+'plots/ttl2.log', auxroute+'plots/ttl5.log']
+archives = [auxroute+'plots/ttl2.log', auxroute+'plots/ttl5.log',auxroute+'plots/ttl20.log']
 data=[]
+count=0
 for ele in archives:
     total_sent = 0
     received = []
@@ -27,9 +28,15 @@ for ele in archives:
     
     percentages = [float(float(x)/total_sent)*100 for x in received]
 
+    plt.bar(range(0,len(percentages)),percentages)
+    plt.xlabel("Node")
+    plt.ylabel("Percentage")
+    plt.savefig(auxroute+'plots/nodes_'+str(count)+'.png')
+    count+=1
     data.append(percentages)
     f.close()
     
+plt.figure(figsize=(8,4))
 plt.boxplot(data)
 plt.ylabel("Percentages")
 

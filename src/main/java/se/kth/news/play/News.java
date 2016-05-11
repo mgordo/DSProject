@@ -4,7 +4,7 @@ public class News {
 	
 	private String newsId;
 	private int ttl=NEWS_TTL;
-	private static final int NEWS_TTL=5;
+	private static final int NEWS_TTL=20;
 	public News(String id){
 		newsId = id;
 		

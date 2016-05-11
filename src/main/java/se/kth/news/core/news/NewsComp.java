@@ -102,7 +102,7 @@ public class NewsComp extends ComponentDefinition {
 			LOG.info("{}starting...", logPrefix);
 			updateLocalNewsView();
 			
-			SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(1000*400, 99999999);
+			SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(1000*90, 99999999);
 			LogTimeout timeout = new LogTimeout(spt);
 			spt.setTimeoutEvent(timeout);
 			trigger(spt, timerPort);
@@ -119,8 +119,8 @@ public class NewsComp extends ComponentDefinition {
 	private int count=0;
 	
 	private void updateLocalNewsView() {
-		localNewsView = new NewsView(selfAdr.getId(), 0);
-		LOG.debug("{}informing overlays of new view", logPrefix);
+		localNewsView = new NewsView(selfAdr.getId(), (int)(Math.random()*100));//THIS CHANGES NUMBER OF NODES IN GRADIENT
+		LOG.debug("{}informing overlays of new view, _{}", logPrefix, localNewsView.localNewsCount);
 		trigger(new OverlayViewUpdate.Indication<>(gradientOId, false, localNewsView.copy()), viewUpdatePort);
 	}
 	//This function reacts to updated neighbour
@@ -156,11 +156,11 @@ public class NewsComp extends ComponentDefinition {
 	
 	private void sendNews() {
 		sentMessages++;
-		LOG.debug("{} about to send a news", logPrefix);
-		News newNew = new News(selfAdr.getIp().toString()+"_1");
+		//LOG.debug("{} about to send a news", logPrefix);
+		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessages);
 		newshash.add(newNew.getNewsId());
 		for(KAddress address : peerlist){
-			LOG.debug("{} sending news to {}", logPrefix, address.toString());
+			//LOG.debug("{} sending news to {}", logPrefix, address.toString());
 			KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
 			KContentMsg msg = new BasicContentMsg(header, newNew);
 
@@ -172,6 +172,8 @@ public class NewsComp extends ComponentDefinition {
 	Handler handleGradientSample = new Handler<TGradientSample>() {
 		@Override
 		public void handle(TGradientSample sample) {
+			
+			//LOG.debug("{} BINGO",logPrefix);
 		}
 	};
 
@@ -188,13 +190,13 @@ public class NewsComp extends ComponentDefinition {
 		@Override
 		public void handle(News news, KContentMsg<?, ?, News> container) {
 			if(!newshash.contains(news.getNewsId())){
-				LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
+				//LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
 				newshash.add(news.getNewsId());
 				News newNew = new News(news);
 				newNew.decreaseTTL();
 				if(newNew.getTTL()>0){
 					for(KAddress address : peerlist){
-						LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
+						//LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
 						KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
 						KContentMsg msg = new BasicContentMsg(header, newNew);
 						trigger(msg, networkPort);
