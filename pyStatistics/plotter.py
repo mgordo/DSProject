@@ -25,7 +25,7 @@ for ele in archives:
     
     print "Total sent file "+ele+": "+str(total_sent)
     
-    percentages = [float(x/total_sent) for x in received]
+    percentages = [float(float(x)/total_sent)*100 for x in received]
 
     data.append(percentages)
     f.close()
