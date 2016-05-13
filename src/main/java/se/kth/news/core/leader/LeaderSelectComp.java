@@ -18,8 +18,12 @@
 package se.kth.news.core.leader;
 
 import java.util.Comparator;
+import java.util.Iterator;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import se.kth.news.core.news.util.NewsView;
 import se.sics.kompics.ComponentDefinition;
 import se.sics.kompics.Handler;
 import se.sics.kompics.Negative;
@@ -29,6 +33,7 @@ import se.sics.kompics.network.Network;
 import se.sics.kompics.timer.Timer;
 import se.sics.ktoolbox.gradient.GradientPort;
 import se.sics.ktoolbox.gradient.event.TGradientSample;
+import se.sics.ktoolbox.gradient.util.GradientContainer;
 import se.sics.ktoolbox.util.network.KAddress;
 
 /**
@@ -70,6 +75,26 @@ public class LeaderSelectComp extends ComponentDefinition {
     Handler handleGradientSample = new Handler<TGradientSample>() {
         @Override
         public void handle(TGradientSample sample) {
+        	Iterator it = sample.getGradientNeighbours().iterator();
+        	KAddress closestHigherNeighbour = null;
+        	int ownNewsCount = ((NewsView)sample.selfView).localNewsCount;//Hope this is not always zero as it happened with Miguel
+        	int closestHigherCount = Integer.MAX_VALUE;
+        	
+        	while (it.hasNext()) {
+        		GradientContainer<NewsView> neighbour = (GradientContainer<NewsView>)it.next();
+        		if (neighbour.getContent().localNewsCount>ownNewsCount) {
+        			
+        			if ( neighbour.getContent().localNewsCount < closestHigherCount){
+        				closestHigherCount = neighbour.getContent().localNewsCount;
+        				closestHigherNeighbour = neighbour.getSource();
+        			}
+        		}
+        			
+        		//neighbour.getContent().localNewsCount;
+        	}
+        	if(closestHigherNeighbour == null){
+        		
+        	}
             LOG.debug("{}neighbours:{}", logPrefix, sample.gradientNeighbours);
             LOG.debug("{}fingers:{}", logPrefix, sample.gradientFingers);
             LOG.debug("{}local view:{}", logPrefix, sample.selfView);

@@ -84,6 +84,7 @@ public class NewsComp extends ComponentDefinition {
 		LOG.info("{}initiating...", logPrefix);
 
 		gradientOId = init.gradientOId;
+		localNewsView = new NewsView(selfAdr.getId(), 0);
 
 		subscribe(handleStart, control);
 		subscribe(handleCroupierSample, croupierPort);
@@ -100,6 +101,7 @@ public class NewsComp extends ComponentDefinition {
 		@Override
 		public void handle(Start event) {
 			LOG.info("{}starting...", logPrefix);
+
 			updateLocalNewsView();
 			
 			SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(1000*90, 99999999);
@@ -107,7 +109,8 @@ public class NewsComp extends ComponentDefinition {
 			spt.setTimeoutEvent(timeout);
 			trigger(spt, timerPort);
 
-			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*2, 1000);
+			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*2, 500+(int)(Math.random()*5000));
+//			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*2, 1000);
 			SendTimeout timeout2 = new SendTimeout(spt2);
 			spt2.setTimeoutEvent(timeout2);
 			trigger(spt2, timerPort);
@@ -119,7 +122,8 @@ public class NewsComp extends ComponentDefinition {
 	private int count=0;
 	
 	private void updateLocalNewsView() {
-		localNewsView = new NewsView(selfAdr.getId(), (int)(Math.random()*100));//THIS CHANGES NUMBER OF NODES IN GRADIENT
+		//localNewsView = new NewsView(selfAdr.getId(), (int)(Math.random()*100));//THIS CHANGES NUMBER OF NODES IN GRADIENT
+		localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 		LOG.debug("{}informing overlays of new view, _{}", logPrefix, localNewsView.localNewsCount);
 		trigger(new OverlayViewUpdate.Indication<>(gradientOId, false, localNewsView.copy()), viewUpdatePort);
 	}
@@ -155,6 +159,8 @@ public class NewsComp extends ComponentDefinition {
 	};
 	
 	private void sendNews() {
+		localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
+
 		sentMessages++;
 		//LOG.debug("{} about to send a news", logPrefix);
 		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessages);
@@ -173,6 +179,7 @@ public class NewsComp extends ComponentDefinition {
 		@Override
 		public void handle(TGradientSample sample) {
 			
+			//LOG.debug("{} utilityx value{}", logPrefix, localNewsView.localNewsCount);
 			//LOG.debug("{} BINGO",logPrefix);
 		}
 	};
@@ -190,6 +197,7 @@ public class NewsComp extends ComponentDefinition {
 		@Override
 		public void handle(News news, KContentMsg<?, ?, News> container) {
 			if(!newshash.contains(news.getNewsId())){
+				//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 				//LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
 				newshash.add(news.getNewsId());
 				News newNew = new News(news);
