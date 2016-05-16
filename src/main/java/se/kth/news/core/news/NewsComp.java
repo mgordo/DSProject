@@ -46,6 +46,7 @@ import se.sics.ktoolbox.croupier.CroupierPort;
 import se.sics.ktoolbox.croupier.event.CroupierSample;
 import se.sics.ktoolbox.gradient.GradientPort;
 import se.sics.ktoolbox.gradient.event.TGradientSample;
+import se.sics.ktoolbox.gradient.util.GradientContainer;
 import se.sics.ktoolbox.util.identifiable.Identifier;
 import se.sics.ktoolbox.util.network.KAddress;
 import se.sics.ktoolbox.util.network.KContentMsg;
@@ -120,10 +121,11 @@ public class NewsComp extends ComponentDefinition {
 	protected ArrayList<KAddress> peerlist = new ArrayList<KAddress>();
 	protected HashSet<String> newshash = new HashSet<String>();
 	private int count=0;
+	private ArrayList<Identifier> neighborlist;
 	
 	private void updateLocalNewsView() {
 		//localNewsView = new NewsView(selfAdr.getId(), (int)(Math.random()*100));//THIS CHANGES NUMBER OF NODES IN GRADIENT
-		localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount);//THIS CHANGES NUMBER OF NODES IN GRADIENT
+		localNewsView = new NewsView(selfAdr.getId(), 0);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 		LOG.debug("{}informing overlays of new view, _{}", logPrefix, localNewsView.localNewsCount);
 		trigger(new OverlayViewUpdate.Indication<>(gradientOId, false, localNewsView.copy()), viewUpdatePort);
 	}
@@ -157,9 +159,10 @@ public class NewsComp extends ComponentDefinition {
             trigger(msg, networkPort);*/
 		}
 	};
+	protected boolean isLeader;
 	
 	private void sendNews() {
-		localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
+		//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 
 		sentMessages++;
 		//LOG.debug("{} about to send a news", logPrefix);
@@ -176,8 +179,50 @@ public class NewsComp extends ComponentDefinition {
 	}
 
 	Handler handleGradientSample = new Handler<TGradientSample>() {
+		
+
 		@Override
 		public void handle(TGradientSample sample) {
+			
+			//Iterator it = sample.getGradientNeighbours().iterator();
+			
+        	//KAddress closestHigherNeighbour = null;
+        	//int ownNewsCount = ((NewsView)sample.selfView).localNewsCount;//Hope this is not always zero as it happened with Miguel
+        	//int closestHigherCount = Integer.MAX_VALUE;
+        	
+        	//TODO check if we are leaders
+			Iterator<Identifier> it = sample.getGradientNeighbours().iterator();
+			//Determine if we are leaders
+			while(it.hasNext()){
+				
+			}
+        	
+        	
+        	it = sample.getGradientNeighbours().iterator();
+        	
+			//KAddress partner = castSample.publicSample.get(it.next()).getSource();
+			ArrayList<Identifier> new_neighborlist = new ArrayList<Identifier>();
+			current_size = neighborlist.size();
+			//TO BE DONE ONLY BY THE LEADER
+			if(isLeader){
+				int unfamiliar_Nodes=0;
+			
+				while(it.hasNext()){
+					GradientContainer<NewsView> neighbour = (GradientContainer<NewsView>)it.next();
+					if(!neighborlist.contains(neighbour.getContent().nodeId)){
+						unfamiliar_Nodes++;
+						
+					}
+					else{
+						continue;	
+					}
+					new_neighborlist.add(neighbour.getContent().nodeId);
+				}
+				neighborlist = new_neighborlist;
+				if(unfamiliar_Nodes>5){
+					
+				}	
+			}   
 			
 			//LOG.debug("{} utilityx value{}", logPrefix, localNewsView.localNewsCount);
 			//LOG.debug("{} BINGO",logPrefix);
