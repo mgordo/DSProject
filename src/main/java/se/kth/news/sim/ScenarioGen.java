@@ -32,7 +32,6 @@ import se.sics.kompics.simulator.network.identifier.IdentifierExtractor;
 import se.sics.ktoolbox.omngr.bootstrap.BootstrapServerComp;
 import se.sics.ktoolbox.util.network.KAddress;
 import se.sics.ktoolbox.util.overlays.id.OverlayIdRegistry;
-import se.sics.kompics.simulator.adaptor.distributions.Distribution;
 
 /**
  * @author Alex Ormenisan <aaor@kth.se>

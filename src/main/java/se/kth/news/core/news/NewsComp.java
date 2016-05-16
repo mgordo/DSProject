@@ -110,7 +110,7 @@ public class NewsComp extends ComponentDefinition {
 			spt.setTimeoutEvent(timeout);
 			trigger(spt, timerPort);
 
-			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*2, 500+(int)(Math.random()*5000));
+			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*60, 1000*10+(int)(Math.random()*20000));
 //			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*2, 1000);
 			SendTimeout timeout2 = new SendTimeout(spt2);
 			spt2.setTimeoutEvent(timeout2);
@@ -126,7 +126,7 @@ public class NewsComp extends ComponentDefinition {
 	private void updateLocalNewsView() {
 		//localNewsView = new NewsView(selfAdr.getId(), (int)(Math.random()*100));//THIS CHANGES NUMBER OF NODES IN GRADIENT
 		localNewsView = new NewsView(selfAdr.getId(), 0);//THIS CHANGES NUMBER OF NODES IN GRADIENT
-		LOG.debug("{}informing overlays of new view, _{}", logPrefix, localNewsView.localNewsCount);
+		//LOG.debug("{}informing overlays of new view, _{}", logPrefix, localNewsView.localNewsCount);
 		trigger(new OverlayViewUpdate.Indication<>(gradientOId, false, localNewsView.copy()), viewUpdatePort);
 	}
 	//This function reacts to updated neighbour
@@ -183,6 +183,7 @@ public class NewsComp extends ComponentDefinition {
 
 		@Override
 		public void handle(TGradientSample sample) {
+		/**
 			
 			//Iterator it = sample.getGradientNeighbours().iterator();
 			
@@ -202,7 +203,6 @@ public class NewsComp extends ComponentDefinition {
         	
 			//KAddress partner = castSample.publicSample.get(it.next()).getSource();
 			ArrayList<Identifier> new_neighborlist = new ArrayList<Identifier>();
-			current_size = neighborlist.size();
 			//TO BE DONE ONLY BY THE LEADER
 			if(isLeader){
 				int unfamiliar_Nodes=0;
@@ -226,6 +226,7 @@ public class NewsComp extends ComponentDefinition {
 			
 			//LOG.debug("{} utilityx value{}", logPrefix, localNewsView.localNewsCount);
 			//LOG.debug("{} BINGO",logPrefix);
+		*/
 		}
 	};
 
