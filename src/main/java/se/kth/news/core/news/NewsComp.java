@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
 import se.kth.news.core.LogTimeout;
 import se.kth.news.core.leader.LeaderSelectPort;
 import se.kth.news.core.leader.LeaderUpdate;
+import se.kth.news.core.leader.LeaderUpdatePush;
 import se.kth.news.core.news.util.NewsView;
 import se.kth.news.play.News;
 import se.kth.news.play.Ping;
@@ -78,6 +79,15 @@ public class NewsComp extends ComponentDefinition {
 	private NewsView localNewsView;
 	private boolean hasSent = false;//TODO This is preliminary
 	private int sentMessages = 0;
+	
+	private boolean iAmLeader = false;
+
+	// FOR NON-LEADERS
+    private KAddress leaderAddress;
+	
+
+    private TGradientSample lastSample;
+
 
 	public NewsComp(Init init) {
 		selfAdr = init.selfAdr;
@@ -86,6 +96,9 @@ public class NewsComp extends ComponentDefinition {
 
 		gradientOId = init.gradientOId;
 		localNewsView = new NewsView(selfAdr.getId(), 0);
+		
+		lastSample = null;
+		leaderAddress = null;
 
 		subscribe(handleStart, control);
 		subscribe(handleCroupierSample, croupierPort);
@@ -159,7 +172,7 @@ public class NewsComp extends ComponentDefinition {
             trigger(msg, networkPort);*/
 		}
 	};
-	protected boolean isLeader;
+	//protected boolean isLeader;
 	
 	private void sendNews() {
 		//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
@@ -183,6 +196,7 @@ public class NewsComp extends ComponentDefinition {
 
 		@Override
 		public void handle(TGradientSample sample) {
+			lastSample = sample;
 		/**
 			
 			//Iterator it = sample.getGradientNeighbours().iterator();
@@ -230,9 +244,18 @@ public class NewsComp extends ComponentDefinition {
 		}
 	};
 
+	//This handler is only for transporting information from LeaderSelectComp
+	//DON'T INCLUDE THESE MESSAGES IN STATS
 	Handler handleLeader = new Handler<LeaderUpdate>() {
 		@Override
 		public void handle(LeaderUpdate event) {
+
+			leaderAddress = event.leaderAdr;
+
+			if (event.leaderAdr.equals(selfAdr)) // I am the leader, save this information
+				iAmLeader = true;
+			else
+				iAmLeader = false;
 		}
 	};
 
@@ -263,6 +286,7 @@ public class NewsComp extends ComponentDefinition {
 			//trigger(container.answer(new Pong()), networkPort);
 		}
 	};
+
 
 	ClassMatchedHandler handlePing
 	= new ClassMatchedHandler<Ping, KContentMsg<?, ?, Ping>>() {

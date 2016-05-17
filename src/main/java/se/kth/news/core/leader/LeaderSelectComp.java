@@ -20,6 +20,7 @@ package se.kth.news.core.leader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,6 +36,9 @@ import se.sics.kompics.Positive;
 import se.sics.kompics.Start;
 import se.sics.kompics.network.Network;
 import se.sics.kompics.network.Transport;
+import se.sics.kompics.timer.CancelPeriodicTimeout;
+import se.sics.kompics.timer.SchedulePeriodicTimeout;
+import se.sics.kompics.timer.Timeout;
 //import se.sics.kompics.simulator.network.identifier.Identifier;
 import se.sics.kompics.timer.Timer;
 import se.sics.ktoolbox.gradient.GradientPort;
@@ -82,6 +86,8 @@ public class LeaderSelectComp extends ComponentDefinition {
         subscribe(handleGradientSample, gradientPort);
         subscribe(handleAmILeader, networkPort);
         subscribe(handleAmILeaderResponse, networkPort);
+		subscribe(leaderPushTimeout, timerPort);
+        subscribe(handleLeaderUpdatePush, networkPort);
     }
 
     Handler handleStart = new Handler<Start>() {
@@ -93,8 +99,22 @@ public class LeaderSelectComp extends ComponentDefinition {
 	protected boolean isLeader;
 	private static final int COMPARE_SAME_NEIGBOURS = 8; // TODO: test parameter
 	private static final int LEADER_ROUNDS_LIMIT = 3; // TODO: test parameter
-	private int leaderRounds =0;
-	private int waitingResponses =0;
+	private static final int TIMEOUT_REPUSH_LEADER = 10; // In seconds TODO: test parameter
+	private int leaderRounds = 0;
+	private int waitingResponses = 0;
+
+
+	private boolean iAmLeader = false;
+
+	// FOR LEADER
+	private Integer leaderPushId = 0; // Each LeaderUpdatePush has an identifier
+	private UUID pushTimerId =  null;
+
+	// FOR NON-LEADERS
+    private KAddress leaderAddress;
+    private int lastLeaderPushId; // identifier to recognize if the LeaderUpdatePush was already seen or if to forward it to everyone who I know
+	
+	
     
     Handler handleGradientSample = new Handler<TGradientSample>() {
         @Override
@@ -115,7 +135,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 
 				NewsView peerNews = neighbour.getContent();
 				
-				if(neighborList == null || !neighborList.contains(neighbour.getContent().nodeId)){
+				if (neighborList == null || !neighborList.contains(neighbour.getContent().nodeId)){
 					unfamiliar_Nodes++;
 					
 				}
@@ -136,7 +156,13 @@ public class LeaderSelectComp extends ComponentDefinition {
 				leaderRounds = 0;
 			}else{
 				leaderRounds++;
-				if(leaderRounds> LEADER_ROUNDS_LIMIT){
+				if (leaderRounds> LEADER_ROUNDS_LIMIT){
+					leaderRounds = 0;
+
+					if (iAmLeader) { // I'm already the leader, everyone should know. For those who joined later, there's a timeout when I'll push this information.
+						return;
+					}
+
 					//Try to become a leader
 					LOG.info("{}I want to be the leader!!!:{}", logPrefix);
 					
@@ -188,7 +214,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 					//NewsView selfView = (NewsView)sample.selfView;
 
 					NewsView peerNews = neighbour.getContent();
-					NewsView possibleLeader = ami.leaderView; //TODO:
+					NewsView possibleLeader = ami.leaderView;
 
 					if(myComparator.compare(possibleLeader, peerNews) < 0){
 						//				if(viewComparator.compare((NewsView)sample.selfView, peerNews) < 0){
@@ -207,6 +233,33 @@ public class LeaderSelectComp extends ComponentDefinition {
     
     
     };	
+    
+    void pushLeaderUpdate(){
+
+		trigger(new LeaderUpdate(selfAdr), leaderUpdate); // transport this information to NewsComp
+
+    	leaderPushId++;
+
+    	Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
+    	while (neighbourIt.hasNext()) { // Send it to all neighbours
+
+    		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
+
+    		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId));
+    		trigger(msg, networkPort);
+    	}
+
+    	Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
+    	while (fingerIt.hasNext()) { // Send it to all fingers
+
+    		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)fingerIt.next();
+
+    		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId));
+    		trigger(msg, networkPort);
+    	}
+    }
 
     ClassMatchedHandler<AmILeaderResponse, KContentMsg<?, ?, AmILeaderResponse>> handleAmILeaderResponse 
     = new ClassMatchedHandler<AmILeaderResponse, KContentMsg<?, ?, AmILeaderResponse>>() {
@@ -215,19 +268,102 @@ public class LeaderSelectComp extends ComponentDefinition {
     	public void handle(AmILeaderResponse ami, KContentMsg<?, ?, AmILeaderResponse> container){
     		if (ami.isLeader) {
     			waitingResponses--;
+
 				LOG.debug("{} Someone agrees, {} remaining :)", logPrefix, waitingResponses);
-				if (waitingResponses == 0) {
+
+				if (waitingResponses == 0) { // I'm the leader! Now let's inform everyone
+					iAmLeader = true;
+
 					LOG.debug("{}I AM THE LEADER!", logPrefix);
+
+					pushLeaderUpdate();
+					
+					//set timeout to periodically send the LeaderUpdatePush
+					SchedulePeriodicTimeout leaderRePushTimeout = new SchedulePeriodicTimeout(1000*TIMEOUT_REPUSH_LEADER, 1000*TIMEOUT_REPUSH_LEADER);
+					LeaderTimeout timeout = new LeaderTimeout(leaderRePushTimeout);
+					leaderRePushTimeout.setTimeoutEvent(timeout);
+					trigger(leaderRePushTimeout, timerPort);
+					pushTimerId = timeout.getTimeoutId();
 				}
     		}
     		else
-				LOG.debug("{} Someone disagrees :(", logPrefix); //TODO: should each request have an ID and should we introduce timeouts?
+    			LOG.debug("{} Someone disagrees :(", logPrefix); //TODO: should each request have an ID and should we introduce timeouts?
 
     	}
     };
 
+	
+
+	ClassMatchedHandler<LeaderUpdatePush, KContentMsg<?, ?, LeaderUpdatePush>> handleLeaderUpdatePush
+	= new ClassMatchedHandler<LeaderUpdatePush, KContentMsg<?, ?, LeaderUpdatePush>>() {
+
+		@Override
+		public void handle(LeaderUpdatePush update, KContentMsg<?, ?, LeaderUpdatePush> container) {
+
+			if (update.leaderAdr.equals(leaderAddress) && update.id.equals(lastLeaderPushId)) // I have already processed this message, skip it
+				return;
+			else if (update.leaderAdr.equals(selfAdr)) // It's me, I don't want to forward my own message!
+				return;
 
 
+			// In case I was the leader before, I'm definitely not leader now
+			iAmLeader = false;
+
+			// The first time what I see this message, let's forward it to everyone I know.
+			
+			// First, remember this in case I received it again
+			leaderAddress = update.leaderAdr;
+			lastLeaderPushId = update.id;
+
+			// Send the leader internally to NewsComp
+
+			trigger(new LeaderUpdate(update.leaderAdr), leaderUpdate); // transport this information to NewsComp
+
+
+			Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
+			while (neighbourIt.hasNext()) { // Send it to all neighbours
+
+				GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
+
+				KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id));
+				trigger(msg, networkPort);
+			}
+
+			Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
+			while (fingerIt.hasNext()) { // Send it to all fingers
+
+				GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)fingerIt.next();
+
+				KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id));
+				trigger(msg, networkPort);
+			}
+
+			LOG.info("{}received LeaderUpdatePush, leader is: {}", logPrefix, update.leaderAdr);
+
+		}
+	};
+
+
+
+    public class LeaderTimeout extends Timeout {
+    	public LeaderTimeout(SchedulePeriodicTimeout spt) {
+    		super(spt);
+    	}
+    }
+
+    Handler<LeaderTimeout> leaderPushTimeout = new Handler<LeaderTimeout>() {
+    	public void handle(LeaderTimeout event) {
+
+    		if (!iAmLeader) { // I am not leader anymore, don't send anything and cancel the timer
+    			trigger(new CancelPeriodicTimeout(pushTimerId), timerPort);
+    			return;
+    		}
+
+    		pushLeaderUpdate();
+    	}
+    };
 		
     public static class Init extends se.sics.kompics.Init<LeaderSelectComp> {
 
@@ -239,4 +375,5 @@ public class LeaderSelectComp extends ComponentDefinition {
             this.viewComparator = viewComparator;
         }
     }
+
 }
