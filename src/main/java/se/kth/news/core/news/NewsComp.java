@@ -20,6 +20,7 @@ package se.kth.news.core.news;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,9 +86,9 @@ public class NewsComp extends ComponentDefinition {
 	// FOR NON-LEADERS
     private KAddress leaderAddress;
 	
-
+    private ArrayList<News> pendingNews;
     private TGradientSample lastSample;
-
+    private static final double  SEND_MESSSAGE_PROBABILITY = 0.6;
 
 	public NewsComp(Init init) {
 		selfAdr = init.selfAdr;
@@ -99,7 +100,7 @@ public class NewsComp extends ComponentDefinition {
 		
 		lastSample = null;
 		leaderAddress = null;
-
+		pendingNews = new ArrayList<News>();
 		subscribe(handleStart, control);
 		subscribe(handleCroupierSample, croupierPort);
 		subscribe(handleGradientSample, gradientPort);
@@ -172,7 +173,8 @@ public class NewsComp extends ComponentDefinition {
             trigger(msg, networkPort);*/
 		}
 	};
-	//protected boolean isLeader;
+
+		
 	
 	private void sendNews() {
 		//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
@@ -181,13 +183,23 @@ public class NewsComp extends ComponentDefinition {
 		//LOG.debug("{} about to send a news", logPrefix);
 		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessages);
 		newshash.add(newNew.getNewsId());
-		for(KAddress address : peerlist){
-			//LOG.debug("{} sending news to {}", logPrefix, address.toString());
-			KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
-			KContentMsg msg = new BasicContentMsg(header, newNew);
+		pendingNews.add(newNew);
+		if(leaderAddress!=null){
+			
+			for(News nw : pendingNews){
+				//LOG.debug("{} sending news to {}", logPrefix, address.toString());
+				KHeader header = new BasicHeader(selfAdr, leaderAddress, Transport.TCP);//Changed to TCP to avoid timeouts between leader and sender of news
+				KContentMsg msg = new BasicContentMsg(header, nw);
 
-			trigger(msg, networkPort);
+				trigger(msg, networkPort);
+			}
+			pendingNews.clear();
+			
+			
 		}
+			
+		
+		
 
 	}
 
@@ -265,6 +277,55 @@ public class NewsComp extends ComponentDefinition {
 
 		@Override
 		public void handle(News news, KContentMsg<?, ?, News> container) {
+			
+			
+			if(!newshash.contains(news.getNewsId())){
+				//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
+				//LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
+				newshash.add(news.getNewsId());
+				News newNew = new News(news);
+				newNew.decreaseTTL();
+				if(newNew.getTTL()>0){
+					
+					Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
+			    	while (neighbourIt.hasNext()) { // Send it to all neighbours
+
+			    		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
+
+			    		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+			    		KContentMsg msg = new BasicContentMsg(header, newNew);
+			    		trigger(msg, networkPort);
+			    	}
+
+			    	Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
+			    	while (fingerIt.hasNext()) { // Send it to all fingers
+
+			    		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)fingerIt.next();
+
+			    		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+			    		KContentMsg msg = new BasicContentMsg(header, newNew);
+			    		trigger(msg, networkPort);
+			    	}
+					
+					/*for( current : lastSample.getGradientNeighbours()){
+						GradientContainer<NewsView> nw = (GradientContainer<NewsView>)current.selfView;
+						
+						KHeader header = new BasicHeader(selfAdr, nw.getSource(), Transport.UDP);
+						KContentMsg msg = new BasicContentMsg(header, newNew);
+						trigger(msg, networkPort);
+						
+					}*/
+				}
+			
+			
+			
+			}
+			
+			
+			
+			
+			
+			/*
 			if(!newshash.contains(news.getNewsId())){
 				//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 				//LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
@@ -282,7 +343,7 @@ public class NewsComp extends ComponentDefinition {
 				}
 
 
-			}
+			}*/
 			//trigger(container.answer(new Pong()), networkPort);
 		}
 	};
@@ -316,7 +377,10 @@ public class NewsComp extends ComponentDefinition {
 
 	Handler<SendTimeout> sendTimeout = new Handler<SendTimeout>() {
 		public void handle(SendTimeout event) {
-			sendNews();
+			if(Math.random()>=SEND_MESSSAGE_PROBABILITY){
+				sendNews();
+			}
+			
 		}
 	};
 
@@ -336,3 +400,5 @@ public class NewsComp extends ComponentDefinition {
 		}
 	}
 }
+
+
