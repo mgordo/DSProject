@@ -119,7 +119,7 @@ public class NewsComp extends ComponentDefinition {
 
 			updateLocalNewsView();
 			
-			SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(1000*90, 99999999);
+			SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(1000*890, 99999999);
 			LogTimeout timeout = new LogTimeout(spt);
 			spt.setTimeoutEvent(timeout);
 			trigger(spt, timerPort);
@@ -377,10 +377,10 @@ public class NewsComp extends ComponentDefinition {
 
 	Handler<SendTimeout> sendTimeout = new Handler<SendTimeout>() {
 		public void handle(SendTimeout event) {
-			if(Math.random()>=SEND_MESSSAGE_PROBABILITY){
+			/*if(Math.random()>=SEND_MESSSAGE_PROBABILITY){
 				sendNews();
-			}
-			
+			}*/
+			sendNews();
 		}
 	};
 
