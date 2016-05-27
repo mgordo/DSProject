@@ -306,7 +306,13 @@ public class NewsComp extends ComponentDefinition {
 			    		KContentMsg msg = new BasicContentMsg(header, newNew);
 			    		trigger(msg, networkPort);
 			    	}
-					
+			    	for(KAddress address : peerlist){
+						//LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
+						KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+						KContentMsg msg = new BasicContentMsg(header, newNew);
+						trigger(msg, networkPort);
+
+					}
 					/*for( current : lastSample.getGradientNeighbours()){
 						GradientContainer<NewsView> nw = (GradientContainer<NewsView>)current.selfView;
 						

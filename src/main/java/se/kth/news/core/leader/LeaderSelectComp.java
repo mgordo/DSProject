@@ -25,6 +25,8 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import se.kth.news.core.LogTimeout;
+import se.kth.news.core.news.NewsComp.SendTimeout;
 import se.kth.news.core.news.util.NewsView;
 import se.kth.news.core.news.util.NewsViewComparator;
 import se.kth.news.play.News;
@@ -100,21 +102,24 @@ public class LeaderSelectComp extends ComponentDefinition {
 	private static final int COMPARE_SAME_NEIGBOURS = 8; // TODO: test parameter
 	private static final int LEADER_ROUNDS_LIMIT = 3; // TODO: test parameter
 	private static final int TIMEOUT_REPUSH_LEADER = 10; // In seconds TODO: test parameter
+	private static final int LEADER_TIMEOUT_DETECTION = 40;//In seconds TODO: Set to three reounds of leader updates or more
 	private int leaderRounds = 0;
 	private int waitingResponses = 0;
 
 
 	private boolean iAmLeader = false;
-
+	private boolean timeoutSet = false;
+	
+	
 	// FOR LEADER
 	private Integer leaderPushId = 0; // Each LeaderUpdatePush has an identifier
 	private UUID pushTimerId =  null;
-
+	private UUID timeoutUUID = null;
 	// FOR NON-LEADERS
     private KAddress leaderAddress;
     private int lastLeaderPushId; // identifier to recognize if the LeaderUpdatePush was already seen or if to forward it to everyone who I know
 	
-	
+	private int lastSeenPushIdTimeout;
     
     Handler handleGradientSample = new Handler<TGradientSample>() {
         @Override
@@ -291,6 +296,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 
     	}
     };
+	
 
 	
 
@@ -300,6 +306,14 @@ public class LeaderSelectComp extends ComponentDefinition {
 		@Override
 		public void handle(LeaderUpdatePush update, KContentMsg<?, ?, LeaderUpdatePush> container) {
 
+			if(!timeoutSet){
+				SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(0, 1000*LEADER_TIMEOUT_DETECTION);
+				UpdateTimeout timeout = new UpdateTimeout(spt);
+				spt.setTimeoutEvent(timeout);
+				trigger(spt, timerPort);
+				timeoutUUID = timeout.getTimeoutId();
+				timeoutSet=true;
+			}
 			if (update.leaderAdr.equals(leaderAddress) && update.id.equals(lastLeaderPushId)) // I have already processed this message, skip it
 				return;
 			else if (update.leaderAdr.equals(selfAdr)) // It's me, I don't want to forward my own message!
@@ -364,7 +378,23 @@ public class LeaderSelectComp extends ComponentDefinition {
     		pushLeaderUpdate();
     	}
     };
-		
+	
+    //This handler detects if the leader has not sent a LeaderPush in a certain time frame
+    Handler<UpdateTimeout> sendTimeout = new Handler<UpdateTimeout>() {
+		public void handle(UpdateTimeout event) {
+			if(lastSeenPushIdTimeout==lastLeaderPushId && leaderAddress!=null){//No updates since last time we woke up, we forget info about leader
+				iAmLeader=false;
+				leaderAddress=null;
+				leaderRounds =0;
+				trigger(new LeaderUpdate(null), leaderUpdate); // transport this information to NewsComp
+				trigger(new CancelPeriodicTimeout(timeoutUUID), timerPort);
+				timeoutSet=false;
+			}
+			lastSeenPushIdTimeout=lastLeaderPushId;
+		}
+	};
+    
+    
     public static class Init extends se.sics.kompics.Init<LeaderSelectComp> {
 
         public final KAddress selfAdr;
@@ -375,5 +405,11 @@ public class LeaderSelectComp extends ComponentDefinition {
             this.viewComparator = viewComparator;
         }
     }
+    
+    public class UpdateTimeout extends Timeout {
+		public UpdateTimeout(SchedulePeriodicTimeout spt) {
+			super(spt);
+		}
+	}
 
 }
