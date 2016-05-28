@@ -7,10 +7,11 @@ import matplotlib.pyplot as plt
 import os
 
 '''Change and add to the list as needed. Should contain path to archives'''
-auxroute='C:/maven/'
+auxroute='C:\Users\Miguel\git\DSProject'
 archives = [auxroute+'plots/ttl2.log', auxroute+'plots/ttl5.log',auxroute+'plots/ttl20.log']
 data=[]
 count=0
+seenLeader = False
 for ele in archives:
     total_sent = 0
     received = []
@@ -21,6 +22,12 @@ for ele in archives:
             total_sent+=int(parts[-1])
             
             received.append(int(parts[1].split(",")[0]))
+            
+        if "I AM THE LEADER!" in line and not seenLeader:
+            parts = line.split("nid:")
+            finalpart = parts[1].split(">")
+            timepart = line.split("]")
+            print "First Leader is "+finalpart[0]+" at time "+ timepart[0]
             
 
     
