@@ -82,6 +82,7 @@ public class NewsComp extends ComponentDefinition {
 	private int sentMessages = 0;
 	
 	private boolean iAmLeader = false;
+	private boolean sentNews = false; //TODO temporary for testing
 
 	// FOR NON-LEADERS
     private KAddress leaderAddress;
@@ -178,22 +179,27 @@ public class NewsComp extends ComponentDefinition {
 	
 	private void sendNews() {
 		//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
+		
+		if (sentNews) //TODO: temporary testing
+			return;
 
-		sentMessages++;
 		//LOG.debug("{} about to send a news", logPrefix);
 		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessages);
-		newshash.add(newNew.getNewsId());
+		//newshash.add(newNew.getNewsId());
 		pendingNews.add(newNew);
 		if(leaderAddress!=null){
 			
 			for(News nw : pendingNews){
+				sentMessages++;
 				//LOG.debug("{} sending news to {}", logPrefix, address.toString());
 				KHeader header = new BasicHeader(selfAdr, leaderAddress, Transport.TCP);//Changed to TCP to avoid timeouts between leader and sender of news
 				KContentMsg msg = new BasicContentMsg(header, nw);
 
 				trigger(msg, networkPort);
+				break; //TODO temporary, testing
 			}
 			pendingNews.clear();
+			sentNews = true;
 			
 			
 		}
@@ -264,7 +270,7 @@ public class NewsComp extends ComponentDefinition {
 
 			leaderAddress = event.leaderAdr;
 
-			if (event.leaderAdr.equals(selfAdr)) // I am the leader, save this information
+			if (event.leaderAdr != null && event.leaderAdr.equals(selfAdr)) // I am the leader, save this information
 				iAmLeader = true;
 			else
 				iAmLeader = false;
@@ -285,7 +291,8 @@ public class NewsComp extends ComponentDefinition {
 				newshash.add(news.getNewsId());
 				News newNew = new News(news);
 				newNew.decreaseTTL();
-				if(newNew.getTTL()>0){
+				if(newNew.getTTL() >= 19){
+				//if(newNew.getTTL()>0){ //TODO:return back
 					
 					Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
 			    	while (neighbourIt.hasNext()) { // Send it to all neighbours
@@ -293,7 +300,8 @@ public class NewsComp extends ComponentDefinition {
 			    		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
 
 			    		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
-			    		KContentMsg msg = new BasicContentMsg(header, newNew);
+			    		//KContentMsg msg = new BasicContentMsg(header, newNew);
+			    		KContentMsg msg = new BasicContentMsg(header, new News(newNew));
 			    		trigger(msg, networkPort);
 			    	}
 
@@ -303,9 +311,11 @@ public class NewsComp extends ComponentDefinition {
 			    		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)fingerIt.next();
 
 			    		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
-			    		KContentMsg msg = new BasicContentMsg(header, newNew);
+			    		KContentMsg msg = new BasicContentMsg(header, new News(newNew));
+			    		//KContentMsg msg = new BasicContentMsg(header, newNew);
 			    		trigger(msg, networkPort);
 			    	}
+			    	/**
 			    	for(KAddress address : peerlist){
 						//LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
 						KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
@@ -313,6 +323,7 @@ public class NewsComp extends ComponentDefinition {
 						trigger(msg, networkPort);
 
 					}
+					*/
 					/*for( current : lastSample.getGradientNeighbours()){
 						GradientContainer<NewsView> nw = (GradientContainer<NewsView>)current.selfView;
 						
