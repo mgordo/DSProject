@@ -17,6 +17,13 @@
  */
 package se.kth.news.core.news;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -137,6 +144,7 @@ public class NewsComp extends ComponentDefinition {
 	protected HashSet<String> newshash = new HashSet<String>();
 	private int count=0;
 	private ArrayList<Identifier> neighborlist;
+	private ArrayList<String> seenMessages = new ArrayList<String>();
 	
 	private void updateLocalNewsView() {
 		//localNewsView = new NewsView(selfAdr.getId(), (int)(Math.random()*100));//THIS CHANGES NUMBER OF NODES IN GRADIENT
@@ -186,6 +194,7 @@ public class NewsComp extends ComponentDefinition {
 		//LOG.debug("{} about to send a news", logPrefix);
 		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessages);
 		//newshash.add(newNew.getNewsId());
+		seenMessages.add(newNew.getNewsId());
 		pendingNews.add(newNew);
 		if(leaderAddress!=null){
 			
@@ -290,6 +299,7 @@ public class NewsComp extends ComponentDefinition {
 				//LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
 				newshash.add(news.getNewsId());
 				News newNew = new News(news);
+				seenMessages.add(news.getNewsId());
 				newNew.decreaseTTL();
 				if(newNew.getTTL() >= 19){
 				//if(newNew.getTTL()>0){ //TODO:return back
@@ -389,6 +399,19 @@ public class NewsComp extends ComponentDefinition {
 		public void handle(LogTimeout event) {
 			LOG.info("{}Final log, received: {}, sent: {}", logPrefix, newshash.size(), sentMessages);
 			count++;
+			PrintWriter file=null;
+			try {
+				file = new PrintWriter("C:\\Users\\Miguel\\git\\DSProject\\logs\\"+selfAdr.getId()+".txt", "UTF-8");
+				System.out.println("Successfully printed to file");
+				for(String line: seenMessages){
+					file.println(line);
+				}
+				
+				file.close();
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				System.out.println("Error creating file");
+				e.printStackTrace();
+			}
 		}
 	};
 

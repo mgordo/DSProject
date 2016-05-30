@@ -1,4 +1,4 @@
-package se.kth.news.core.leader;
+package se.kth.news.core.news;
 
 import se.kth.news.core.news.util.NewsView;
 
