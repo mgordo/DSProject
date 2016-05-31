@@ -97,6 +97,7 @@ public class NewsComp extends ComponentDefinition {
     private ArrayList<News> pendingNews;
     private TGradientSample lastSample;
     private static final double  SEND_MESSSAGE_PROBABILITY = 0.6;
+    private boolean isFirstTimeLeader=false;
 
 	public NewsComp(Init init) {
 		selfAdr = init.selfAdr;
@@ -190,8 +191,8 @@ public class NewsComp extends ComponentDefinition {
 	private void sendNews() {
 		//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 		
-		if (sentNews) //TODO: temporary testing
-			return;
+		/*if (sentNews) //TODO: temporary testing
+			return;*/
 
 		//LOG.debug("{} about to send a news", logPrefix);
 		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessages);
@@ -282,7 +283,7 @@ public class NewsComp extends ComponentDefinition {
 			if (leaderAddress == null && event.leaderAdr != null)
 
 			leaderAddress = event.leaderAdr;
-
+			
 			if (event.leaderAdr != null && event.leaderAdr.equals(selfAdr)) // I am the leader, save this information
 				iAmLeader = true;
 			else

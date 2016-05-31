@@ -42,7 +42,11 @@ for ele in archives:
             print "First Leader is "+finalpart[0]+" at time "+ timepart[0]
             seenLeader=True;
             
-
+        if "First leader" in line:
+            parts = line.split("nid:")
+            finalpart = parts[1].split(">")
+            timepart = line.split("]")
+            print "First Leader received by "+finalpart[0]+" at time "+ timepart[0]
     
     print "Total sent file "+ele+": "+str(total_sent)
     

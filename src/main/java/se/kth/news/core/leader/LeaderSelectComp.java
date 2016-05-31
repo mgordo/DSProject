@@ -77,6 +77,8 @@ public class LeaderSelectComp extends ComponentDefinition {
     private NewsViewComparator myComparator;
     private ArrayList<Identifier> neighborList;
     private TGradientSample lastSample;
+    private boolean isFirstTimeLeader=false;
+    
     public LeaderSelectComp(Init init) {
         selfAdr = init.selfAdr;
         logPrefix = "<nid:" + selfAdr.getId() + ">";
@@ -290,6 +292,9 @@ public class LeaderSelectComp extends ComponentDefinition {
 
 					pushLeaderUpdate(true);
 					
+					
+					
+					
 					//set timeout to periodically send the LeaderUpdatePush
 					SchedulePeriodicTimeout leaderRePushTimeout = new SchedulePeriodicTimeout(1000*TIMEOUT_REPUSH_LEADER, 1000*TIMEOUT_REPUSH_LEADER);
 					LeaderTimeout timeout = new LeaderTimeout(leaderRePushTimeout);
@@ -333,6 +338,12 @@ public class LeaderSelectComp extends ComponentDefinition {
 			// First, remember this in case I received it again
 			leaderAddress = update.leaderAdr;
 			lastLeaderPushId = update.id;
+			
+			//Log first update received
+			if(isFirstTimeLeader==false){
+				LOG.debug("{} First leader update received",logPrefix);
+				isFirstTimeLeader=true;
+			}
 
 			if(!timeoutSet){
 				LOG.debug("{} timeout set {}", logPrefix, lastLeaderPushId); // TODO: debug
