@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
 
 import se.kth.news.core.LogTimeout;
 import se.kth.news.core.news.NewsComp.SendTimeout;
+import se.kth.news.core.news.SendAllMessages;
 import se.kth.news.core.news.util.NewsView;
 import se.kth.news.core.news.util.NewsViewComparator;
 import se.kth.news.play.News;
@@ -102,7 +103,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 	protected boolean isLeader;
 	private static final int COMPARE_SAME_NEIGBOURS = 10; // TODO: test parameter
 	private static final int LEADER_ROUNDS_LIMIT = 3; // TODO: test parameter
-	private static final int TIMEOUT_REPUSH_LEADER = 120; // In seconds TODO: test parameter
+	private static final int TIMEOUT_REPUSH_LEADER = 30; // In seconds TODO: test parameter
 	private static final int LEADER_TIMEOUT_DETECTION = 240;//In seconds TODO: Set to three reounds of leader updates or more
 	private int leaderRounds = 0;
 	private int waitingResponses = 0;
@@ -240,7 +241,7 @@ public class LeaderSelectComp extends ComponentDefinition {
     
     };	
     
-    void pushLeaderUpdate(){
+    void pushLeaderUpdate(boolean newLeader){
 
 
 		trigger(new LeaderUpdate(selfAdr), leaderUpdate); // transport this information to NewsComp
@@ -254,7 +255,7 @@ public class LeaderSelectComp extends ComponentDefinition {
     		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
 
     		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
-    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId));
+    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId, newLeader));
     		trigger(msg, networkPort);
 			LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, current_container.getSource());
     	}
@@ -266,7 +267,7 @@ public class LeaderSelectComp extends ComponentDefinition {
     		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)fingerIt.next();
 
     		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
-    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId));
+    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId, newLeader));
     		trigger(msg, networkPort);
 			LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, current_container.getSource());
     	}
@@ -287,7 +288,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 
 					LOG.debug("{}I AM THE LEADER!", logPrefix);
 
-					pushLeaderUpdate();
+					pushLeaderUpdate(true);
 					
 					//set timeout to periodically send the LeaderUpdatePush
 					SchedulePeriodicTimeout leaderRePushTimeout = new SchedulePeriodicTimeout(1000*TIMEOUT_REPUSH_LEADER, 1000*TIMEOUT_REPUSH_LEADER);
@@ -318,6 +319,16 @@ public class LeaderSelectComp extends ComponentDefinition {
 			else if (update.leaderAdr.equals(selfAdr)) // It's me, I don't want to forward my own message!
 				return;
 
+			if (leaderAddress != update.leaderAdr && update.leaderAdr != null && update.newLeader == false) {
+				// I've got to know a new leader and this is not the leader's first update (that
+				// means the leader has already been a leader for some time), so let's ask it for
+				// all known messages
+
+				KHeader header = new BasicHeader(selfAdr, update.leaderAdr, Transport.UDP);
+				KContentMsg msg = new BasicContentMsg(header, new SendAllMessages());
+				trigger(msg, networkPort);
+				
+			}
 
 			// First, remember this in case I received it again
 			leaderAddress = update.leaderAdr;
@@ -352,7 +363,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 				GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
 
 				KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
-				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id));
+				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id, update.newLeader));
 				trigger(msg, networkPort);
 				LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, current_container.getSource());
 			}
@@ -365,7 +376,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 				GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)fingerIt.next();
 
 				KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
-				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id));
+				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id, update.newLeader));
 				trigger(msg, networkPort);
 				LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, current_container.getSource());
 			}
@@ -391,7 +402,7 @@ public class LeaderSelectComp extends ComponentDefinition {
     			return;
     		}
 
-    		pushLeaderUpdate();
+    		pushLeaderUpdate(false);
     	}
     };
 	

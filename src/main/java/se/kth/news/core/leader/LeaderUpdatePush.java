@@ -22,8 +22,16 @@ import se.sics.ktoolbox.util.network.KAddress;
 public class LeaderUpdatePush {
     public final KAddress leaderAdr;
     public final Integer id;
+    public final boolean newLeader; // If the leader is newly selected and this is the first message, it is marked as true, otherwise false
     
     public LeaderUpdatePush(KAddress leaderAdr, Integer id) {
+    	this.newLeader = false;
+        this.leaderAdr = leaderAdr;
+        this.id = id;
+    }
+
+	public LeaderUpdatePush(KAddress leaderAdr, Integer id, boolean newLeader) {
+    	this.newLeader = newLeader;
         this.leaderAdr = leaderAdr;
         this.id = id;
     }

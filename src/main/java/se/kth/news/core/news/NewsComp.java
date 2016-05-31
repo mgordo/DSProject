@@ -116,6 +116,7 @@ public class NewsComp extends ComponentDefinition {
 		subscribe(handlePing, networkPort);
 		subscribe(handlePong, networkPort);
 		subscribe(handleNews, networkPort);
+		subscribe(handleSendAllMessages, networkPort);
 		subscribe(handleTimeout, timerPort);
 		subscribe(sendTimeout, timerPort);
 	}
@@ -142,6 +143,7 @@ public class NewsComp extends ComponentDefinition {
 	};
 	protected ArrayList<KAddress> peerlist = new ArrayList<KAddress>();
 	protected HashSet<String> newshash = new HashSet<String>();
+	protected ArrayList<News> newsList = new ArrayList<News>();
 	private int count=0;
 	private ArrayList<Identifier> neighborlist;
 	private ArrayList<String> seenMessages = new ArrayList<String>();
@@ -276,6 +278,8 @@ public class NewsComp extends ComponentDefinition {
 	Handler handleLeader = new Handler<LeaderUpdate>() {
 		@Override
 		public void handle(LeaderUpdate event) {
+			
+			if (leaderAddress == null && event.leaderAdr != null)
 
 			leaderAddress = event.leaderAdr;
 
@@ -298,6 +302,7 @@ public class NewsComp extends ComponentDefinition {
 				//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 				//LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
 				newshash.add(news.getNewsId());
+				newsList.add(news);
 				News newNew = new News(news);
 				seenMessages.add(news.getNewsId());
 				newNew.decreaseTTL();
@@ -375,6 +380,29 @@ public class NewsComp extends ComponentDefinition {
 		}
 	};
 
+	ClassMatchedHandler handleSendAllMessages // received only by a leader to send all messages it knows
+	= new ClassMatchedHandler<SendAllMessages, KContentMsg<?, ?, SendAllMessages>>() {
+
+		@Override
+		public void handle(SendAllMessages content, KContentMsg<?, ?, SendAllMessages> container) {
+
+
+			LOG.info("{}received SendAllMessages from:{}", logPrefix, container.getHeader().getSource());
+
+			// TODO: now
+			for (News news : newsList){
+
+				News sendNews = new News(news);
+				sendNews.restoreTTL();
+
+				KHeader header = new BasicHeader(selfAdr, container.getHeader().getSource(), Transport.UDP);
+				KContentMsg msg = new BasicContentMsg(header, sendNews);
+				trigger(msg, networkPort);
+			}
+
+			trigger(container.answer(new Pong()), networkPort);
+		}
+	};
 
 	ClassMatchedHandler handlePing
 	= new ClassMatchedHandler<Ping, KContentMsg<?, ?, Ping>>() {
@@ -399,7 +427,11 @@ public class NewsComp extends ComponentDefinition {
 		public void handle(LogTimeout event) {
 			LOG.info("{}Final log, received: {}, sent: {}", logPrefix, newshash.size(), sentMessages);
 			count++;
+
+			//TODO: skipping debug
+/**
 			PrintWriter file=null;
+
 			try {
 				file = new PrintWriter("C:\\Users\\Miguel\\git\\DSProject\\logs\\"+selfAdr.getId()+".txt", "UTF-8");
 				System.out.println("Successfully printed to file");
@@ -412,6 +444,7 @@ public class NewsComp extends ComponentDefinition {
 				System.out.println("Error creating file");
 				e.printStackTrace();
 			}
+			*/
 		}
 	};
 

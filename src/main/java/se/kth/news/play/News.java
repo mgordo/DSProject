@@ -26,4 +26,8 @@ public class News {
 		return ttl;
 	}
 
+	public void restoreTTL(){
+		ttl = NEWS_TTL;
+	}
+
 }
