@@ -36,6 +36,7 @@ import se.kth.news.core.LogTimeout;
 import se.kth.news.core.leader.LeaderSelectPort;
 import se.kth.news.core.leader.LeaderUpdate;
 import se.kth.news.core.leader.LeaderUpdatePush;
+import se.kth.news.core.leader.SaveMyAddress;
 import se.kth.news.core.news.util.NewsView;
 import se.kth.news.play.News;
 import se.kth.news.play.Ping;
@@ -92,6 +93,9 @@ public class NewsComp extends ComponentDefinition {
 	private boolean iAmLeader = false;
 	private boolean sentNews = false; //TODO temporary for testing
 
+	// WARNING: set also in LeaderSelectComp
+	private static final int NEIGHBOURS_LIST_SIZE = 10; // How many neighbours to remember (received SaveMyAddress), for reverse gradient
+
 	// FOR NON-LEADERS
     private KAddress leaderAddress;
 	
@@ -111,6 +115,8 @@ public class NewsComp extends ComponentDefinition {
 		lastSample = null;
 		leaderAddress = null;
 		pendingNews = new ArrayList<News>();
+		lowerNeighbours = new ArrayList<KAddress>();
+
 		subscribe(handleStart, control);
 		subscribe(handleCroupierSample, croupierPort);
 		subscribe(handleGradientSample, gradientPort);
@@ -119,6 +125,7 @@ public class NewsComp extends ComponentDefinition {
 		subscribe(handlePong, networkPort);
 		subscribe(handleNews, networkPort);
 		subscribe(handleSendAllMessages, networkPort);
+        subscribe(handleSaveMyAddress, networkPort);
 		subscribe(handleTimeout, timerPort);
 		subscribe(sendTimeout, timerPort);
 	}
@@ -135,15 +142,17 @@ public class NewsComp extends ComponentDefinition {
 			spt.setTimeoutEvent(timeout);
 			trigger(spt, timerPort);
 
-			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*60, 1000*10+(int)(Math.random()*20000));
-//			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*2, 1000);
+			SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*10, 1000*10+(int)(Math.random()*20*1000));
+			//SchedulePeriodicTimeout spt2 = new SchedulePeriodicTimeout(1000*10, 1000);
 			SendTimeout timeout2 = new SendTimeout(spt2);
 			spt2.setTimeoutEvent(timeout2);
 			trigger(spt2, timerPort);
 
+
 		}
 	};
 	protected ArrayList<KAddress> peerlist = new ArrayList<KAddress>();
+	private ArrayList<KAddress> lowerNeighbours = new ArrayList<KAddress>(); //reverse Gradient
 	protected HashSet<String> newshash = new HashSet<String>();
 	protected ArrayList<News> newsList = new ArrayList<News>();
 	private int count=0;
@@ -152,7 +161,9 @@ public class NewsComp extends ComponentDefinition {
 	
 	private void updateLocalNewsView() {
 		//localNewsView = new NewsView(selfAdr.getId(), (int)(Math.random()*100));//THIS CHANGES NUMBER OF NODES IN GRADIENT
-		localNewsView = new NewsView(selfAdr.getId(), 0);//THIS CHANGES NUMBER OF NODES IN GRADIENT
+//		localNewsView = new NewsView(selfAdr.getId(), 0);//THIS CHANGES NUMBER OF NODES IN GRADIENT
+		localNewsView = new NewsView(selfAdr.getId(), newshash.size());
+//		localNewsView = new NewsView(selfAdr.getId(), newshash.size());
 		//LOG.debug("{}informing overlays of new view, _{}", logPrefix, localNewsView.localNewsCount);
 		trigger(new OverlayViewUpdate.Indication<>(gradientOId, false, localNewsView.copy()), viewUpdatePort);
 	}
@@ -170,7 +181,7 @@ public class NewsComp extends ComponentDefinition {
 				peerlist.add(castSample.publicSample.get(it.next()).getSource());
 			}
 
-			sendNews();
+			//sendNews();
 			/**
 			if (hasSent==false){
 				hasSent = true;
@@ -189,8 +200,8 @@ public class NewsComp extends ComponentDefinition {
 	private void sendNews() {
 		//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 		
-		if (sentNews) //TODO: temporary testing for sending only one news per node
-			return;
+		//if (sentNews) //TODO: temporary testing for sending only one news per node
+		//	return;
 
 		//LOG.debug("{} about to send a news", logPrefix);
 		sentMessagesId++;
@@ -225,6 +236,8 @@ public class NewsComp extends ComponentDefinition {
 		@Override
 		public void handle(TGradientSample sample) {
 			lastSample = sample;
+			//if(newshash.size() > 0)
+			//	LOG.info("{}Received: {}", logPrefix, newshash.size());
 		/**
 			
 			//Iterator it = sample.getGradientNeighbours().iterator();
@@ -282,10 +295,13 @@ public class NewsComp extends ComponentDefinition {
 
 			leaderAddress = event.leaderAdr;
 			
-			if (event.leaderAdr != null && event.leaderAdr.equals(selfAdr)) // I am the leader, save this information
+			if (event.leaderAdr != null && event.leaderAdr.equals(selfAdr)) { // I am the leader, save this information
 				iAmLeader = true;
+			}
 			else
+			{
 				iAmLeader = false;
+			}
 		}
 	};
 
@@ -298,15 +314,51 @@ public class NewsComp extends ComponentDefinition {
 			
 			
 			if(!newshash.contains(news.getNewsId())){
+				//updateLocalNewsView(); //update utility value
 				//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 				//LOG.info("{}received news from:{}, identifier:{}_{}", logPrefix, container.getHeader().getSource(), news.getNewsId(), selfAdr.toString());
 				newshash.add(news.getNewsId());
+				//LOG.info("{}Received: {}", logPrefix, newshash.size());
 				newsList.add(news);
 				News newNew = new News(news);
 				seenMessages.add(news.getNewsId());
 				newNew.decreaseTTL();
 				if(newNew.getTTL()>0)
 				{
+
+						for (KAddress address : lowerNeighbours){
+							//LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
+							KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+							KContentMsg msg = new BasicContentMsg(header, new News(newNew));
+							trigger(msg, networkPort);
+
+						}
+	
+/**
+					if (iAmLeader) { //send to neighbours
+						Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
+						while (neighbourIt.hasNext()) { // Send it to all neighbours
+
+							GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
+
+							KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+							//KContentMsg msg = new BasicContentMsg(header, newNew);
+							KContentMsg msg = new BasicContentMsg(header, new News(newNew));
+							trigger(msg, networkPort);
+						}
+					}
+					else { //send to lower neighbours
+						for (KAddress address : lowerNeighbours){
+							//LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
+							KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+							KContentMsg msg = new BasicContentMsg(header, new News(newNew));
+							trigger(msg, networkPort);
+
+						}
+					}
+					*/
+					
+/**
 					
 					Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
 			    	while (neighbourIt.hasNext()) { // Send it to all neighbours
@@ -325,6 +377,7 @@ public class NewsComp extends ComponentDefinition {
 						trigger(msg, networkPort);
 
 					}
+*/
 
 /** FINGERS NOT WORKING, REPLACED WITH A CROUPIER SAMPLE
 			    	Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
@@ -398,7 +451,6 @@ public class NewsComp extends ComponentDefinition {
 				trigger(msg, networkPort);
 			}
 
-			trigger(container.answer(new Pong()), networkPort);
 		}
 	};
 
@@ -445,13 +497,31 @@ public class NewsComp extends ComponentDefinition {
 			*/
 		}
 	};
+	
+	// WARNING: set also in LeaderSelectComp
+	ClassMatchedHandler<SaveMyAddress, KContentMsg<?, ?, SaveMyAddress>> handleSaveMyAddress 
+    = new ClassMatchedHandler<SaveMyAddress, KContentMsg<?, ?, SaveMyAddress>>() {
+
+    	@Override
+    	public void handle(SaveMyAddress ami, KContentMsg<?, ?, SaveMyAddress> container){
+			//LOG.debug("{} SaveMyAddress received from {}", logPrefix, container.getHeader().getSource());
+			KAddress address = container.getHeader().getSource();
+			
+			lowerNeighbours.remove(address); //If the address was in the list, remove it so that it can be added as the newest one
+			
+			if (lowerNeighbours.size() >= NEIGHBOURS_LIST_SIZE)
+				lowerNeighbours.remove(0); // remove the oldest one to have space for this new one
+			
+			lowerNeighbours.add(address);
+    	}
+    };
 
 	Handler<SendTimeout> sendTimeout = new Handler<SendTimeout>() {
 		public void handle(SendTimeout event) {
-			/*if(Math.random()>=SEND_MESSSAGE_PROBABILITY){
+			if(Math.random()>=SEND_MESSSAGE_PROBABILITY){
 				sendNews();
-			}*/
-			sendNews();
+			}
+			//sendNews();
 		}
 	};
 
@@ -470,6 +540,7 @@ public class NewsComp extends ComponentDefinition {
 			super(spt);
 		}
 	}
+
 }
 
 

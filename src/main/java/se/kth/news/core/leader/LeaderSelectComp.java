@@ -81,8 +81,10 @@ public class LeaderSelectComp extends ComponentDefinition {
     private ArrayList<Identifier> neighborList;
     private TGradientSample lastSample;
     private boolean isFirstTimeLeader=false;
+    private boolean leaderFirstUpdate=true;
 
 	private ArrayList<KAddress> peerlist = new ArrayList<KAddress>(); //Croupier
+	private ArrayList<KAddress> lowerNeighbours = new ArrayList<KAddress>(); //reverse Gradient
     
 	
 
@@ -94,14 +96,19 @@ public class LeaderSelectComp extends ComponentDefinition {
         viewComparator = viewComparator;
         myComparator = new NewsViewComparator();
 
+		lowerNeighbours = new ArrayList<KAddress>();
+
         subscribe(handleStart, control);
 		subscribe(handleCroupierSample, croupierPort);
         subscribe(handleGradientSample, gradientPort);
         subscribe(handleAmILeader, networkPort);
         subscribe(handleAmILeaderResponse, networkPort);
-		subscribe(leaderPushTimeout, timerPort);
-		subscribe(sendTimeout, timerPort);
         subscribe(handleLeaderUpdatePush, networkPort);
+        subscribe(handleSaveMyAddress, networkPort);
+		subscribe(leaderPushTimeout, timerPort);
+		subscribe(neighbourTimeout, timerPort);
+		subscribe(sendTimeout, timerPort);
+
     }
 
     Handler handleStart = new Handler<Start>() {
@@ -111,11 +118,19 @@ public class LeaderSelectComp extends ComponentDefinition {
         }
     };
 	protected boolean isLeader;
-	private static final int COMPARE_SAME_NEIGBOURS = 10; // TODO: test parameter
-	private static final int LEADER_ROUNDS_LIMIT = 3; // TODO: test parameter
-	private static final int TIMEOUT_REPUSH_LEADER = 30; // In seconds TODO: test parameter
-	private static final int LEADER_TIMEOUT_DETECTION = 240;//In seconds TODO: Set to three reounds of leader updates or more
+	private static final int COMPARE_SAME_NEIGBOURS = 10; 
+	private static final int LEADER_ROUNDS_LIMIT = 5;
+	private static final int TIMEOUT_REPUSH_LEADER = 30; // In seconds 
+	private static final int FIRST_TIMEOUT_REPUSH_LEADER = 10; // In seconds 
+
+	// WARNING: set also in NewsComp
+	private static final int NEIGHBOURS_LIST_SIZE = 10; // How many neighbours to remember (received SaveMyAddress), for reverse gradient
+	private static final int NEIGHBOURS_ROUNDS_LIMIT = 4; // For reverse gradient
+	private static final int TIMEOUT_RESEND_ADDRESS = 30; // In seconds, how often a node sends its address to its neighbours (for reverse Gradient) 
+	private static final int LEADER_TIMEOUT_DETECTION = 90;//In seconds, set to three rounds of leader updates or more
 	private int leaderRounds = 0;
+	private int neighboursRounds = 0;
+	private boolean initialStageNeighbours = true; // neighboursRounds used only for the first time (initiating). Then a timer is set.
 	private int waitingResponses = 0;
 
 
@@ -144,7 +159,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 			
 
 			//Determine if we are leader
-			isLeader = true;
+			isLeader = true; // Do I think I can be the leader?
 			NewsView selfView = (NewsView)sample.selfView;
 			int unfamiliar_Nodes=0;
 			while(it.hasNext()){
@@ -157,46 +172,66 @@ public class LeaderSelectComp extends ComponentDefinition {
 					
 				}
 				
-				if(myComparator.compare(selfView, peerNews) < 0){
+				if(myComparator.compare(selfView, peerNews) < 0){ // A neighbour is better than me
 //				if(viewComparator.compare((NewsView)sample.selfView, peerNews) < 0){
-					isLeader=false;
-					break;
+					isLeader = false;
 				}
 				new_neighborlist.add((Identifier) neighbour.getContent().nodeId);
 				
 			}
         	
 			neighborList = new_neighborlist;
-        	
-        	
-			if(unfamiliar_Nodes>COMPARE_SAME_NEIGBOURS || isLeader==false){
+
+
+			if (unfamiliar_Nodes>COMPARE_SAME_NEIGBOURS){
 				leaderRounds = 0;
+				neighboursRounds = 0;
 			}else{
-				leaderRounds++;
-				if (leaderRounds> LEADER_ROUNDS_LIMIT){
+				if (!isLeader) { // There are some better nodes than me
 					leaderRounds = 0;
+					neighboursRounds++;
+					if (initialStageNeighbours && neighboursRounds > NEIGHBOURS_ROUNDS_LIMIT) { // send my address to all my neighbours and set a timer
 
-					if (iAmLeader) { // I'm already the leader, everyone should know. For those who joined later, there's a timeout when I'll push this information.
-						return;
+						initialStageNeighbours = false; // since now, only timer is used, no neighboursRounds
+						
+						// Send my address to all my neighbours
+						notifyNeighbours();
+						
+						// Set timeout to periodically notify neighbours
+						SchedulePeriodicTimeout neighbourReSendTimeout = new SchedulePeriodicTimeout(1000*TIMEOUT_RESEND_ADDRESS, 1000*TIMEOUT_RESEND_ADDRESS);
+						NeighbourTimeout timeout = new NeighbourTimeout(neighbourReSendTimeout);
+						neighbourReSendTimeout.setTimeoutEvent(timeout);
+						trigger(neighbourReSendTimeout, timerPort);
+					}
+				}
+				else {
+					neighboursRounds = 0;
+					leaderRounds++;
+					if (leaderRounds > LEADER_ROUNDS_LIMIT){
+						leaderRounds = 0;
+
+						if (iAmLeader) { // I'm already the leader, everyone should know. For those who joined later, there's a timeout when I'll push this information.
+							return;
+						}
+
+						//Try to become a leader
+						LOG.info("{}I want to be the leader!!! The leader is {} I know {} messages:", logPrefix, leaderAddress, selfView.localNewsCount);
+
+						Iterator<Identifier> neighbourIt = sample.getGradientNeighbours().iterator();
+
+						waitingResponses = sample.getGradientNeighbours().size();
+
+						while (neighbourIt.hasNext()){
+
+							GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
+
+							KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+							KContentMsg msg = new BasicContentMsg(header, new AmILeader(selfView));
+							trigger(msg, networkPort);
+
+						}
 					}
 
-					//Try to become a leader
-					LOG.info("{}I want to be the leader!!!:{}", logPrefix);
-					
-					Iterator<Identifier> neighbourIt = sample.getGradientNeighbours().iterator();
-					
-					waitingResponses = sample.getGradientNeighbours().size();
-
-					while (neighbourIt.hasNext()){
-						
-						GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
-						
-						KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
-			            KContentMsg msg = new BasicContentMsg(header, new AmILeader(selfView));
-			            trigger(msg, networkPort);
-						
-					}
-					
 				}
 			}
 
@@ -258,7 +293,15 @@ public class LeaderSelectComp extends ComponentDefinition {
 
     	leaderPushId++;
 
-//		LOG.debug("{} Pushing new leaderUpdate {}", logPrefix, leaderPushId);
+		for (KAddress address : lowerNeighbours){
+    		KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId, newLeader));
+    		trigger(msg, networkPort);
+			//LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, address);
+    	}
+
+		LOG.debug("{} Pushing new leaderUpdate {}", logPrefix, leaderPushId);
+		/**
     	Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
     	while (neighbourIt.hasNext()) { // Send it to all neighbours
 
@@ -267,8 +310,12 @@ public class LeaderSelectComp extends ComponentDefinition {
     		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
     		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId, newLeader));
     		trigger(msg, networkPort);
-			//LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, current_container.getSource());
+			LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, current_container.getSource());
     	}
+    	*/
+
+
+/**
 //		LOG.info("{}LeaderUpdatePush {} fingers:", logPrefix, leaderPushId);
 
 
@@ -280,7 +327,7 @@ public class LeaderSelectComp extends ComponentDefinition {
     		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId, newLeader));
 			trigger(msg, networkPort);
 		}
-
+*/
 
 /** FINGERS NOT WORKING, REPLACED WITH A CROUPIER SAMPLE
     	Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
@@ -296,6 +343,38 @@ public class LeaderSelectComp extends ComponentDefinition {
 */
     }
 
+    void notifyNeighbours(){
+		Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
+    	while (neighbourIt.hasNext()) { // Send it to all neighbours
+
+    		GradientContainer<NewsView> current_container = (GradientContainer<NewsView>)neighbourIt.next();
+
+    		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
+    		KContentMsg msg = new BasicContentMsg(header, new SaveMyAddress());
+    		trigger(msg, networkPort);
+    	}
+
+    }
+
+	// WARNING: set also in NewsComp
+    ClassMatchedHandler<SaveMyAddress, KContentMsg<?, ?, SaveMyAddress>> handleSaveMyAddress 
+    = new ClassMatchedHandler<SaveMyAddress, KContentMsg<?, ?, SaveMyAddress>>() {
+
+    	@Override
+    	public void handle(SaveMyAddress ami, KContentMsg<?, ?, SaveMyAddress> container){
+			//LOG.debug("{} SaveMyAddress received from {}", logPrefix, container.getHeader().getSource());
+			KAddress address = container.getHeader().getSource();
+			
+			lowerNeighbours.remove(address); //If the address was in the list, remove it so that it can be added as the newest one
+			
+			if (lowerNeighbours.size() >= NEIGHBOURS_LIST_SIZE)
+				lowerNeighbours.remove(0); // remove the oldest one to have space for this new one
+			
+			lowerNeighbours.add(address);
+    	}
+    };
+
+
     ClassMatchedHandler<AmILeaderResponse, KContentMsg<?, ?, AmILeaderResponse>> handleAmILeaderResponse 
     = new ClassMatchedHandler<AmILeaderResponse, KContentMsg<?, ?, AmILeaderResponse>>() {
 
@@ -304,20 +383,25 @@ public class LeaderSelectComp extends ComponentDefinition {
     		if (ami.isLeader) {
     			waitingResponses--;
 
-				LOG.debug("{} Someone agrees, {} remaining :)", logPrefix, waitingResponses);
+				LOG.debug("{} {} agrees, {} remaining :)", logPrefix, container.getHeader().getSource(), waitingResponses);
 
 				if (waitingResponses == 0) { // I'm the leader! Now let's inform everyone
 					iAmLeader = true;
 
 					LOG.debug("{}I AM THE LEADER!", logPrefix);
 
-					pushLeaderUpdate(true);
+					if(leaderAddress != null)
+					{
+						leaderFirstUpdate = false;
+						pushLeaderUpdate(true);
+					}
 					
+					leaderAddress = selfAdr;
 					
 					
 					
 					//set timeout to periodically send the LeaderUpdatePush
-					SchedulePeriodicTimeout leaderRePushTimeout = new SchedulePeriodicTimeout(1000*TIMEOUT_REPUSH_LEADER, 1000*TIMEOUT_REPUSH_LEADER);
+					SchedulePeriodicTimeout leaderRePushTimeout = new SchedulePeriodicTimeout(1000*FIRST_TIMEOUT_REPUSH_LEADER, 1000*TIMEOUT_REPUSH_LEADER);
 					LeaderTimeout timeout = new LeaderTimeout(leaderRePushTimeout);
 					leaderRePushTimeout.setTimeoutEvent(timeout);
 					trigger(leaderRePushTimeout, timerPort);
@@ -346,10 +430,11 @@ public class LeaderSelectComp extends ComponentDefinition {
 				return;
 
 			if (leaderAddress != update.leaderAdr && update.leaderAdr != null && update.newLeader == false) {
-				// I've got to know a new leader and this is not the leader's first update (that
+				// I've gotten to know a new leader and this is not the leader's first update (that
 				// means the leader has already been a leader for some time), so let's ask it for
 				// all known messages
 
+				LOG.debug("{} Ask all messages",logPrefix);
 				KHeader header = new BasicHeader(selfAdr, update.leaderAdr, Transport.UDP);
 				KContentMsg msg = new BasicContentMsg(header, new SendAllMessages());
 				trigger(msg, networkPort);
@@ -388,6 +473,17 @@ public class LeaderSelectComp extends ComponentDefinition {
 
 
 			int numSent = 0;
+
+			for (KAddress address : lowerNeighbours){
+				//LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, address);
+				numSent++;
+
+				KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id, update.newLeader));
+				trigger(msg, networkPort);
+			}
+
+/**
 			Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
 			while (neighbourIt.hasNext()) { // Send it to all neighbours
 				numSent++;
@@ -410,7 +506,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id, update.newLeader));
 				trigger(msg, networkPort);
 			}
-			
+*/		
 /** FINGERS NOT WORKING, REPLACED WITH A CROUPIER SAMPLE
 
 			//LOG.info("{}LeaderUpdatePush {} fingers:", logPrefix, update.id);
@@ -445,14 +541,28 @@ public class LeaderSelectComp extends ComponentDefinition {
     	public void handle(LeaderTimeout event) {
 
     		if (!iAmLeader) { // I am not leader anymore, don't send anything and cancel the timer
-    			trigger(new CancelPeriodicTimeout(pushTimerId), timerPort);
+    			if(pushTimerId != null)
+					trigger(new CancelPeriodicTimeout(pushTimerId), timerPort);
     			return;
     		}
 
-    		pushLeaderUpdate(false);
+    		pushLeaderUpdate(leaderFirstUpdate);
+    		leaderFirstUpdate = false;
     	}
     };
-	
+
+	public class NeighbourTimeout extends Timeout {
+    	public NeighbourTimeout(SchedulePeriodicTimeout spt) {
+    		super(spt);
+    	}
+    }
+
+	Handler<NeighbourTimeout> neighbourTimeout = new Handler<NeighbourTimeout>() {
+    	public void handle(NeighbourTimeout event) {
+
+    		notifyNeighbours();
+    	}
+    };
     //This handler detects if the leader has not sent a LeaderPush in a certain time frame
     Handler<UpdateTimeout> sendTimeout = new Handler<UpdateTimeout>() {
 		public void handle(UpdateTimeout event) {
@@ -462,7 +572,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 
 				iAmLeader=false;
 				leaderAddress=null;
-				leaderRounds =0;
+				leaderRounds = 0;
 				trigger(new LeaderUpdate(null), leaderUpdate); // transport this information to NewsComp
 				trigger(new CancelPeriodicTimeout(timeoutUUID), timerPort);
 				timeoutSet=false;
