@@ -1,0 +1,16 @@
++ localNewsView: add number of known news, so far it's 0 for all of them
+    - then call updateLocalNewsView
+
++ how to simulate churns / leader failure?
+
+
+
+
+
+TODO: 1) +remember all news, not only hashes
+      2) +send all news when asked
+
+      11) +use peerlist
+      12) change localNewsView as mentioned above
+      13) ?todos mentioned in email
+      14) how to simulate churns?

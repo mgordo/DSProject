@@ -1,0 +1,2033 @@
+[01:58:38,835] INFO  {CodeInstrumentation} no user defined instrumentation exceptions detected
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>initiating...
+[00:00:02,000] INFO  {HostMngrComp} <nid:1>starting...
+[00:00:02,000] INFO  {LeaderSelectComp} <nid:1>initiating...
+[00:00:02,000] INFO  {NewsComp} <nid:1>initiating...
+[00:00:02,000] INFO  {LeaderSelectComp} <nid:1>starting...
+[00:00:02,000] INFO  {NewsComp} <nid:1>starting...
+[00:00:02,000] WARN  {GradientComp} <nid:1,oid:12000001> no self view
+[00:00:02,003] INFO  {HostMngrComp} <nid:2>initiating...
+[00:00:02,003] INFO  {HostMngrComp} <nid:2>starting...
+[00:00:02,003] INFO  {LeaderSelectComp} <nid:2>initiating...
+[00:00:02,003] INFO  {NewsComp} <nid:2>initiating...
+[00:00:02,003] INFO  {LeaderSelectComp} <nid:2>starting...
+[00:00:02,003] INFO  {NewsComp} <nid:2>starting...
+[00:00:02,003] WARN  {GradientComp} <nid:2,oid:12000001> no self view
+[00:00:02,008] INFO  {HostMngrComp} <nid:3>initiating...
+[00:00:02,008] INFO  {HostMngrComp} <nid:3>starting...
+[00:00:02,008] INFO  {LeaderSelectComp} <nid:3>initiating...
+[00:00:02,008] INFO  {NewsComp} <nid:3>initiating...
+[00:00:02,008] INFO  {LeaderSelectComp} <nid:3>starting...
+[00:00:02,008] INFO  {NewsComp} <nid:3>starting...
+[00:00:02,008] WARN  {GradientComp} <nid:3,oid:12000001> no self view
+[00:00:02,012] INFO  {HostMngrComp} <nid:4>initiating...
+[00:00:02,012] INFO  {HostMngrComp} <nid:4>starting...
+[00:00:02,012] INFO  {LeaderSelectComp} <nid:4>initiating...
+[00:00:02,012] INFO  {NewsComp} <nid:4>initiating...
+[00:00:02,012] INFO  {LeaderSelectComp} <nid:4>starting...
+[00:00:02,012] INFO  {NewsComp} <nid:4>starting...
+[00:00:02,012] WARN  {GradientComp} <nid:4,oid:12000001> no self view
+[00:00:02,014] INFO  {HostMngrComp} <nid:5>initiating...
+[00:00:02,014] INFO  {HostMngrComp} <nid:5>starting...
+[00:00:02,014] INFO  {LeaderSelectComp} <nid:5>initiating...
+[00:00:02,014] INFO  {NewsComp} <nid:5>initiating...
+[00:00:02,014] INFO  {LeaderSelectComp} <nid:5>starting...
+[00:00:02,014] INFO  {NewsComp} <nid:5>starting...
+[00:00:02,014] WARN  {GradientComp} <nid:5,oid:12000001> no self view
+[00:00:02,016] INFO  {HostMngrComp} <nid:6>initiating...
+[00:00:02,016] INFO  {HostMngrComp} <nid:6>starting...
+[00:00:02,016] INFO  {LeaderSelectComp} <nid:6>initiating...
+[00:00:02,016] INFO  {NewsComp} <nid:6>initiating...
+[00:00:02,016] INFO  {LeaderSelectComp} <nid:6>starting...
+[00:00:02,016] INFO  {NewsComp} <nid:6>starting...
+[00:00:02,016] WARN  {GradientComp} <nid:6,oid:12000001> no self view
+[00:00:02,017] INFO  {HostMngrComp} <nid:7>initiating...
+[00:00:02,017] INFO  {HostMngrComp} <nid:7>starting...
+[00:00:02,017] INFO  {LeaderSelectComp} <nid:7>initiating...
+[00:00:02,017] INFO  {NewsComp} <nid:7>initiating...
+[00:00:02,017] INFO  {LeaderSelectComp} <nid:7>starting...
+[00:00:02,017] INFO  {NewsComp} <nid:7>starting...
+[00:00:02,017] WARN  {GradientComp} <nid:7,oid:12000001> no self view
+[00:00:02,019] INFO  {HostMngrComp} <nid:8>initiating...
+[00:00:02,019] INFO  {HostMngrComp} <nid:8>starting...
+[00:00:02,019] INFO  {LeaderSelectComp} <nid:8>initiating...
+[00:00:02,019] INFO  {NewsComp} <nid:8>initiating...
+[00:00:02,019] INFO  {LeaderSelectComp} <nid:8>starting...
+[00:00:02,019] INFO  {NewsComp} <nid:8>starting...
+[00:00:02,019] WARN  {GradientComp} <nid:8,oid:12000001> no self view
+[00:00:02,022] INFO  {HostMngrComp} <nid:9>initiating...
+[00:00:02,022] INFO  {HostMngrComp} <nid:9>starting...
+[00:00:02,022] INFO  {LeaderSelectComp} <nid:9>initiating...
+[00:00:02,022] INFO  {NewsComp} <nid:9>initiating...
+[00:00:02,022] INFO  {LeaderSelectComp} <nid:9>starting...
+[00:00:02,022] INFO  {NewsComp} <nid:9>starting...
+[00:00:02,022] WARN  {GradientComp} <nid:9,oid:12000001> no self view
+[00:00:02,027] INFO  {HostMngrComp} <nid:10>initiating...
+[00:00:02,027] INFO  {HostMngrComp} <nid:10>starting...
+[00:00:02,027] INFO  {HostMngrComp} <nid:11>initiating...
+[00:00:02,027] INFO  {HostMngrComp} <nid:11>starting...
+[00:00:02,027] INFO  {LeaderSelectComp} <nid:10>initiating...
+[00:00:02,027] INFO  {NewsComp} <nid:10>initiating...
+[00:00:02,027] INFO  {LeaderSelectComp} <nid:10>starting...
+[00:00:02,027] INFO  {NewsComp} <nid:10>starting...
+[00:00:02,027] INFO  {LeaderSelectComp} <nid:11>initiating...
+[00:00:02,027] INFO  {NewsComp} <nid:11>initiating...
+[00:00:02,027] INFO  {LeaderSelectComp} <nid:11>starting...
+[00:00:02,027] INFO  {NewsComp} <nid:11>starting...
+[00:00:02,027] WARN  {GradientComp} <nid:10,oid:12000001> no self view
+[00:00:02,027] WARN  {GradientComp} <nid:11,oid:12000001> no self view
+[00:00:02,029] INFO  {HostMngrComp} <nid:12>initiating...
+[00:00:02,029] INFO  {HostMngrComp} <nid:12>starting...
+[00:00:02,029] INFO  {HostMngrComp} <nid:13>initiating...
+[00:00:02,029] INFO  {HostMngrComp} <nid:13>starting...
+[00:00:02,029] INFO  {HostMngrComp} <nid:14>initiating...
+[00:00:02,029] INFO  {HostMngrComp} <nid:14>starting...
+[00:00:02,029] INFO  {LeaderSelectComp} <nid:12>initiating...
+[00:00:02,029] INFO  {NewsComp} <nid:12>initiating...
+[00:00:02,029] INFO  {LeaderSelectComp} <nid:12>starting...
+[00:00:02,029] INFO  {NewsComp} <nid:12>starting...
+[00:00:02,029] INFO  {LeaderSelectComp} <nid:13>initiating...
+[00:00:02,029] INFO  {NewsComp} <nid:13>initiating...
+[00:00:02,029] INFO  {LeaderSelectComp} <nid:13>starting...
+[00:00:02,029] INFO  {NewsComp} <nid:13>starting...
+[00:00:02,029] INFO  {LeaderSelectComp} <nid:14>initiating...
+[00:00:02,029] INFO  {NewsComp} <nid:14>initiating...
+[00:00:02,029] WARN  {GradientComp} <nid:12,oid:12000001> no self view
+[00:00:02,029] INFO  {LeaderSelectComp} <nid:14>starting...
+[00:00:02,029] INFO  {NewsComp} <nid:14>starting...
+[00:00:02,029] WARN  {GradientComp} <nid:13,oid:12000001> no self view
+[00:00:02,029] WARN  {GradientComp} <nid:14,oid:12000001> no self view
+[00:00:02,030] INFO  {HostMngrComp} <nid:15>initiating...
+[00:00:02,030] INFO  {HostMngrComp} <nid:15>starting...
+[00:00:02,030] INFO  {LeaderSelectComp} <nid:15>initiating...
+[00:00:02,030] INFO  {NewsComp} <nid:15>initiating...
+[00:00:02,030] INFO  {LeaderSelectComp} <nid:15>starting...
+[00:00:02,030] INFO  {NewsComp} <nid:15>starting...
+[00:00:02,030] WARN  {GradientComp} <nid:15,oid:12000001> no self view
+[00:00:02,034] INFO  {HostMngrComp} <nid:16>initiating...
+[00:00:02,034] INFO  {HostMngrComp} <nid:16>starting...
+[00:00:02,034] INFO  {LeaderSelectComp} <nid:16>initiating...
+[00:00:02,034] INFO  {NewsComp} <nid:16>initiating...
+[00:00:02,034] INFO  {LeaderSelectComp} <nid:16>starting...
+[00:00:02,034] INFO  {NewsComp} <nid:16>starting...
+[00:00:02,034] WARN  {GradientComp} <nid:16,oid:12000001> no self view
+[00:00:02,035] INFO  {HostMngrComp} <nid:17>initiating...
+[00:00:02,035] INFO  {HostMngrComp} <nid:17>starting...
+[00:00:02,035] INFO  {LeaderSelectComp} <nid:17>initiating...
+[00:00:02,035] INFO  {NewsComp} <nid:17>initiating...
+[00:00:02,035] INFO  {LeaderSelectComp} <nid:17>starting...
+[00:00:02,035] INFO  {NewsComp} <nid:17>starting...
+[00:00:02,035] WARN  {GradientComp} <nid:17,oid:12000001> no self view
+[00:00:02,036] INFO  {HostMngrComp} <nid:18>initiating...
+[00:00:02,036] INFO  {HostMngrComp} <nid:18>starting...
+[00:00:02,036] INFO  {LeaderSelectComp} <nid:18>initiating...
+[00:00:02,036] INFO  {NewsComp} <nid:18>initiating...
+[00:00:02,036] INFO  {LeaderSelectComp} <nid:18>starting...
+[00:00:02,036] INFO  {NewsComp} <nid:18>starting...
+[00:00:02,036] WARN  {GradientComp} <nid:18,oid:12000001> no self view
+[00:00:02,038] INFO  {HostMngrComp} <nid:19>initiating...
+[00:00:02,038] INFO  {HostMngrComp} <nid:19>starting...
+[00:00:02,038] INFO  {LeaderSelectComp} <nid:19>initiating...
+[00:00:02,038] INFO  {NewsComp} <nid:19>initiating...
+[00:00:02,038] INFO  {LeaderSelectComp} <nid:19>starting...
+[00:00:02,038] INFO  {NewsComp} <nid:19>starting...
+[00:00:02,038] WARN  {GradientComp} <nid:19,oid:12000001> no self view
+[00:00:02,042] INFO  {HostMngrComp} <nid:20>initiating...
+[00:00:02,042] INFO  {HostMngrComp} <nid:20>starting...
+[00:00:02,042] INFO  {LeaderSelectComp} <nid:20>initiating...
+[00:00:02,042] INFO  {NewsComp} <nid:20>initiating...
+[00:00:02,042] INFO  {LeaderSelectComp} <nid:20>starting...
+[00:00:02,042] INFO  {NewsComp} <nid:20>starting...
+[00:00:02,042] WARN  {GradientComp} <nid:20,oid:12000001> no self view
+[00:00:02,043] INFO  {HostMngrComp} <nid:21>initiating...
+[00:00:02,043] INFO  {HostMngrComp} <nid:21>starting...
+[00:00:02,043] INFO  {LeaderSelectComp} <nid:21>initiating...
+[00:00:02,043] INFO  {NewsComp} <nid:21>initiating...
+[00:00:02,043] INFO  {LeaderSelectComp} <nid:21>starting...
+[00:00:02,043] INFO  {NewsComp} <nid:21>starting...
+[00:00:02,043] WARN  {GradientComp} <nid:21,oid:12000001> no self view
+[00:00:02,045] INFO  {HostMngrComp} <nid:22>initiating...
+[00:00:02,045] INFO  {HostMngrComp} <nid:22>starting...
+[00:00:02,045] INFO  {HostMngrComp} <nid:23>initiating...
+[00:00:02,045] INFO  {HostMngrComp} <nid:23>starting...
+[00:00:02,045] INFO  {LeaderSelectComp} <nid:22>initiating...
+[00:00:02,045] INFO  {NewsComp} <nid:22>initiating...
+[00:00:02,045] INFO  {LeaderSelectComp} <nid:22>starting...
+[00:00:02,045] INFO  {NewsComp} <nid:22>starting...
+[00:00:02,045] INFO  {LeaderSelectComp} <nid:23>initiating...
+[00:00:02,045] INFO  {NewsComp} <nid:23>initiating...
+[00:00:02,045] INFO  {LeaderSelectComp} <nid:23>starting...
+[00:00:02,045] INFO  {NewsComp} <nid:23>starting...
+[00:00:02,045] WARN  {GradientComp} <nid:22,oid:12000001> no self view
+[00:00:02,045] WARN  {GradientComp} <nid:23,oid:12000001> no self view
+[00:00:02,048] INFO  {HostMngrComp} <nid:24>initiating...
+[00:00:02,048] INFO  {HostMngrComp} <nid:24>starting...
+[00:00:02,048] INFO  {LeaderSelectComp} <nid:24>initiating...
+[00:00:02,048] INFO  {NewsComp} <nid:24>initiating...
+[00:00:02,048] INFO  {LeaderSelectComp} <nid:24>starting...
+[00:00:02,048] INFO  {NewsComp} <nid:24>starting...
+[00:00:02,048] WARN  {GradientComp} <nid:24,oid:12000001> no self view
+[00:00:02,052] INFO  {HostMngrComp} <nid:25>initiating...
+[00:00:02,052] INFO  {HostMngrComp} <nid:25>starting...
+[00:00:02,052] INFO  {LeaderSelectComp} <nid:25>initiating...
+[00:00:02,052] INFO  {NewsComp} <nid:25>initiating...
+[00:00:02,052] INFO  {LeaderSelectComp} <nid:25>starting...
+[00:00:02,052] INFO  {NewsComp} <nid:25>starting...
+[00:00:02,052] WARN  {GradientComp} <nid:25,oid:12000001> no self view
+[00:00:02,056] INFO  {HostMngrComp} <nid:26>initiating...
+[00:00:02,056] INFO  {HostMngrComp} <nid:26>starting...
+[00:00:02,056] INFO  {LeaderSelectComp} <nid:26>initiating...
+[00:00:02,056] INFO  {NewsComp} <nid:26>initiating...
+[00:00:02,056] INFO  {LeaderSelectComp} <nid:26>starting...
+[00:00:02,056] INFO  {NewsComp} <nid:26>starting...
+[00:00:02,056] WARN  {GradientComp} <nid:26,oid:12000001> no self view
+[00:00:02,058] INFO  {HostMngrComp} <nid:27>initiating...
+[00:00:02,058] INFO  {HostMngrComp} <nid:27>starting...
+[00:00:02,058] INFO  {LeaderSelectComp} <nid:27>initiating...
+[00:00:02,058] INFO  {NewsComp} <nid:27>initiating...
+[00:00:02,058] INFO  {LeaderSelectComp} <nid:27>starting...
+[00:00:02,058] INFO  {NewsComp} <nid:27>starting...
+[00:00:02,058] WARN  {GradientComp} <nid:27,oid:12000001> no self view
+[00:00:02,059] INFO  {HostMngrComp} <nid:28>initiating...
+[00:00:02,059] INFO  {HostMngrComp} <nid:28>starting...
+[00:00:02,059] INFO  {LeaderSelectComp} <nid:28>initiating...
+[00:00:02,059] INFO  {NewsComp} <nid:28>initiating...
+[00:00:02,059] INFO  {LeaderSelectComp} <nid:28>starting...
+[00:00:02,059] INFO  {NewsComp} <nid:28>starting...
+[00:00:02,059] WARN  {GradientComp} <nid:28,oid:12000001> no self view
+[00:00:02,062] INFO  {HostMngrComp} <nid:29>initiating...
+[00:00:02,062] INFO  {HostMngrComp} <nid:29>starting...
+[00:00:02,062] INFO  {LeaderSelectComp} <nid:29>initiating...
+[00:00:02,062] INFO  {NewsComp} <nid:29>initiating...
+[00:00:02,062] INFO  {LeaderSelectComp} <nid:29>starting...
+[00:00:02,062] INFO  {NewsComp} <nid:29>starting...
+[00:00:02,062] WARN  {GradientComp} <nid:29,oid:12000001> no self view
+[00:00:02,065] INFO  {HostMngrComp} <nid:30>initiating...
+[00:00:02,065] INFO  {HostMngrComp} <nid:30>starting...
+[00:00:02,065] INFO  {LeaderSelectComp} <nid:30>initiating...
+[00:00:02,065] INFO  {NewsComp} <nid:30>initiating...
+[00:00:02,065] INFO  {LeaderSelectComp} <nid:30>starting...
+[00:00:02,065] INFO  {NewsComp} <nid:30>starting...
+[00:00:02,065] WARN  {GradientComp} <nid:30,oid:12000001> no self view
+[00:00:02,069] INFO  {HostMngrComp} <nid:31>initiating...
+[00:00:02,069] INFO  {HostMngrComp} <nid:31>starting...
+[00:00:02,069] INFO  {LeaderSelectComp} <nid:31>initiating...
+[00:00:02,069] INFO  {NewsComp} <nid:31>initiating...
+[00:00:02,069] INFO  {LeaderSelectComp} <nid:31>starting...
+[00:00:02,069] INFO  {NewsComp} <nid:31>starting...
+[00:00:02,069] WARN  {GradientComp} <nid:31,oid:12000001> no self view
+[00:00:02,071] INFO  {HostMngrComp} <nid:32>initiating...
+[00:00:02,071] INFO  {HostMngrComp} <nid:32>starting...
+[00:00:02,071] INFO  {LeaderSelectComp} <nid:32>initiating...
+[00:00:02,071] INFO  {NewsComp} <nid:32>initiating...
+[00:00:02,071] INFO  {LeaderSelectComp} <nid:32>starting...
+[00:00:02,071] INFO  {NewsComp} <nid:32>starting...
+[00:00:02,071] WARN  {GradientComp} <nid:32,oid:12000001> no self view
+[00:00:02,072] INFO  {HostMngrComp} <nid:33>initiating...
+[00:00:02,072] INFO  {HostMngrComp} <nid:33>starting...
+[00:00:02,072] INFO  {LeaderSelectComp} <nid:33>initiating...
+[00:00:02,072] INFO  {NewsComp} <nid:33>initiating...
+[00:00:02,072] INFO  {LeaderSelectComp} <nid:33>starting...
+[00:00:02,072] INFO  {NewsComp} <nid:33>starting...
+[00:00:02,072] WARN  {GradientComp} <nid:33,oid:12000001> no self view
+[00:00:02,073] INFO  {HostMngrComp} <nid:34>initiating...
+[00:00:02,073] INFO  {HostMngrComp} <nid:34>starting...
+[00:00:02,073] INFO  {LeaderSelectComp} <nid:34>initiating...
+[00:00:02,073] INFO  {NewsComp} <nid:34>initiating...
+[00:00:02,073] INFO  {LeaderSelectComp} <nid:34>starting...
+[00:00:02,073] INFO  {NewsComp} <nid:34>starting...
+[00:00:02,073] WARN  {GradientComp} <nid:34,oid:12000001> no self view
+[00:00:02,078] INFO  {HostMngrComp} <nid:35>initiating...
+[00:00:02,078] INFO  {HostMngrComp} <nid:35>starting...
+[00:00:02,078] INFO  {HostMngrComp} <nid:36>initiating...
+[00:00:02,078] INFO  {HostMngrComp} <nid:36>starting...
+[00:00:02,078] INFO  {LeaderSelectComp} <nid:35>initiating...
+[00:00:02,078] INFO  {NewsComp} <nid:35>initiating...
+[00:00:02,078] INFO  {LeaderSelectComp} <nid:35>starting...
+[00:00:02,078] INFO  {NewsComp} <nid:35>starting...
+[00:00:02,078] INFO  {LeaderSelectComp} <nid:36>initiating...
+[00:00:02,078] INFO  {NewsComp} <nid:36>initiating...
+[00:00:02,078] INFO  {LeaderSelectComp} <nid:36>starting...
+[00:00:02,078] INFO  {NewsComp} <nid:36>starting...
+[00:00:02,078] WARN  {GradientComp} <nid:35,oid:12000001> no self view
+[00:00:02,078] WARN  {GradientComp} <nid:36,oid:12000001> no self view
+[00:00:02,082] INFO  {HostMngrComp} <nid:37>initiating...
+[00:00:02,082] INFO  {HostMngrComp} <nid:37>starting...
+[00:00:02,082] INFO  {HostMngrComp} <nid:38>initiating...
+[00:00:02,082] INFO  {HostMngrComp} <nid:38>starting...
+[00:00:02,082] INFO  {LeaderSelectComp} <nid:37>initiating...
+[00:00:02,082] INFO  {NewsComp} <nid:37>initiating...
+[00:00:02,082] INFO  {LeaderSelectComp} <nid:37>starting...
+[00:00:02,082] INFO  {NewsComp} <nid:37>starting...
+[00:00:02,082] INFO  {LeaderSelectComp} <nid:38>initiating...
+[00:00:02,082] INFO  {NewsComp} <nid:38>initiating...
+[00:00:02,082] INFO  {LeaderSelectComp} <nid:38>starting...
+[00:00:02,082] INFO  {NewsComp} <nid:38>starting...
+[00:00:02,082] WARN  {GradientComp} <nid:37,oid:12000001> no self view
+[00:00:02,082] WARN  {GradientComp} <nid:38,oid:12000001> no self view
+[00:00:02,084] INFO  {HostMngrComp} <nid:39>initiating...
+[00:00:02,084] INFO  {HostMngrComp} <nid:39>starting...
+[00:00:02,084] INFO  {LeaderSelectComp} <nid:39>initiating...
+[00:00:02,084] INFO  {NewsComp} <nid:39>initiating...
+[00:00:02,084] INFO  {LeaderSelectComp} <nid:39>starting...
+[00:00:02,084] INFO  {NewsComp} <nid:39>starting...
+[00:00:02,084] WARN  {GradientComp} <nid:39,oid:12000001> no self view
+[00:00:02,088] INFO  {HostMngrComp} <nid:40>initiating...
+[00:00:02,088] INFO  {HostMngrComp} <nid:40>starting...
+[00:00:02,088] INFO  {LeaderSelectComp} <nid:40>initiating...
+[00:00:02,088] INFO  {NewsComp} <nid:40>initiating...
+[00:00:02,088] INFO  {LeaderSelectComp} <nid:40>starting...
+[00:00:02,088] INFO  {NewsComp} <nid:40>starting...
+[00:00:02,088] WARN  {GradientComp} <nid:40,oid:12000001> no self view
+[00:00:02,090] INFO  {HostMngrComp} <nid:41>initiating...
+[00:00:02,090] INFO  {HostMngrComp} <nid:41>starting...
+[00:00:02,090] INFO  {LeaderSelectComp} <nid:41>initiating...
+[00:00:02,090] INFO  {NewsComp} <nid:41>initiating...
+[00:00:02,090] INFO  {LeaderSelectComp} <nid:41>starting...
+[00:00:02,090] INFO  {NewsComp} <nid:41>starting...
+[00:00:02,090] WARN  {GradientComp} <nid:41,oid:12000001> no self view
+[00:00:02,094] INFO  {HostMngrComp} <nid:42>initiating...
+[00:00:02,094] INFO  {HostMngrComp} <nid:42>starting...
+[00:00:02,094] INFO  {LeaderSelectComp} <nid:42>initiating...
+[00:00:02,094] INFO  {NewsComp} <nid:42>initiating...
+[00:00:02,094] INFO  {LeaderSelectComp} <nid:42>starting...
+[00:00:02,094] INFO  {NewsComp} <nid:42>starting...
+[00:00:02,094] WARN  {GradientComp} <nid:42,oid:12000001> no self view
+[00:00:02,099] INFO  {HostMngrComp} <nid:43>initiating...
+[00:00:02,099] INFO  {HostMngrComp} <nid:43>starting...
+[00:00:02,099] INFO  {LeaderSelectComp} <nid:43>initiating...
+[00:00:02,099] INFO  {NewsComp} <nid:43>initiating...
+[00:00:02,099] INFO  {LeaderSelectComp} <nid:43>starting...
+[00:00:02,099] INFO  {NewsComp} <nid:43>starting...
+[00:00:02,099] WARN  {GradientComp} <nid:43,oid:12000001> no self view
+[00:00:02,103] INFO  {HostMngrComp} <nid:44>initiating...
+[00:00:02,103] INFO  {HostMngrComp} <nid:44>starting...
+[00:00:02,103] INFO  {LeaderSelectComp} <nid:44>initiating...
+[00:00:02,103] INFO  {NewsComp} <nid:44>initiating...
+[00:00:02,103] INFO  {LeaderSelectComp} <nid:44>starting...
+[00:00:02,103] INFO  {NewsComp} <nid:44>starting...
+[00:00:02,103] WARN  {GradientComp} <nid:44,oid:12000001> no self view
+[00:00:02,106] INFO  {HostMngrComp} <nid:45>initiating...
+[00:00:02,106] INFO  {HostMngrComp} <nid:45>starting...
+[00:00:02,106] INFO  {LeaderSelectComp} <nid:45>initiating...
+[00:00:02,106] INFO  {NewsComp} <nid:45>initiating...
+[00:00:02,106] INFO  {LeaderSelectComp} <nid:45>starting...
+[00:00:02,106] INFO  {NewsComp} <nid:45>starting...
+[00:00:02,106] WARN  {GradientComp} <nid:45,oid:12000001> no self view
+[00:00:02,107] INFO  {HostMngrComp} <nid:46>initiating...
+[00:00:02,107] INFO  {HostMngrComp} <nid:46>starting...
+[00:00:02,107] INFO  {LeaderSelectComp} <nid:46>initiating...
+[00:00:02,107] INFO  {NewsComp} <nid:46>initiating...
+[00:00:02,107] INFO  {LeaderSelectComp} <nid:46>starting...
+[00:00:02,107] INFO  {NewsComp} <nid:46>starting...
+[00:00:02,107] WARN  {GradientComp} <nid:46,oid:12000001> no self view
+[00:00:02,108] INFO  {HostMngrComp} <nid:47>initiating...
+[00:00:02,108] INFO  {HostMngrComp} <nid:47>starting...
+[00:00:02,108] INFO  {LeaderSelectComp} <nid:47>initiating...
+[00:00:02,108] INFO  {NewsComp} <nid:47>initiating...
+[00:00:02,108] INFO  {LeaderSelectComp} <nid:47>starting...
+[00:00:02,108] INFO  {NewsComp} <nid:47>starting...
+[00:00:02,108] WARN  {GradientComp} <nid:47,oid:12000001> no self view
+[00:00:02,112] INFO  {HostMngrComp} <nid:48>initiating...
+[00:00:02,112] INFO  {HostMngrComp} <nid:48>starting...
+[00:00:02,112] INFO  {LeaderSelectComp} <nid:48>initiating...
+[00:00:02,112] INFO  {NewsComp} <nid:48>initiating...
+[00:00:02,112] INFO  {LeaderSelectComp} <nid:48>starting...
+[00:00:02,112] INFO  {NewsComp} <nid:48>starting...
+[00:00:02,112] WARN  {GradientComp} <nid:48,oid:12000001> no self view
+[00:00:02,113] INFO  {HostMngrComp} <nid:49>initiating...
+[00:00:02,113] INFO  {HostMngrComp} <nid:49>starting...
+[00:00:02,113] INFO  {LeaderSelectComp} <nid:49>initiating...
+[00:00:02,113] INFO  {NewsComp} <nid:49>initiating...
+[00:00:02,113] INFO  {LeaderSelectComp} <nid:49>starting...
+[00:00:02,113] INFO  {NewsComp} <nid:49>starting...
+[00:00:02,113] WARN  {GradientComp} <nid:49,oid:12000001> no self view
+[00:00:02,115] INFO  {HostMngrComp} <nid:50>initiating...
+[00:00:02,115] INFO  {HostMngrComp} <nid:50>starting...
+[00:00:02,115] INFO  {LeaderSelectComp} <nid:50>initiating...
+[00:00:02,115] INFO  {NewsComp} <nid:50>initiating...
+[00:00:02,115] INFO  {LeaderSelectComp} <nid:50>starting...
+[00:00:02,115] INFO  {NewsComp} <nid:50>starting...
+[00:00:02,115] WARN  {GradientComp} <nid:50,oid:12000001> no self view
+[00:00:02,116] INFO  {HostMngrComp} <nid:51>initiating...
+[00:00:02,116] INFO  {HostMngrComp} <nid:51>starting...
+[00:00:02,116] INFO  {LeaderSelectComp} <nid:51>initiating...
+[00:00:02,116] INFO  {NewsComp} <nid:51>initiating...
+[00:00:02,116] INFO  {LeaderSelectComp} <nid:51>starting...
+[00:00:02,116] INFO  {NewsComp} <nid:51>starting...
+[00:00:02,116] WARN  {GradientComp} <nid:51,oid:12000001> no self view
+[00:00:02,117] INFO  {HostMngrComp} <nid:52>initiating...
+[00:00:02,117] INFO  {HostMngrComp} <nid:52>starting...
+[00:00:02,117] INFO  {LeaderSelectComp} <nid:52>initiating...
+[00:00:02,117] INFO  {NewsComp} <nid:52>initiating...
+[00:00:02,117] INFO  {LeaderSelectComp} <nid:52>starting...
+[00:00:02,117] INFO  {NewsComp} <nid:52>starting...
+[00:00:02,117] WARN  {GradientComp} <nid:52,oid:12000001> no self view
+[00:00:02,120] INFO  {HostMngrComp} <nid:53>initiating...
+[00:00:02,120] INFO  {HostMngrComp} <nid:53>starting...
+[00:00:02,120] INFO  {LeaderSelectComp} <nid:53>initiating...
+[00:00:02,120] INFO  {NewsComp} <nid:53>initiating...
+[00:00:02,120] INFO  {LeaderSelectComp} <nid:53>starting...
+[00:00:02,120] INFO  {NewsComp} <nid:53>starting...
+[00:00:02,120] WARN  {GradientComp} <nid:53,oid:12000001> no self view
+[00:00:02,124] INFO  {HostMngrComp} <nid:54>initiating...
+[00:00:02,124] INFO  {HostMngrComp} <nid:54>starting...
+[00:00:02,124] INFO  {LeaderSelectComp} <nid:54>initiating...
+[00:00:02,124] INFO  {NewsComp} <nid:54>initiating...
+[00:00:02,124] INFO  {LeaderSelectComp} <nid:54>starting...
+[00:00:02,124] INFO  {NewsComp} <nid:54>starting...
+[00:00:02,124] WARN  {GradientComp} <nid:54,oid:12000001> no self view
+[00:00:02,125] INFO  {HostMngrComp} <nid:55>initiating...
+[00:00:02,125] INFO  {HostMngrComp} <nid:55>starting...
+[00:00:02,125] INFO  {LeaderSelectComp} <nid:55>initiating...
+[00:00:02,125] INFO  {NewsComp} <nid:55>initiating...
+[00:00:02,125] INFO  {LeaderSelectComp} <nid:55>starting...
+[00:00:02,125] INFO  {NewsComp} <nid:55>starting...
+[00:00:02,125] WARN  {GradientComp} <nid:55,oid:12000001> no self view
+[00:00:02,130] INFO  {HostMngrComp} <nid:56>initiating...
+[00:00:02,130] INFO  {HostMngrComp} <nid:56>starting...
+[00:00:02,130] INFO  {LeaderSelectComp} <nid:56>initiating...
+[00:00:02,130] INFO  {NewsComp} <nid:56>initiating...
+[00:00:02,130] INFO  {LeaderSelectComp} <nid:56>starting...
+[00:00:02,130] INFO  {NewsComp} <nid:56>starting...
+[00:00:02,130] WARN  {GradientComp} <nid:56,oid:12000001> no self view
+[00:00:02,133] INFO  {HostMngrComp} <nid:57>initiating...
+[00:00:02,133] INFO  {HostMngrComp} <nid:57>starting...
+[00:00:02,133] INFO  {LeaderSelectComp} <nid:57>initiating...
+[00:00:02,133] INFO  {NewsComp} <nid:57>initiating...
+[00:00:02,133] INFO  {LeaderSelectComp} <nid:57>starting...
+[00:00:02,133] INFO  {NewsComp} <nid:57>starting...
+[00:00:02,133] WARN  {GradientComp} <nid:57,oid:12000001> no self view
+[00:00:02,134] INFO  {HostMngrComp} <nid:58>initiating...
+[00:00:02,134] INFO  {HostMngrComp} <nid:58>starting...
+[00:00:02,134] INFO  {LeaderSelectComp} <nid:58>initiating...
+[00:00:02,134] INFO  {NewsComp} <nid:58>initiating...
+[00:00:02,134] INFO  {LeaderSelectComp} <nid:58>starting...
+[00:00:02,134] INFO  {NewsComp} <nid:58>starting...
+[00:00:02,134] WARN  {GradientComp} <nid:58,oid:12000001> no self view
+[00:00:02,139] INFO  {HostMngrComp} <nid:59>initiating...
+[00:00:02,139] INFO  {HostMngrComp} <nid:59>starting...
+[00:00:02,139] INFO  {LeaderSelectComp} <nid:59>initiating...
+[00:00:02,139] INFO  {NewsComp} <nid:59>initiating...
+[00:00:02,139] INFO  {LeaderSelectComp} <nid:59>starting...
+[00:00:02,139] INFO  {NewsComp} <nid:59>starting...
+[00:00:02,139] WARN  {GradientComp} <nid:59,oid:12000001> no self view
+[00:00:02,140] INFO  {HostMngrComp} <nid:60>initiating...
+[00:00:02,140] INFO  {HostMngrComp} <nid:60>starting...
+[00:00:02,140] INFO  {LeaderSelectComp} <nid:60>initiating...
+[00:00:02,140] INFO  {NewsComp} <nid:60>initiating...
+[00:00:02,140] INFO  {LeaderSelectComp} <nid:60>starting...
+[00:00:02,140] INFO  {NewsComp} <nid:60>starting...
+[00:00:02,140] WARN  {GradientComp} <nid:60,oid:12000001> no self view
+[00:00:02,144] INFO  {HostMngrComp} <nid:61>initiating...
+[00:00:02,144] INFO  {HostMngrComp} <nid:61>starting...
+[00:00:02,144] INFO  {LeaderSelectComp} <nid:61>initiating...
+[00:00:02,144] INFO  {NewsComp} <nid:61>initiating...
+[00:00:02,144] INFO  {LeaderSelectComp} <nid:61>starting...
+[00:00:02,144] INFO  {NewsComp} <nid:61>starting...
+[00:00:02,144] WARN  {GradientComp} <nid:61,oid:12000001> no self view
+[00:00:02,147] INFO  {HostMngrComp} <nid:62>initiating...
+[00:00:02,147] INFO  {HostMngrComp} <nid:62>starting...
+[00:00:02,147] INFO  {LeaderSelectComp} <nid:62>initiating...
+[00:00:02,147] INFO  {NewsComp} <nid:62>initiating...
+[00:00:02,147] INFO  {LeaderSelectComp} <nid:62>starting...
+[00:00:02,147] INFO  {NewsComp} <nid:62>starting...
+[00:00:02,147] WARN  {GradientComp} <nid:62,oid:12000001> no self view
+[00:00:02,150] INFO  {HostMngrComp} <nid:63>initiating...
+[00:00:02,150] INFO  {HostMngrComp} <nid:63>starting...
+[00:00:02,150] INFO  {LeaderSelectComp} <nid:63>initiating...
+[00:00:02,150] INFO  {NewsComp} <nid:63>initiating...
+[00:00:02,150] INFO  {LeaderSelectComp} <nid:63>starting...
+[00:00:02,150] INFO  {NewsComp} <nid:63>starting...
+[00:00:02,150] WARN  {GradientComp} <nid:63,oid:12000001> no self view
+[00:00:02,152] INFO  {HostMngrComp} <nid:64>initiating...
+[00:00:02,152] INFO  {HostMngrComp} <nid:64>starting...
+[00:00:02,152] INFO  {LeaderSelectComp} <nid:64>initiating...
+[00:00:02,152] INFO  {NewsComp} <nid:64>initiating...
+[00:00:02,152] INFO  {LeaderSelectComp} <nid:64>starting...
+[00:00:02,152] INFO  {NewsComp} <nid:64>starting...
+[00:00:02,152] WARN  {GradientComp} <nid:64,oid:12000001> no self view
+[00:00:02,155] INFO  {HostMngrComp} <nid:65>initiating...
+[00:00:02,155] INFO  {HostMngrComp} <nid:65>starting...
+[00:00:02,155] INFO  {LeaderSelectComp} <nid:65>initiating...
+[00:00:02,155] INFO  {NewsComp} <nid:65>initiating...
+[00:00:02,155] INFO  {LeaderSelectComp} <nid:65>starting...
+[00:00:02,155] INFO  {NewsComp} <nid:65>starting...
+[00:00:02,155] WARN  {GradientComp} <nid:65,oid:12000001> no self view
+[00:00:02,160] INFO  {HostMngrComp} <nid:66>initiating...
+[00:00:02,160] INFO  {HostMngrComp} <nid:66>starting...
+[00:00:02,160] INFO  {LeaderSelectComp} <nid:66>initiating...
+[00:00:02,160] INFO  {NewsComp} <nid:66>initiating...
+[00:00:02,160] INFO  {LeaderSelectComp} <nid:66>starting...
+[00:00:02,160] INFO  {NewsComp} <nid:66>starting...
+[00:00:02,160] WARN  {GradientComp} <nid:66,oid:12000001> no self view
+[00:00:02,164] INFO  {HostMngrComp} <nid:67>initiating...
+[00:00:02,164] INFO  {HostMngrComp} <nid:67>starting...
+[00:00:02,164] INFO  {LeaderSelectComp} <nid:67>initiating...
+[00:00:02,164] INFO  {NewsComp} <nid:67>initiating...
+[00:00:02,164] INFO  {LeaderSelectComp} <nid:67>starting...
+[00:00:02,164] INFO  {NewsComp} <nid:67>starting...
+[00:00:02,164] WARN  {GradientComp} <nid:67,oid:12000001> no self view
+[00:00:02,167] INFO  {HostMngrComp} <nid:68>initiating...
+[00:00:02,167] INFO  {HostMngrComp} <nid:68>starting...
+[00:00:02,167] INFO  {HostMngrComp} <nid:69>initiating...
+[00:00:02,167] INFO  {HostMngrComp} <nid:69>starting...
+[00:00:02,167] INFO  {LeaderSelectComp} <nid:68>initiating...
+[00:00:02,167] INFO  {NewsComp} <nid:68>initiating...
+[00:00:02,167] INFO  {LeaderSelectComp} <nid:68>starting...
+[00:00:02,167] INFO  {NewsComp} <nid:68>starting...
+[00:00:02,167] INFO  {LeaderSelectComp} <nid:69>initiating...
+[00:00:02,167] INFO  {NewsComp} <nid:69>initiating...
+[00:00:02,167] INFO  {LeaderSelectComp} <nid:69>starting...
+[00:00:02,167] INFO  {NewsComp} <nid:69>starting...
+[00:00:02,167] WARN  {GradientComp} <nid:68,oid:12000001> no self view
+[00:00:02,167] WARN  {GradientComp} <nid:69,oid:12000001> no self view
+[00:00:02,169] INFO  {HostMngrComp} <nid:70>initiating...
+[00:00:02,169] INFO  {HostMngrComp} <nid:70>starting...
+[00:00:02,169] INFO  {LeaderSelectComp} <nid:70>initiating...
+[00:00:02,169] INFO  {NewsComp} <nid:70>initiating...
+[00:00:02,169] INFO  {LeaderSelectComp} <nid:70>starting...
+[00:00:02,169] INFO  {NewsComp} <nid:70>starting...
+[00:00:02,169] WARN  {GradientComp} <nid:70,oid:12000001> no self view
+[00:00:02,171] INFO  {HostMngrComp} <nid:71>initiating...
+[00:00:02,171] INFO  {HostMngrComp} <nid:71>starting...
+[00:00:02,171] INFO  {LeaderSelectComp} <nid:71>initiating...
+[00:00:02,171] INFO  {NewsComp} <nid:71>initiating...
+[00:00:02,171] INFO  {LeaderSelectComp} <nid:71>starting...
+[00:00:02,171] INFO  {NewsComp} <nid:71>starting...
+[00:00:02,171] WARN  {GradientComp} <nid:71,oid:12000001> no self view
+[00:00:02,172] INFO  {HostMngrComp} <nid:72>initiating...
+[00:00:02,172] INFO  {HostMngrComp} <nid:72>starting...
+[00:00:02,172] INFO  {LeaderSelectComp} <nid:72>initiating...
+[00:00:02,172] INFO  {NewsComp} <nid:72>initiating...
+[00:00:02,172] INFO  {LeaderSelectComp} <nid:72>starting...
+[00:00:02,172] INFO  {NewsComp} <nid:72>starting...
+[00:00:02,172] WARN  {GradientComp} <nid:72,oid:12000001> no self view
+[00:00:02,173] INFO  {HostMngrComp} <nid:73>initiating...
+[00:00:02,173] INFO  {HostMngrComp} <nid:73>starting...
+[00:00:02,173] INFO  {LeaderSelectComp} <nid:73>initiating...
+[00:00:02,173] INFO  {NewsComp} <nid:73>initiating...
+[00:00:02,173] INFO  {LeaderSelectComp} <nid:73>starting...
+[00:00:02,173] INFO  {NewsComp} <nid:73>starting...
+[00:00:02,173] WARN  {GradientComp} <nid:73,oid:12000001> no self view
+[00:00:02,177] INFO  {HostMngrComp} <nid:74>initiating...
+[00:00:02,177] INFO  {HostMngrComp} <nid:74>starting...
+[00:00:02,177] INFO  {LeaderSelectComp} <nid:74>initiating...
+[00:00:02,177] INFO  {NewsComp} <nid:74>initiating...
+[00:00:02,177] INFO  {LeaderSelectComp} <nid:74>starting...
+[00:00:02,177] INFO  {NewsComp} <nid:74>starting...
+[00:00:02,177] WARN  {GradientComp} <nid:74,oid:12000001> no self view
+[00:00:02,179] INFO  {HostMngrComp} <nid:75>initiating...
+[00:00:02,179] INFO  {HostMngrComp} <nid:75>starting...
+[00:00:02,179] INFO  {LeaderSelectComp} <nid:75>initiating...
+[00:00:02,179] INFO  {NewsComp} <nid:75>initiating...
+[00:00:02,179] INFO  {LeaderSelectComp} <nid:75>starting...
+[00:00:02,179] INFO  {NewsComp} <nid:75>starting...
+[00:00:02,179] WARN  {GradientComp} <nid:75,oid:12000001> no self view
+[00:00:02,183] INFO  {HostMngrComp} <nid:76>initiating...
+[00:00:02,183] INFO  {HostMngrComp} <nid:76>starting...
+[00:00:02,183] INFO  {LeaderSelectComp} <nid:76>initiating...
+[00:00:02,183] INFO  {NewsComp} <nid:76>initiating...
+[00:00:02,183] INFO  {LeaderSelectComp} <nid:76>starting...
+[00:00:02,183] INFO  {NewsComp} <nid:76>starting...
+[00:00:02,183] WARN  {GradientComp} <nid:76,oid:12000001> no self view
+[00:00:02,185] INFO  {HostMngrComp} <nid:77>initiating...
+[00:00:02,185] INFO  {HostMngrComp} <nid:77>starting...
+[00:00:02,185] INFO  {LeaderSelectComp} <nid:77>initiating...
+[00:00:02,185] INFO  {NewsComp} <nid:77>initiating...
+[00:00:02,185] INFO  {LeaderSelectComp} <nid:77>starting...
+[00:00:02,185] INFO  {NewsComp} <nid:77>starting...
+[00:00:02,185] WARN  {GradientComp} <nid:77,oid:12000001> no self view
+[00:00:02,186] INFO  {HostMngrComp} <nid:78>initiating...
+[00:00:02,186] INFO  {HostMngrComp} <nid:78>starting...
+[00:00:02,186] INFO  {LeaderSelectComp} <nid:78>initiating...
+[00:00:02,186] INFO  {NewsComp} <nid:78>initiating...
+[00:00:02,186] INFO  {LeaderSelectComp} <nid:78>starting...
+[00:00:02,186] INFO  {NewsComp} <nid:78>starting...
+[00:00:02,186] WARN  {GradientComp} <nid:78,oid:12000001> no self view
+[00:00:02,189] INFO  {HostMngrComp} <nid:79>initiating...
+[00:00:02,189] INFO  {HostMngrComp} <nid:79>starting...
+[00:00:02,189] INFO  {LeaderSelectComp} <nid:79>initiating...
+[00:00:02,189] INFO  {NewsComp} <nid:79>initiating...
+[00:00:02,189] INFO  {LeaderSelectComp} <nid:79>starting...
+[00:00:02,189] INFO  {NewsComp} <nid:79>starting...
+[00:00:02,189] WARN  {GradientComp} <nid:79,oid:12000001> no self view
+[00:00:02,193] INFO  {HostMngrComp} <nid:80>initiating...
+[00:00:02,193] INFO  {HostMngrComp} <nid:80>starting...
+[00:00:02,193] INFO  {HostMngrComp} <nid:81>initiating...
+[00:00:02,193] INFO  {HostMngrComp} <nid:81>starting...
+[00:00:02,193] INFO  {LeaderSelectComp} <nid:80>initiating...
+[00:00:02,193] INFO  {NewsComp} <nid:80>initiating...
+[00:00:02,193] INFO  {LeaderSelectComp} <nid:80>starting...
+[00:00:02,193] INFO  {NewsComp} <nid:80>starting...
+[00:00:02,193] INFO  {LeaderSelectComp} <nid:81>initiating...
+[00:00:02,193] INFO  {NewsComp} <nid:81>initiating...
+[00:00:02,193] INFO  {LeaderSelectComp} <nid:81>starting...
+[00:00:02,193] INFO  {NewsComp} <nid:81>starting...
+[00:00:02,193] WARN  {GradientComp} <nid:80,oid:12000001> no self view
+[00:00:02,193] WARN  {GradientComp} <nid:81,oid:12000001> no self view
+[00:00:02,195] INFO  {HostMngrComp} <nid:82>initiating...
+[00:00:02,195] INFO  {HostMngrComp} <nid:82>starting...
+[00:00:02,195] INFO  {LeaderSelectComp} <nid:82>initiating...
+[00:00:02,195] INFO  {NewsComp} <nid:82>initiating...
+[00:00:02,195] INFO  {LeaderSelectComp} <nid:82>starting...
+[00:00:02,195] INFO  {NewsComp} <nid:82>starting...
+[00:00:02,195] WARN  {GradientComp} <nid:82,oid:12000001> no self view
+[00:00:02,197] INFO  {HostMngrComp} <nid:83>initiating...
+[00:00:02,197] INFO  {HostMngrComp} <nid:83>starting...
+[00:00:02,197] INFO  {LeaderSelectComp} <nid:83>initiating...
+[00:00:02,197] INFO  {NewsComp} <nid:83>initiating...
+[00:00:02,197] INFO  {LeaderSelectComp} <nid:83>starting...
+[00:00:02,197] INFO  {NewsComp} <nid:83>starting...
+[00:00:02,197] WARN  {GradientComp} <nid:83,oid:12000001> no self view
+[00:00:02,202] INFO  {HostMngrComp} <nid:84>initiating...
+[00:00:02,202] INFO  {HostMngrComp} <nid:84>starting...
+[00:00:02,202] INFO  {LeaderSelectComp} <nid:84>initiating...
+[00:00:02,202] INFO  {NewsComp} <nid:84>initiating...
+[00:00:02,202] INFO  {LeaderSelectComp} <nid:84>starting...
+[00:00:02,202] INFO  {NewsComp} <nid:84>starting...
+[00:00:02,202] WARN  {GradientComp} <nid:84,oid:12000001> no self view
+[00:00:02,206] INFO  {HostMngrComp} <nid:85>initiating...
+[00:00:02,206] INFO  {HostMngrComp} <nid:85>starting...
+[00:00:02,206] INFO  {HostMngrComp} <nid:86>initiating...
+[00:00:02,206] INFO  {HostMngrComp} <nid:86>starting...
+[00:00:02,206] INFO  {LeaderSelectComp} <nid:85>initiating...
+[00:00:02,206] INFO  {NewsComp} <nid:85>initiating...
+[00:00:02,206] INFO  {LeaderSelectComp} <nid:85>starting...
+[00:00:02,206] INFO  {NewsComp} <nid:85>starting...
+[00:00:02,206] INFO  {LeaderSelectComp} <nid:86>initiating...
+[00:00:02,206] INFO  {NewsComp} <nid:86>initiating...
+[00:00:02,206] INFO  {LeaderSelectComp} <nid:86>starting...
+[00:00:02,206] INFO  {NewsComp} <nid:86>starting...
+[00:00:02,206] WARN  {GradientComp} <nid:85,oid:12000001> no self view
+[00:00:02,206] WARN  {GradientComp} <nid:86,oid:12000001> no self view
+[00:00:02,210] INFO  {HostMngrComp} <nid:87>initiating...
+[00:00:02,210] INFO  {HostMngrComp} <nid:87>starting...
+[00:00:02,210] INFO  {LeaderSelectComp} <nid:87>initiating...
+[00:00:02,210] INFO  {NewsComp} <nid:87>initiating...
+[00:00:02,210] INFO  {LeaderSelectComp} <nid:87>starting...
+[00:00:02,210] INFO  {NewsComp} <nid:87>starting...
+[00:00:02,210] WARN  {GradientComp} <nid:87,oid:12000001> no self view
+[00:00:02,214] INFO  {HostMngrComp} <nid:88>initiating...
+[00:00:02,214] INFO  {HostMngrComp} <nid:88>starting...
+[00:00:02,214] INFO  {LeaderSelectComp} <nid:88>initiating...
+[00:00:02,214] INFO  {NewsComp} <nid:88>initiating...
+[00:00:02,214] INFO  {LeaderSelectComp} <nid:88>starting...
+[00:00:02,214] INFO  {NewsComp} <nid:88>starting...
+[00:00:02,214] WARN  {GradientComp} <nid:88,oid:12000001> no self view
+[00:00:02,216] INFO  {HostMngrComp} <nid:89>initiating...
+[00:00:02,216] INFO  {HostMngrComp} <nid:89>starting...
+[00:00:02,216] INFO  {LeaderSelectComp} <nid:89>initiating...
+[00:00:02,216] INFO  {NewsComp} <nid:89>initiating...
+[00:00:02,216] INFO  {LeaderSelectComp} <nid:89>starting...
+[00:00:02,216] INFO  {NewsComp} <nid:89>starting...
+[00:00:02,216] WARN  {GradientComp} <nid:89,oid:12000001> no self view
+[00:00:02,219] INFO  {HostMngrComp} <nid:90>initiating...
+[00:00:02,219] INFO  {HostMngrComp} <nid:90>starting...
+[00:00:02,219] INFO  {LeaderSelectComp} <nid:90>initiating...
+[00:00:02,219] INFO  {NewsComp} <nid:90>initiating...
+[00:00:02,219] INFO  {LeaderSelectComp} <nid:90>starting...
+[00:00:02,219] INFO  {NewsComp} <nid:90>starting...
+[00:00:02,219] WARN  {GradientComp} <nid:90,oid:12000001> no self view
+[00:00:02,220] INFO  {HostMngrComp} <nid:91>initiating...
+[00:00:02,220] INFO  {HostMngrComp} <nid:91>starting...
+[00:00:02,220] INFO  {LeaderSelectComp} <nid:91>initiating...
+[00:00:02,220] INFO  {NewsComp} <nid:91>initiating...
+[00:00:02,220] INFO  {LeaderSelectComp} <nid:91>starting...
+[00:00:02,220] INFO  {NewsComp} <nid:91>starting...
+[00:00:02,220] WARN  {GradientComp} <nid:91,oid:12000001> no self view
+[00:00:02,223] INFO  {HostMngrComp} <nid:92>initiating...
+[00:00:02,223] INFO  {HostMngrComp} <nid:92>starting...
+[00:00:02,223] INFO  {LeaderSelectComp} <nid:92>initiating...
+[00:00:02,223] INFO  {NewsComp} <nid:92>initiating...
+[00:00:02,223] INFO  {LeaderSelectComp} <nid:92>starting...
+[00:00:02,223] INFO  {NewsComp} <nid:92>starting...
+[00:00:02,223] WARN  {GradientComp} <nid:92,oid:12000001> no self view
+[00:00:02,226] INFO  {HostMngrComp} <nid:93>initiating...
+[00:00:02,226] INFO  {HostMngrComp} <nid:93>starting...
+[00:00:02,226] INFO  {LeaderSelectComp} <nid:93>initiating...
+[00:00:02,226] INFO  {NewsComp} <nid:93>initiating...
+[00:00:02,226] INFO  {LeaderSelectComp} <nid:93>starting...
+[00:00:02,226] INFO  {NewsComp} <nid:93>starting...
+[00:00:02,226] WARN  {GradientComp} <nid:93,oid:12000001> no self view
+[00:00:02,228] INFO  {HostMngrComp} <nid:94>initiating...
+[00:00:02,228] INFO  {HostMngrComp} <nid:94>starting...
+[00:00:02,228] INFO  {HostMngrComp} <nid:95>initiating...
+[00:00:02,228] INFO  {HostMngrComp} <nid:95>starting...
+[00:00:02,228] INFO  {LeaderSelectComp} <nid:94>initiating...
+[00:00:02,228] INFO  {NewsComp} <nid:94>initiating...
+[00:00:02,228] INFO  {LeaderSelectComp} <nid:94>starting...
+[00:00:02,228] INFO  {NewsComp} <nid:94>starting...
+[00:00:02,228] INFO  {LeaderSelectComp} <nid:95>initiating...
+[00:00:02,228] INFO  {NewsComp} <nid:95>initiating...
+[00:00:02,228] INFO  {LeaderSelectComp} <nid:95>starting...
+[00:00:02,228] INFO  {NewsComp} <nid:95>starting...
+[00:00:02,228] WARN  {GradientComp} <nid:94,oid:12000001> no self view
+[00:00:02,228] WARN  {GradientComp} <nid:95,oid:12000001> no self view
+[00:00:02,233] INFO  {HostMngrComp} <nid:96>initiating...
+[00:00:02,233] INFO  {HostMngrComp} <nid:96>starting...
+[00:00:02,233] INFO  {LeaderSelectComp} <nid:96>initiating...
+[00:00:02,233] INFO  {NewsComp} <nid:96>initiating...
+[00:00:02,233] INFO  {LeaderSelectComp} <nid:96>starting...
+[00:00:02,233] INFO  {NewsComp} <nid:96>starting...
+[00:00:02,233] WARN  {GradientComp} <nid:96,oid:12000001> no self view
+[00:00:02,235] INFO  {HostMngrComp} <nid:97>initiating...
+[00:00:02,235] INFO  {HostMngrComp} <nid:97>starting...
+[00:00:02,235] INFO  {LeaderSelectComp} <nid:97>initiating...
+[00:00:02,235] INFO  {NewsComp} <nid:97>initiating...
+[00:00:02,235] INFO  {LeaderSelectComp} <nid:97>starting...
+[00:00:02,235] INFO  {NewsComp} <nid:97>starting...
+[00:00:02,235] WARN  {GradientComp} <nid:97,oid:12000001> no self view
+[00:00:02,240] INFO  {HostMngrComp} <nid:98>initiating...
+[00:00:02,240] INFO  {HostMngrComp} <nid:98>starting...
+[00:00:02,240] INFO  {LeaderSelectComp} <nid:98>initiating...
+[00:00:02,240] INFO  {NewsComp} <nid:98>initiating...
+[00:00:02,240] INFO  {LeaderSelectComp} <nid:98>starting...
+[00:00:02,240] INFO  {NewsComp} <nid:98>starting...
+[00:00:02,240] WARN  {GradientComp} <nid:98,oid:12000001> no self view
+[00:00:02,243] INFO  {HostMngrComp} <nid:99>initiating...
+[00:00:02,243] INFO  {HostMngrComp} <nid:99>starting...
+[00:00:02,243] INFO  {LeaderSelectComp} <nid:99>initiating...
+[00:00:02,243] INFO  {NewsComp} <nid:99>initiating...
+[00:00:02,243] INFO  {LeaderSelectComp} <nid:99>starting...
+[00:00:02,243] INFO  {NewsComp} <nid:99>starting...
+[00:00:02,243] WARN  {GradientComp} <nid:99,oid:12000001> no self view
+[00:00:02,248] INFO  {HostMngrComp} <nid:100>initiating...
+[00:00:02,248] INFO  {HostMngrComp} <nid:100>starting...
+[00:00:02,248] INFO  {LeaderSelectComp} <nid:100>initiating...
+[00:00:02,248] INFO  {NewsComp} <nid:100>initiating...
+[00:00:02,248] INFO  {LeaderSelectComp} <nid:100>starting...
+[00:00:02,248] INFO  {NewsComp} <nid:100>starting...
+[00:00:02,248] WARN  {GradientComp} <nid:100,oid:12000001> no self view
+[00:00:04,000] WARN  {CroupierComp} <nid:1,oid:11000001> no partners - not shuffling
+[00:00:04,000] WARN  {GradientComp} <nid:1,oid:12000001> no partners - not shuffling
+[00:00:04,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no partners - not shuffling
+[00:00:04,003] WARN  {CroupierComp} <nid:2,oid:11000001> no partners - not shuffling
+[00:00:04,003] WARN  {GradientComp} <nid:2,oid:12000001> no partners - not shuffling
+[00:00:04,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no partners - not shuffling
+[00:00:04,008] WARN  {CroupierComp} <nid:3,oid:11000001> no partners - not shuffling
+[00:00:04,008] WARN  {GradientComp} <nid:3,oid:12000001> no partners - not shuffling
+[00:00:04,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no partners - not shuffling
+[00:00:04,012] WARN  {CroupierComp} <nid:4,oid:11000001> no partners - not shuffling
+[00:00:04,012] WARN  {GradientComp} <nid:4,oid:12000001> no partners - not shuffling
+[00:00:04,012] WARN  {TreeGradientComp} <nid:4,oid:13000001> no partners - not shuffling
+[00:00:04,014] WARN  {CroupierComp} <nid:5,oid:11000001> no partners - not shuffling
+[00:00:04,014] WARN  {GradientComp} <nid:5,oid:12000001> no partners - not shuffling
+[00:00:04,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no partners - not shuffling
+[00:00:04,016] WARN  {CroupierComp} <nid:6,oid:11000001> no partners - not shuffling
+[00:00:04,016] WARN  {GradientComp} <nid:6,oid:12000001> no partners - not shuffling
+[00:00:04,016] WARN  {TreeGradientComp} <nid:6,oid:13000001> no partners - not shuffling
+[00:00:04,017] WARN  {CroupierComp} <nid:7,oid:11000001> no partners - not shuffling
+[00:00:04,017] WARN  {GradientComp} <nid:7,oid:12000001> no partners - not shuffling
+[00:00:04,017] WARN  {TreeGradientComp} <nid:7,oid:13000001> no partners - not shuffling
+[00:00:04,019] WARN  {CroupierComp} <nid:8,oid:11000001> no partners - not shuffling
+[00:00:04,019] WARN  {GradientComp} <nid:8,oid:12000001> no partners - not shuffling
+[00:00:04,019] WARN  {TreeGradientComp} <nid:8,oid:13000001> no partners - not shuffling
+[00:00:04,022] WARN  {CroupierComp} <nid:9,oid:11000001> no partners - not shuffling
+[00:00:04,022] WARN  {GradientComp} <nid:9,oid:12000001> no partners - not shuffling
+[00:00:04,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no partners - not shuffling
+[00:00:04,027] WARN  {CroupierComp} <nid:10,oid:11000001> no partners - not shuffling
+[00:00:04,027] WARN  {GradientComp} <nid:10,oid:12000001> no partners - not shuffling
+[00:00:04,027] WARN  {TreeGradientComp} <nid:10,oid:13000001> no partners - not shuffling
+[00:00:04,027] WARN  {CroupierComp} <nid:11,oid:11000001> no partners - not shuffling
+[00:00:04,027] WARN  {GradientComp} <nid:11,oid:12000001> no partners - not shuffling
+[00:00:04,027] WARN  {TreeGradientComp} <nid:11,oid:13000001> no partners - not shuffling
+[00:00:04,029] WARN  {CroupierComp} <nid:12,oid:11000001> no partners - not shuffling
+[00:00:04,029] WARN  {GradientComp} <nid:12,oid:12000001> no partners - not shuffling
+[00:00:04,029] WARN  {TreeGradientComp} <nid:12,oid:13000001> no partners - not shuffling
+[00:00:04,029] WARN  {CroupierComp} <nid:13,oid:11000001> no partners - not shuffling
+[00:00:04,029] WARN  {GradientComp} <nid:13,oid:12000001> no partners - not shuffling
+[00:00:04,029] WARN  {TreeGradientComp} <nid:13,oid:13000001> no partners - not shuffling
+[00:00:04,029] WARN  {CroupierComp} <nid:14,oid:11000001> no partners - not shuffling
+[00:00:04,029] WARN  {GradientComp} <nid:14,oid:12000001> no partners - not shuffling
+[00:00:04,029] WARN  {TreeGradientComp} <nid:14,oid:13000001> no partners - not shuffling
+[00:00:04,030] WARN  {CroupierComp} <nid:15,oid:11000001> no partners - not shuffling
+[00:00:04,030] WARN  {GradientComp} <nid:15,oid:12000001> no partners - not shuffling
+[00:00:04,030] WARN  {TreeGradientComp} <nid:15,oid:13000001> no partners - not shuffling
+[00:00:04,034] WARN  {CroupierComp} <nid:16,oid:11000001> no partners - not shuffling
+[00:00:04,034] WARN  {GradientComp} <nid:16,oid:12000001> no partners - not shuffling
+[00:00:04,034] WARN  {TreeGradientComp} <nid:16,oid:13000001> no partners - not shuffling
+[00:00:04,035] WARN  {CroupierComp} <nid:17,oid:11000001> no partners - not shuffling
+[00:00:04,035] WARN  {GradientComp} <nid:17,oid:12000001> no partners - not shuffling
+[00:00:04,035] WARN  {TreeGradientComp} <nid:17,oid:13000001> no partners - not shuffling
+[00:00:04,036] WARN  {CroupierComp} <nid:18,oid:11000001> no partners - not shuffling
+[00:00:04,036] WARN  {GradientComp} <nid:18,oid:12000001> no partners - not shuffling
+[00:00:04,036] WARN  {TreeGradientComp} <nid:18,oid:13000001> no partners - not shuffling
+[00:00:04,038] WARN  {CroupierComp} <nid:19,oid:11000001> no partners - not shuffling
+[00:00:04,038] WARN  {GradientComp} <nid:19,oid:12000001> no partners - not shuffling
+[00:00:04,038] WARN  {TreeGradientComp} <nid:19,oid:13000001> no partners - not shuffling
+[00:00:04,042] WARN  {CroupierComp} <nid:20,oid:11000001> no partners - not shuffling
+[00:00:04,042] WARN  {GradientComp} <nid:20,oid:12000001> no partners - not shuffling
+[00:00:04,042] WARN  {TreeGradientComp} <nid:20,oid:13000001> no partners - not shuffling
+[00:00:04,043] WARN  {CroupierComp} <nid:21,oid:11000001> no partners - not shuffling
+[00:00:04,043] WARN  {GradientComp} <nid:21,oid:12000001> no partners - not shuffling
+[00:00:04,043] WARN  {TreeGradientComp} <nid:21,oid:13000001> no partners - not shuffling
+[00:00:04,045] WARN  {CroupierComp} <nid:22,oid:11000001> no partners - not shuffling
+[00:00:04,045] WARN  {GradientComp} <nid:22,oid:12000001> no partners - not shuffling
+[00:00:04,045] WARN  {TreeGradientComp} <nid:22,oid:13000001> no partners - not shuffling
+[00:00:04,045] WARN  {CroupierComp} <nid:23,oid:11000001> no partners - not shuffling
+[00:00:04,045] WARN  {GradientComp} <nid:23,oid:12000001> no partners - not shuffling
+[00:00:04,045] WARN  {TreeGradientComp} <nid:23,oid:13000001> no partners - not shuffling
+[00:00:04,048] WARN  {CroupierComp} <nid:24,oid:11000001> no partners - not shuffling
+[00:00:04,048] WARN  {GradientComp} <nid:24,oid:12000001> no partners - not shuffling
+[00:00:04,048] WARN  {TreeGradientComp} <nid:24,oid:13000001> no partners - not shuffling
+[00:00:04,052] WARN  {CroupierComp} <nid:25,oid:11000001> no partners - not shuffling
+[00:00:04,052] WARN  {GradientComp} <nid:25,oid:12000001> no partners - not shuffling
+[00:00:04,052] WARN  {TreeGradientComp} <nid:25,oid:13000001> no partners - not shuffling
+[00:00:04,056] WARN  {CroupierComp} <nid:26,oid:11000001> no partners - not shuffling
+[00:00:04,056] WARN  {GradientComp} <nid:26,oid:12000001> no partners - not shuffling
+[00:00:04,056] WARN  {TreeGradientComp} <nid:26,oid:13000001> no partners - not shuffling
+[00:00:04,058] WARN  {CroupierComp} <nid:27,oid:11000001> no partners - not shuffling
+[00:00:04,058] WARN  {GradientComp} <nid:27,oid:12000001> no partners - not shuffling
+[00:00:04,058] WARN  {TreeGradientComp} <nid:27,oid:13000001> no partners - not shuffling
+[00:00:04,059] WARN  {CroupierComp} <nid:28,oid:11000001> no partners - not shuffling
+[00:00:04,059] WARN  {GradientComp} <nid:28,oid:12000001> no partners - not shuffling
+[00:00:04,059] WARN  {TreeGradientComp} <nid:28,oid:13000001> no partners - not shuffling
+[00:00:04,062] WARN  {CroupierComp} <nid:29,oid:11000001> no partners - not shuffling
+[00:00:04,062] WARN  {GradientComp} <nid:29,oid:12000001> no partners - not shuffling
+[00:00:04,062] WARN  {TreeGradientComp} <nid:29,oid:13000001> no partners - not shuffling
+[00:00:04,065] WARN  {CroupierComp} <nid:30,oid:11000001> no partners - not shuffling
+[00:00:04,065] WARN  {GradientComp} <nid:30,oid:12000001> no partners - not shuffling
+[00:00:04,065] WARN  {TreeGradientComp} <nid:30,oid:13000001> no partners - not shuffling
+[00:00:04,069] WARN  {CroupierComp} <nid:31,oid:11000001> no partners - not shuffling
+[00:00:04,069] WARN  {GradientComp} <nid:31,oid:12000001> no partners - not shuffling
+[00:00:04,069] WARN  {TreeGradientComp} <nid:31,oid:13000001> no partners - not shuffling
+[00:00:04,071] WARN  {CroupierComp} <nid:32,oid:11000001> no partners - not shuffling
+[00:00:04,071] WARN  {GradientComp} <nid:32,oid:12000001> no partners - not shuffling
+[00:00:04,071] WARN  {TreeGradientComp} <nid:32,oid:13000001> no partners - not shuffling
+[00:00:04,072] WARN  {CroupierComp} <nid:33,oid:11000001> no partners - not shuffling
+[00:00:04,072] WARN  {GradientComp} <nid:33,oid:12000001> no partners - not shuffling
+[00:00:04,072] WARN  {TreeGradientComp} <nid:33,oid:13000001> no partners - not shuffling
+[00:00:04,073] WARN  {CroupierComp} <nid:34,oid:11000001> no partners - not shuffling
+[00:00:04,073] WARN  {GradientComp} <nid:34,oid:12000001> no partners - not shuffling
+[00:00:04,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no partners - not shuffling
+[00:00:04,078] WARN  {CroupierComp} <nid:35,oid:11000001> no partners - not shuffling
+[00:00:04,078] WARN  {GradientComp} <nid:35,oid:12000001> no partners - not shuffling
+[00:00:04,078] WARN  {TreeGradientComp} <nid:35,oid:13000001> no partners - not shuffling
+[00:00:04,078] WARN  {CroupierComp} <nid:36,oid:11000001> no partners - not shuffling
+[00:00:04,078] WARN  {GradientComp} <nid:36,oid:12000001> no partners - not shuffling
+[00:00:04,078] WARN  {TreeGradientComp} <nid:36,oid:13000001> no partners - not shuffling
+[00:00:04,082] WARN  {CroupierComp} <nid:37,oid:11000001> no partners - not shuffling
+[00:00:04,082] WARN  {GradientComp} <nid:37,oid:12000001> no partners - not shuffling
+[00:00:04,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no partners - not shuffling
+[00:00:04,082] WARN  {CroupierComp} <nid:38,oid:11000001> no partners - not shuffling
+[00:00:04,082] WARN  {GradientComp} <nid:38,oid:12000001> no partners - not shuffling
+[00:00:04,082] WARN  {TreeGradientComp} <nid:38,oid:13000001> no partners - not shuffling
+[00:00:04,084] WARN  {CroupierComp} <nid:39,oid:11000001> no partners - not shuffling
+[00:00:04,084] WARN  {GradientComp} <nid:39,oid:12000001> no partners - not shuffling
+[00:00:04,084] WARN  {TreeGradientComp} <nid:39,oid:13000001> no partners - not shuffling
+[00:00:04,088] WARN  {CroupierComp} <nid:40,oid:11000001> no partners - not shuffling
+[00:00:04,088] WARN  {GradientComp} <nid:40,oid:12000001> no partners - not shuffling
+[00:00:04,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no partners - not shuffling
+[00:00:04,090] WARN  {CroupierComp} <nid:41,oid:11000001> no partners - not shuffling
+[00:00:04,090] WARN  {GradientComp} <nid:41,oid:12000001> no partners - not shuffling
+[00:00:04,090] WARN  {TreeGradientComp} <nid:41,oid:13000001> no partners - not shuffling
+[00:00:04,094] WARN  {CroupierComp} <nid:42,oid:11000001> no partners - not shuffling
+[00:00:04,094] WARN  {GradientComp} <nid:42,oid:12000001> no partners - not shuffling
+[00:00:04,094] WARN  {TreeGradientComp} <nid:42,oid:13000001> no partners - not shuffling
+[00:00:04,099] WARN  {CroupierComp} <nid:43,oid:11000001> no partners - not shuffling
+[00:00:04,099] WARN  {GradientComp} <nid:43,oid:12000001> no partners - not shuffling
+[00:00:04,099] WARN  {TreeGradientComp} <nid:43,oid:13000001> no partners - not shuffling
+[00:00:04,103] WARN  {CroupierComp} <nid:44,oid:11000001> no partners - not shuffling
+[00:00:04,103] WARN  {GradientComp} <nid:44,oid:12000001> no partners - not shuffling
+[00:00:04,103] WARN  {TreeGradientComp} <nid:44,oid:13000001> no partners - not shuffling
+[00:00:04,106] WARN  {CroupierComp} <nid:45,oid:11000001> no partners - not shuffling
+[00:00:04,106] WARN  {GradientComp} <nid:45,oid:12000001> no partners - not shuffling
+[00:00:04,106] WARN  {TreeGradientComp} <nid:45,oid:13000001> no partners - not shuffling
+[00:00:04,107] WARN  {CroupierComp} <nid:46,oid:11000001> no partners - not shuffling
+[00:00:04,107] WARN  {GradientComp} <nid:46,oid:12000001> no partners - not shuffling
+[00:00:04,107] WARN  {TreeGradientComp} <nid:46,oid:13000001> no partners - not shuffling
+[00:00:04,108] WARN  {CroupierComp} <nid:47,oid:11000001> no partners - not shuffling
+[00:00:04,108] WARN  {GradientComp} <nid:47,oid:12000001> no partners - not shuffling
+[00:00:04,108] WARN  {TreeGradientComp} <nid:47,oid:13000001> no partners - not shuffling
+[00:00:04,112] WARN  {CroupierComp} <nid:48,oid:11000001> no partners - not shuffling
+[00:00:04,112] WARN  {GradientComp} <nid:48,oid:12000001> no partners - not shuffling
+[00:00:04,112] WARN  {TreeGradientComp} <nid:48,oid:13000001> no partners - not shuffling
+[00:00:04,113] WARN  {CroupierComp} <nid:49,oid:11000001> no partners - not shuffling
+[00:00:04,113] WARN  {GradientComp} <nid:49,oid:12000001> no partners - not shuffling
+[00:00:04,113] WARN  {TreeGradientComp} <nid:49,oid:13000001> no partners - not shuffling
+[00:00:04,115] WARN  {CroupierComp} <nid:50,oid:11000001> no partners - not shuffling
+[00:00:04,115] WARN  {GradientComp} <nid:50,oid:12000001> no partners - not shuffling
+[00:00:04,115] WARN  {TreeGradientComp} <nid:50,oid:13000001> no partners - not shuffling
+[00:00:04,116] WARN  {CroupierComp} <nid:51,oid:11000001> no partners - not shuffling
+[00:00:04,116] WARN  {GradientComp} <nid:51,oid:12000001> no partners - not shuffling
+[00:00:04,116] WARN  {TreeGradientComp} <nid:51,oid:13000001> no partners - not shuffling
+[00:00:04,117] WARN  {CroupierComp} <nid:52,oid:11000001> no partners - not shuffling
+[00:00:04,117] WARN  {GradientComp} <nid:52,oid:12000001> no partners - not shuffling
+[00:00:04,117] WARN  {TreeGradientComp} <nid:52,oid:13000001> no partners - not shuffling
+[00:00:04,120] WARN  {CroupierComp} <nid:53,oid:11000001> no partners - not shuffling
+[00:00:04,120] WARN  {GradientComp} <nid:53,oid:12000001> no partners - not shuffling
+[00:00:04,120] WARN  {TreeGradientComp} <nid:53,oid:13000001> no partners - not shuffling
+[00:00:04,124] WARN  {CroupierComp} <nid:54,oid:11000001> no partners - not shuffling
+[00:00:04,124] WARN  {GradientComp} <nid:54,oid:12000001> no partners - not shuffling
+[00:00:04,124] WARN  {TreeGradientComp} <nid:54,oid:13000001> no partners - not shuffling
+[00:00:04,125] WARN  {CroupierComp} <nid:55,oid:11000001> no partners - not shuffling
+[00:00:04,125] WARN  {GradientComp} <nid:55,oid:12000001> no partners - not shuffling
+[00:00:04,125] WARN  {TreeGradientComp} <nid:55,oid:13000001> no partners - not shuffling
+[00:00:04,130] WARN  {CroupierComp} <nid:56,oid:11000001> no partners - not shuffling
+[00:00:04,130] WARN  {GradientComp} <nid:56,oid:12000001> no partners - not shuffling
+[00:00:04,130] WARN  {TreeGradientComp} <nid:56,oid:13000001> no partners - not shuffling
+[00:00:04,133] WARN  {CroupierComp} <nid:57,oid:11000001> no partners - not shuffling
+[00:00:04,133] WARN  {GradientComp} <nid:57,oid:12000001> no partners - not shuffling
+[00:00:04,133] WARN  {TreeGradientComp} <nid:57,oid:13000001> no partners - not shuffling
+[00:00:04,134] WARN  {CroupierComp} <nid:58,oid:11000001> no partners - not shuffling
+[00:00:04,134] WARN  {GradientComp} <nid:58,oid:12000001> no partners - not shuffling
+[00:00:04,134] WARN  {TreeGradientComp} <nid:58,oid:13000001> no partners - not shuffling
+[00:00:04,139] WARN  {CroupierComp} <nid:59,oid:11000001> no partners - not shuffling
+[00:00:04,139] WARN  {GradientComp} <nid:59,oid:12000001> no partners - not shuffling
+[00:00:04,139] WARN  {TreeGradientComp} <nid:59,oid:13000001> no partners - not shuffling
+[00:00:04,140] WARN  {CroupierComp} <nid:60,oid:11000001> no partners - not shuffling
+[00:00:04,140] WARN  {GradientComp} <nid:60,oid:12000001> no partners - not shuffling
+[00:00:04,140] WARN  {TreeGradientComp} <nid:60,oid:13000001> no partners - not shuffling
+[00:00:04,144] WARN  {CroupierComp} <nid:61,oid:11000001> no partners - not shuffling
+[00:00:04,144] WARN  {GradientComp} <nid:61,oid:12000001> no partners - not shuffling
+[00:00:04,144] WARN  {TreeGradientComp} <nid:61,oid:13000001> no partners - not shuffling
+[00:00:04,147] WARN  {CroupierComp} <nid:62,oid:11000001> no partners - not shuffling
+[00:00:04,147] WARN  {GradientComp} <nid:62,oid:12000001> no partners - not shuffling
+[00:00:04,147] WARN  {TreeGradientComp} <nid:62,oid:13000001> no partners - not shuffling
+[00:00:04,150] WARN  {CroupierComp} <nid:63,oid:11000001> no partners - not shuffling
+[00:00:04,150] WARN  {GradientComp} <nid:63,oid:12000001> no partners - not shuffling
+[00:00:04,150] WARN  {TreeGradientComp} <nid:63,oid:13000001> no partners - not shuffling
+[00:00:04,152] WARN  {CroupierComp} <nid:64,oid:11000001> no partners - not shuffling
+[00:00:04,152] WARN  {GradientComp} <nid:64,oid:12000001> no partners - not shuffling
+[00:00:04,152] WARN  {TreeGradientComp} <nid:64,oid:13000001> no partners - not shuffling
+[00:00:04,155] WARN  {CroupierComp} <nid:65,oid:11000001> no partners - not shuffling
+[00:00:04,155] WARN  {GradientComp} <nid:65,oid:12000001> no partners - not shuffling
+[00:00:04,155] WARN  {TreeGradientComp} <nid:65,oid:13000001> no partners - not shuffling
+[00:00:04,160] WARN  {CroupierComp} <nid:66,oid:11000001> no partners - not shuffling
+[00:00:04,160] WARN  {GradientComp} <nid:66,oid:12000001> no partners - not shuffling
+[00:00:04,160] WARN  {TreeGradientComp} <nid:66,oid:13000001> no partners - not shuffling
+[00:00:04,164] WARN  {CroupierComp} <nid:67,oid:11000001> no partners - not shuffling
+[00:00:04,164] WARN  {GradientComp} <nid:67,oid:12000001> no partners - not shuffling
+[00:00:04,164] WARN  {TreeGradientComp} <nid:67,oid:13000001> no partners - not shuffling
+[00:00:04,167] WARN  {CroupierComp} <nid:68,oid:11000001> no partners - not shuffling
+[00:00:04,167] WARN  {GradientComp} <nid:68,oid:12000001> no partners - not shuffling
+[00:00:04,167] WARN  {TreeGradientComp} <nid:68,oid:13000001> no partners - not shuffling
+[00:00:04,167] WARN  {CroupierComp} <nid:69,oid:11000001> no partners - not shuffling
+[00:00:04,167] WARN  {GradientComp} <nid:69,oid:12000001> no partners - not shuffling
+[00:00:04,167] WARN  {TreeGradientComp} <nid:69,oid:13000001> no partners - not shuffling
+[00:00:04,169] WARN  {CroupierComp} <nid:70,oid:11000001> no partners - not shuffling
+[00:00:04,169] WARN  {GradientComp} <nid:70,oid:12000001> no partners - not shuffling
+[00:00:04,169] WARN  {TreeGradientComp} <nid:70,oid:13000001> no partners - not shuffling
+[00:00:04,171] WARN  {CroupierComp} <nid:71,oid:11000001> no partners - not shuffling
+[00:00:04,171] WARN  {GradientComp} <nid:71,oid:12000001> no partners - not shuffling
+[00:00:04,171] WARN  {TreeGradientComp} <nid:71,oid:13000001> no partners - not shuffling
+[00:00:04,172] WARN  {CroupierComp} <nid:72,oid:11000001> no partners - not shuffling
+[00:00:04,172] WARN  {GradientComp} <nid:72,oid:12000001> no partners - not shuffling
+[00:00:04,172] WARN  {TreeGradientComp} <nid:72,oid:13000001> no partners - not shuffling
+[00:00:04,173] WARN  {CroupierComp} <nid:73,oid:11000001> no partners - not shuffling
+[00:00:04,173] WARN  {GradientComp} <nid:73,oid:12000001> no partners - not shuffling
+[00:00:04,173] WARN  {TreeGradientComp} <nid:73,oid:13000001> no partners - not shuffling
+[00:00:04,177] WARN  {CroupierComp} <nid:74,oid:11000001> no partners - not shuffling
+[00:00:04,177] WARN  {GradientComp} <nid:74,oid:12000001> no partners - not shuffling
+[00:00:04,177] WARN  {TreeGradientComp} <nid:74,oid:13000001> no partners - not shuffling
+[00:00:04,179] WARN  {CroupierComp} <nid:75,oid:11000001> no partners - not shuffling
+[00:00:04,179] WARN  {GradientComp} <nid:75,oid:12000001> no partners - not shuffling
+[00:00:04,179] WARN  {TreeGradientComp} <nid:75,oid:13000001> no partners - not shuffling
+[00:00:04,183] WARN  {CroupierComp} <nid:76,oid:11000001> no partners - not shuffling
+[00:00:04,183] WARN  {GradientComp} <nid:76,oid:12000001> no partners - not shuffling
+[00:00:04,183] WARN  {TreeGradientComp} <nid:76,oid:13000001> no partners - not shuffling
+[00:00:04,185] WARN  {CroupierComp} <nid:77,oid:11000001> no partners - not shuffling
+[00:00:04,185] WARN  {GradientComp} <nid:77,oid:12000001> no partners - not shuffling
+[00:00:04,185] WARN  {TreeGradientComp} <nid:77,oid:13000001> no partners - not shuffling
+[00:00:04,186] WARN  {CroupierComp} <nid:78,oid:11000001> no partners - not shuffling
+[00:00:04,186] WARN  {GradientComp} <nid:78,oid:12000001> no partners - not shuffling
+[00:00:04,186] WARN  {TreeGradientComp} <nid:78,oid:13000001> no partners - not shuffling
+[00:00:04,189] WARN  {CroupierComp} <nid:79,oid:11000001> no partners - not shuffling
+[00:00:04,189] WARN  {GradientComp} <nid:79,oid:12000001> no partners - not shuffling
+[00:00:04,189] WARN  {TreeGradientComp} <nid:79,oid:13000001> no partners - not shuffling
+[00:00:04,193] WARN  {CroupierComp} <nid:80,oid:11000001> no partners - not shuffling
+[00:00:04,193] WARN  {GradientComp} <nid:80,oid:12000001> no partners - not shuffling
+[00:00:04,193] WARN  {TreeGradientComp} <nid:80,oid:13000001> no partners - not shuffling
+[00:00:04,193] WARN  {CroupierComp} <nid:81,oid:11000001> no partners - not shuffling
+[00:00:04,193] WARN  {GradientComp} <nid:81,oid:12000001> no partners - not shuffling
+[00:00:04,193] WARN  {TreeGradientComp} <nid:81,oid:13000001> no partners - not shuffling
+[00:00:04,195] WARN  {CroupierComp} <nid:82,oid:11000001> no partners - not shuffling
+[00:00:04,195] WARN  {GradientComp} <nid:82,oid:12000001> no partners - not shuffling
+[00:00:04,195] WARN  {TreeGradientComp} <nid:82,oid:13000001> no partners - not shuffling
+[00:00:04,197] WARN  {CroupierComp} <nid:83,oid:11000001> no partners - not shuffling
+[00:00:04,197] WARN  {GradientComp} <nid:83,oid:12000001> no partners - not shuffling
+[00:00:04,197] WARN  {TreeGradientComp} <nid:83,oid:13000001> no partners - not shuffling
+[00:00:04,202] WARN  {CroupierComp} <nid:84,oid:11000001> no partners - not shuffling
+[00:00:04,202] WARN  {GradientComp} <nid:84,oid:12000001> no partners - not shuffling
+[00:00:04,202] WARN  {TreeGradientComp} <nid:84,oid:13000001> no partners - not shuffling
+[00:00:04,206] WARN  {CroupierComp} <nid:85,oid:11000001> no partners - not shuffling
+[00:00:04,206] WARN  {GradientComp} <nid:85,oid:12000001> no partners - not shuffling
+[00:00:04,206] WARN  {TreeGradientComp} <nid:85,oid:13000001> no partners - not shuffling
+[00:00:04,206] WARN  {CroupierComp} <nid:86,oid:11000001> no partners - not shuffling
+[00:00:04,206] WARN  {GradientComp} <nid:86,oid:12000001> no partners - not shuffling
+[00:00:04,206] WARN  {TreeGradientComp} <nid:86,oid:13000001> no partners - not shuffling
+[00:00:04,210] WARN  {CroupierComp} <nid:87,oid:11000001> no partners - not shuffling
+[00:00:04,210] WARN  {GradientComp} <nid:87,oid:12000001> no partners - not shuffling
+[00:00:04,210] WARN  {TreeGradientComp} <nid:87,oid:13000001> no partners - not shuffling
+[00:00:04,214] WARN  {CroupierComp} <nid:88,oid:11000001> no partners - not shuffling
+[00:00:04,214] WARN  {GradientComp} <nid:88,oid:12000001> no partners - not shuffling
+[00:00:04,214] WARN  {TreeGradientComp} <nid:88,oid:13000001> no partners - not shuffling
+[00:00:04,216] WARN  {CroupierComp} <nid:89,oid:11000001> no partners - not shuffling
+[00:00:04,216] WARN  {GradientComp} <nid:89,oid:12000001> no partners - not shuffling
+[00:00:04,216] WARN  {TreeGradientComp} <nid:89,oid:13000001> no partners - not shuffling
+[00:00:04,219] WARN  {CroupierComp} <nid:90,oid:11000001> no partners - not shuffling
+[00:00:04,219] WARN  {GradientComp} <nid:90,oid:12000001> no partners - not shuffling
+[00:00:04,219] WARN  {TreeGradientComp} <nid:90,oid:13000001> no partners - not shuffling
+[00:00:04,220] WARN  {CroupierComp} <nid:91,oid:11000001> no partners - not shuffling
+[00:00:04,220] WARN  {GradientComp} <nid:91,oid:12000001> no partners - not shuffling
+[00:00:04,220] WARN  {TreeGradientComp} <nid:91,oid:13000001> no partners - not shuffling
+[00:00:04,223] WARN  {CroupierComp} <nid:92,oid:11000001> no partners - not shuffling
+[00:00:04,223] WARN  {GradientComp} <nid:92,oid:12000001> no partners - not shuffling
+[00:00:04,223] WARN  {TreeGradientComp} <nid:92,oid:13000001> no partners - not shuffling
+[00:00:04,226] WARN  {CroupierComp} <nid:93,oid:11000001> no partners - not shuffling
+[00:00:04,226] WARN  {GradientComp} <nid:93,oid:12000001> no partners - not shuffling
+[00:00:04,226] WARN  {TreeGradientComp} <nid:93,oid:13000001> no partners - not shuffling
+[00:00:04,228] WARN  {CroupierComp} <nid:94,oid:11000001> no partners - not shuffling
+[00:00:04,228] WARN  {GradientComp} <nid:94,oid:12000001> no partners - not shuffling
+[00:00:04,228] WARN  {TreeGradientComp} <nid:94,oid:13000001> no partners - not shuffling
+[00:00:04,228] WARN  {CroupierComp} <nid:95,oid:11000001> no partners - not shuffling
+[00:00:04,228] WARN  {GradientComp} <nid:95,oid:12000001> no partners - not shuffling
+[00:00:04,228] WARN  {TreeGradientComp} <nid:95,oid:13000001> no partners - not shuffling
+[00:00:04,233] WARN  {CroupierComp} <nid:96,oid:11000001> no partners - not shuffling
+[00:00:04,233] WARN  {GradientComp} <nid:96,oid:12000001> no partners - not shuffling
+[00:00:04,233] WARN  {TreeGradientComp} <nid:96,oid:13000001> no partners - not shuffling
+[00:00:04,235] WARN  {CroupierComp} <nid:97,oid:11000001> no partners - not shuffling
+[00:00:04,235] WARN  {GradientComp} <nid:97,oid:12000001> no partners - not shuffling
+[00:00:04,235] WARN  {TreeGradientComp} <nid:97,oid:13000001> no partners - not shuffling
+[00:00:04,240] WARN  {CroupierComp} <nid:98,oid:11000001> no partners - not shuffling
+[00:00:04,240] WARN  {GradientComp} <nid:98,oid:12000001> no partners - not shuffling
+[00:00:04,240] WARN  {TreeGradientComp} <nid:98,oid:13000001> no partners - not shuffling
+[00:00:04,243] WARN  {CroupierComp} <nid:99,oid:11000001> no partners - not shuffling
+[00:00:04,243] WARN  {GradientComp} <nid:99,oid:12000001> no partners - not shuffling
+[00:00:04,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no partners - not shuffling
+[00:00:04,248] WARN  {CroupierComp} <nid:100,oid:11000001> no partners - not shuffling
+[00:00:04,248] WARN  {GradientComp} <nid:100,oid:12000001> no partners - not shuffling
+[00:00:04,248] WARN  {TreeGradientComp} <nid:100,oid:13000001> no partners - not shuffling
+[00:00:06,000] WARN  {CroupierComp} <nid:1,oid:11000001> no neighbours
+[00:00:06,000] WARN  {GradientComp} <nid:1,oid:12000001> no partners - not shuffling
+[00:00:06,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no partners - not shuffling
+[00:00:06,003] WARN  {CroupierComp} <nid:2,oid:11000001> no neighbours
+[00:00:06,003] WARN  {GradientComp} <nid:2,oid:12000001> no partners - not shuffling
+[00:00:06,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no partners - not shuffling
+[00:00:06,008] WARN  {CroupierComp} <nid:3,oid:11000001> no neighbours
+[00:00:06,008] WARN  {GradientComp} <nid:3,oid:12000001> no partners - not shuffling
+[00:00:06,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no partners - not shuffling
+[00:00:06,012] WARN  {CroupierComp} <nid:4,oid:11000001> no neighbours
+[00:00:06,012] WARN  {GradientComp} <nid:4,oid:12000001> no partners - not shuffling
+[00:00:06,012] WARN  {TreeGradientComp} <nid:4,oid:13000001> no partners - not shuffling
+[00:00:06,014] WARN  {CroupierComp} <nid:5,oid:11000001> no neighbours
+[00:00:06,014] WARN  {GradientComp} <nid:5,oid:12000001> no partners - not shuffling
+[00:00:06,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no partners - not shuffling
+[00:00:06,016] WARN  {CroupierComp} <nid:6,oid:11000001> no neighbours
+[00:00:06,016] WARN  {GradientComp} <nid:6,oid:12000001> no partners - not shuffling
+[00:00:06,016] WARN  {TreeGradientComp} <nid:6,oid:13000001> no partners - not shuffling
+[00:00:06,017] WARN  {CroupierComp} <nid:7,oid:11000001> no neighbours
+[00:00:06,017] WARN  {GradientComp} <nid:7,oid:12000001> no partners - not shuffling
+[00:00:06,017] WARN  {TreeGradientComp} <nid:7,oid:13000001> no partners - not shuffling
+[00:00:06,019] WARN  {CroupierComp} <nid:8,oid:11000001> no neighbours
+[00:00:06,019] WARN  {GradientComp} <nid:8,oid:12000001> no partners - not shuffling
+[00:00:06,019] WARN  {TreeGradientComp} <nid:8,oid:13000001> no partners - not shuffling
+[00:00:06,022] WARN  {CroupierComp} <nid:9,oid:11000001> no neighbours
+[00:00:06,022] WARN  {GradientComp} <nid:9,oid:12000001> no partners - not shuffling
+[00:00:06,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no partners - not shuffling
+[00:00:06,027] WARN  {CroupierComp} <nid:10,oid:11000001> no neighbours
+[00:00:06,027] WARN  {GradientComp} <nid:10,oid:12000001> no partners - not shuffling
+[00:00:06,027] WARN  {TreeGradientComp} <nid:10,oid:13000001> no partners - not shuffling
+[00:00:06,027] WARN  {CroupierComp} <nid:11,oid:11000001> no neighbours
+[00:00:06,027] WARN  {GradientComp} <nid:11,oid:12000001> no partners - not shuffling
+[00:00:06,027] WARN  {TreeGradientComp} <nid:11,oid:13000001> no partners - not shuffling
+[00:00:06,029] WARN  {CroupierComp} <nid:12,oid:11000001> no neighbours
+[00:00:06,029] WARN  {GradientComp} <nid:12,oid:12000001> no partners - not shuffling
+[00:00:06,029] WARN  {TreeGradientComp} <nid:12,oid:13000001> no partners - not shuffling
+[00:00:06,029] WARN  {CroupierComp} <nid:13,oid:11000001> no neighbours
+[00:00:06,029] WARN  {GradientComp} <nid:13,oid:12000001> no partners - not shuffling
+[00:00:06,029] WARN  {TreeGradientComp} <nid:13,oid:13000001> no partners - not shuffling
+[00:00:06,029] WARN  {CroupierComp} <nid:14,oid:11000001> no neighbours
+[00:00:06,029] WARN  {GradientComp} <nid:14,oid:12000001> no partners - not shuffling
+[00:00:06,029] WARN  {TreeGradientComp} <nid:14,oid:13000001> no partners - not shuffling
+[00:00:06,030] WARN  {CroupierComp} <nid:15,oid:11000001> no neighbours
+[00:00:06,030] WARN  {GradientComp} <nid:15,oid:12000001> no partners - not shuffling
+[00:00:06,030] WARN  {TreeGradientComp} <nid:15,oid:13000001> no partners - not shuffling
+[00:00:06,034] WARN  {CroupierComp} <nid:16,oid:11000001> no neighbours
+[00:00:06,034] WARN  {GradientComp} <nid:16,oid:12000001> no partners - not shuffling
+[00:00:06,034] WARN  {TreeGradientComp} <nid:16,oid:13000001> no partners - not shuffling
+[00:00:06,035] WARN  {CroupierComp} <nid:17,oid:11000001> no neighbours
+[00:00:06,035] WARN  {GradientComp} <nid:17,oid:12000001> no partners - not shuffling
+[00:00:06,035] WARN  {TreeGradientComp} <nid:17,oid:13000001> no partners - not shuffling
+[00:00:06,036] WARN  {CroupierComp} <nid:18,oid:11000001> no neighbours
+[00:00:06,036] WARN  {GradientComp} <nid:18,oid:12000001> no partners - not shuffling
+[00:00:06,036] WARN  {TreeGradientComp} <nid:18,oid:13000001> no partners - not shuffling
+[00:00:06,038] WARN  {CroupierComp} <nid:19,oid:11000001> no neighbours
+[00:00:06,038] WARN  {GradientComp} <nid:19,oid:12000001> no partners - not shuffling
+[00:00:06,038] WARN  {TreeGradientComp} <nid:19,oid:13000001> no partners - not shuffling
+[00:00:06,042] WARN  {CroupierComp} <nid:20,oid:11000001> no neighbours
+[00:00:06,042] WARN  {GradientComp} <nid:20,oid:12000001> no partners - not shuffling
+[00:00:06,042] WARN  {TreeGradientComp} <nid:20,oid:13000001> no partners - not shuffling
+[00:00:06,043] WARN  {CroupierComp} <nid:21,oid:11000001> no neighbours
+[00:00:06,043] WARN  {GradientComp} <nid:21,oid:12000001> no partners - not shuffling
+[00:00:06,043] WARN  {TreeGradientComp} <nid:21,oid:13000001> no partners - not shuffling
+[00:00:06,045] WARN  {CroupierComp} <nid:22,oid:11000001> no neighbours
+[00:00:06,045] WARN  {GradientComp} <nid:22,oid:12000001> no partners - not shuffling
+[00:00:06,045] WARN  {TreeGradientComp} <nid:22,oid:13000001> no partners - not shuffling
+[00:00:06,045] WARN  {CroupierComp} <nid:23,oid:11000001> no neighbours
+[00:00:06,045] WARN  {GradientComp} <nid:23,oid:12000001> no partners - not shuffling
+[00:00:06,045] WARN  {TreeGradientComp} <nid:23,oid:13000001> no partners - not shuffling
+[00:00:06,048] WARN  {CroupierComp} <nid:24,oid:11000001> no neighbours
+[00:00:06,048] WARN  {GradientComp} <nid:24,oid:12000001> no partners - not shuffling
+[00:00:06,048] WARN  {TreeGradientComp} <nid:24,oid:13000001> no partners - not shuffling
+[00:00:06,052] WARN  {CroupierComp} <nid:25,oid:11000001> no neighbours
+[00:00:06,052] WARN  {GradientComp} <nid:25,oid:12000001> no partners - not shuffling
+[00:00:06,052] WARN  {TreeGradientComp} <nid:25,oid:13000001> no partners - not shuffling
+[00:00:06,056] WARN  {CroupierComp} <nid:26,oid:11000001> no neighbours
+[00:00:06,056] WARN  {GradientComp} <nid:26,oid:12000001> no partners - not shuffling
+[00:00:06,056] WARN  {TreeGradientComp} <nid:26,oid:13000001> no partners - not shuffling
+[00:00:06,058] WARN  {CroupierComp} <nid:27,oid:11000001> no neighbours
+[00:00:06,058] WARN  {GradientComp} <nid:27,oid:12000001> no partners - not shuffling
+[00:00:06,058] WARN  {TreeGradientComp} <nid:27,oid:13000001> no partners - not shuffling
+[00:00:06,059] WARN  {CroupierComp} <nid:28,oid:11000001> no neighbours
+[00:00:06,059] WARN  {GradientComp} <nid:28,oid:12000001> no partners - not shuffling
+[00:00:06,059] WARN  {TreeGradientComp} <nid:28,oid:13000001> no partners - not shuffling
+[00:00:06,062] WARN  {CroupierComp} <nid:29,oid:11000001> no neighbours
+[00:00:06,062] WARN  {GradientComp} <nid:29,oid:12000001> no partners - not shuffling
+[00:00:06,062] WARN  {TreeGradientComp} <nid:29,oid:13000001> no partners - not shuffling
+[00:00:06,065] WARN  {CroupierComp} <nid:30,oid:11000001> no neighbours
+[00:00:06,065] WARN  {GradientComp} <nid:30,oid:12000001> no partners - not shuffling
+[00:00:06,065] WARN  {TreeGradientComp} <nid:30,oid:13000001> no partners - not shuffling
+[00:00:06,069] WARN  {CroupierComp} <nid:31,oid:11000001> no neighbours
+[00:00:06,069] WARN  {GradientComp} <nid:31,oid:12000001> no partners - not shuffling
+[00:00:06,069] WARN  {TreeGradientComp} <nid:31,oid:13000001> no partners - not shuffling
+[00:00:06,071] WARN  {CroupierComp} <nid:32,oid:11000001> no neighbours
+[00:00:06,071] WARN  {GradientComp} <nid:32,oid:12000001> no partners - not shuffling
+[00:00:06,071] WARN  {TreeGradientComp} <nid:32,oid:13000001> no partners - not shuffling
+[00:00:06,072] WARN  {CroupierComp} <nid:33,oid:11000001> no neighbours
+[00:00:06,072] WARN  {GradientComp} <nid:33,oid:12000001> no partners - not shuffling
+[00:00:06,072] WARN  {TreeGradientComp} <nid:33,oid:13000001> no partners - not shuffling
+[00:00:06,073] WARN  {CroupierComp} <nid:34,oid:11000001> no neighbours
+[00:00:06,073] WARN  {GradientComp} <nid:34,oid:12000001> no partners - not shuffling
+[00:00:06,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no partners - not shuffling
+[00:00:06,078] WARN  {CroupierComp} <nid:35,oid:11000001> no neighbours
+[00:00:06,078] WARN  {GradientComp} <nid:35,oid:12000001> no partners - not shuffling
+[00:00:06,078] WARN  {TreeGradientComp} <nid:35,oid:13000001> no partners - not shuffling
+[00:00:06,078] WARN  {CroupierComp} <nid:36,oid:11000001> no neighbours
+[00:00:06,078] WARN  {GradientComp} <nid:36,oid:12000001> no partners - not shuffling
+[00:00:06,078] WARN  {TreeGradientComp} <nid:36,oid:13000001> no partners - not shuffling
+[00:00:06,082] WARN  {CroupierComp} <nid:37,oid:11000001> no neighbours
+[00:00:06,082] WARN  {GradientComp} <nid:37,oid:12000001> no partners - not shuffling
+[00:00:06,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no partners - not shuffling
+[00:00:06,082] WARN  {CroupierComp} <nid:38,oid:11000001> no neighbours
+[00:00:06,082] WARN  {GradientComp} <nid:38,oid:12000001> no partners - not shuffling
+[00:00:06,082] WARN  {TreeGradientComp} <nid:38,oid:13000001> no partners - not shuffling
+[00:00:06,084] WARN  {CroupierComp} <nid:39,oid:11000001> no neighbours
+[00:00:06,084] WARN  {GradientComp} <nid:39,oid:12000001> no partners - not shuffling
+[00:00:06,084] WARN  {TreeGradientComp} <nid:39,oid:13000001> no partners - not shuffling
+[00:00:06,088] WARN  {CroupierComp} <nid:40,oid:11000001> no neighbours
+[00:00:06,088] WARN  {GradientComp} <nid:40,oid:12000001> no partners - not shuffling
+[00:00:06,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no partners - not shuffling
+[00:00:06,090] WARN  {CroupierComp} <nid:41,oid:11000001> no neighbours
+[00:00:06,090] WARN  {GradientComp} <nid:41,oid:12000001> no partners - not shuffling
+[00:00:06,090] WARN  {TreeGradientComp} <nid:41,oid:13000001> no partners - not shuffling
+[00:00:06,094] WARN  {CroupierComp} <nid:42,oid:11000001> no neighbours
+[00:00:06,094] WARN  {GradientComp} <nid:42,oid:12000001> no partners - not shuffling
+[00:00:06,094] WARN  {TreeGradientComp} <nid:42,oid:13000001> no partners - not shuffling
+[00:00:06,099] WARN  {CroupierComp} <nid:43,oid:11000001> no neighbours
+[00:00:06,099] WARN  {GradientComp} <nid:43,oid:12000001> no partners - not shuffling
+[00:00:06,099] WARN  {TreeGradientComp} <nid:43,oid:13000001> no partners - not shuffling
+[00:00:06,103] WARN  {CroupierComp} <nid:44,oid:11000001> no neighbours
+[00:00:06,103] WARN  {GradientComp} <nid:44,oid:12000001> no partners - not shuffling
+[00:00:06,103] WARN  {TreeGradientComp} <nid:44,oid:13000001> no partners - not shuffling
+[00:00:06,106] WARN  {CroupierComp} <nid:45,oid:11000001> no neighbours
+[00:00:06,106] WARN  {GradientComp} <nid:45,oid:12000001> no partners - not shuffling
+[00:00:06,106] WARN  {TreeGradientComp} <nid:45,oid:13000001> no partners - not shuffling
+[00:00:06,107] WARN  {CroupierComp} <nid:46,oid:11000001> no neighbours
+[00:00:06,107] WARN  {GradientComp} <nid:46,oid:12000001> no partners - not shuffling
+[00:00:06,107] WARN  {TreeGradientComp} <nid:46,oid:13000001> no partners - not shuffling
+[00:00:06,108] WARN  {CroupierComp} <nid:47,oid:11000001> no neighbours
+[00:00:06,108] WARN  {GradientComp} <nid:47,oid:12000001> no partners - not shuffling
+[00:00:06,108] WARN  {TreeGradientComp} <nid:47,oid:13000001> no partners - not shuffling
+[00:00:06,112] WARN  {CroupierComp} <nid:48,oid:11000001> no neighbours
+[00:00:06,112] WARN  {GradientComp} <nid:48,oid:12000001> no partners - not shuffling
+[00:00:06,112] WARN  {TreeGradientComp} <nid:48,oid:13000001> no partners - not shuffling
+[00:00:06,113] WARN  {CroupierComp} <nid:49,oid:11000001> no neighbours
+[00:00:06,113] WARN  {GradientComp} <nid:49,oid:12000001> no partners - not shuffling
+[00:00:06,113] WARN  {TreeGradientComp} <nid:49,oid:13000001> no partners - not shuffling
+[00:00:06,115] WARN  {CroupierComp} <nid:50,oid:11000001> no neighbours
+[00:00:06,115] WARN  {GradientComp} <nid:50,oid:12000001> no partners - not shuffling
+[00:00:06,115] WARN  {TreeGradientComp} <nid:50,oid:13000001> no partners - not shuffling
+[00:00:06,116] WARN  {CroupierComp} <nid:51,oid:11000001> no neighbours
+[00:00:06,116] WARN  {GradientComp} <nid:51,oid:12000001> no partners - not shuffling
+[00:00:06,116] WARN  {TreeGradientComp} <nid:51,oid:13000001> no partners - not shuffling
+[00:00:06,117] WARN  {CroupierComp} <nid:52,oid:11000001> no neighbours
+[00:00:06,117] WARN  {GradientComp} <nid:52,oid:12000001> no partners - not shuffling
+[00:00:06,117] WARN  {TreeGradientComp} <nid:52,oid:13000001> no partners - not shuffling
+[00:00:06,120] WARN  {CroupierComp} <nid:53,oid:11000001> no neighbours
+[00:00:06,120] WARN  {GradientComp} <nid:53,oid:12000001> no partners - not shuffling
+[00:00:06,120] WARN  {TreeGradientComp} <nid:53,oid:13000001> no partners - not shuffling
+[00:00:06,124] WARN  {CroupierComp} <nid:54,oid:11000001> no neighbours
+[00:00:06,124] WARN  {GradientComp} <nid:54,oid:12000001> no partners - not shuffling
+[00:00:06,124] WARN  {TreeGradientComp} <nid:54,oid:13000001> no partners - not shuffling
+[00:00:06,125] WARN  {CroupierComp} <nid:55,oid:11000001> no neighbours
+[00:00:06,125] WARN  {GradientComp} <nid:55,oid:12000001> no partners - not shuffling
+[00:00:06,125] WARN  {TreeGradientComp} <nid:55,oid:13000001> no partners - not shuffling
+[00:00:06,130] WARN  {CroupierComp} <nid:56,oid:11000001> no neighbours
+[00:00:06,130] WARN  {GradientComp} <nid:56,oid:12000001> no partners - not shuffling
+[00:00:06,130] WARN  {TreeGradientComp} <nid:56,oid:13000001> no partners - not shuffling
+[00:00:06,133] WARN  {CroupierComp} <nid:57,oid:11000001> no neighbours
+[00:00:06,133] WARN  {GradientComp} <nid:57,oid:12000001> no partners - not shuffling
+[00:00:06,133] WARN  {TreeGradientComp} <nid:57,oid:13000001> no partners - not shuffling
+[00:00:06,134] WARN  {CroupierComp} <nid:58,oid:11000001> no neighbours
+[00:00:06,134] WARN  {GradientComp} <nid:58,oid:12000001> no partners - not shuffling
+[00:00:06,134] WARN  {TreeGradientComp} <nid:58,oid:13000001> no partners - not shuffling
+[00:00:06,139] WARN  {CroupierComp} <nid:59,oid:11000001> no neighbours
+[00:00:06,139] WARN  {GradientComp} <nid:59,oid:12000001> no partners - not shuffling
+[00:00:06,139] WARN  {TreeGradientComp} <nid:59,oid:13000001> no partners - not shuffling
+[00:00:06,140] WARN  {CroupierComp} <nid:60,oid:11000001> no neighbours
+[00:00:06,140] WARN  {GradientComp} <nid:60,oid:12000001> no partners - not shuffling
+[00:00:06,140] WARN  {TreeGradientComp} <nid:60,oid:13000001> no partners - not shuffling
+[00:00:06,144] WARN  {CroupierComp} <nid:61,oid:11000001> no neighbours
+[00:00:06,144] WARN  {GradientComp} <nid:61,oid:12000001> no partners - not shuffling
+[00:00:06,144] WARN  {TreeGradientComp} <nid:61,oid:13000001> no partners - not shuffling
+[00:00:06,147] WARN  {CroupierComp} <nid:62,oid:11000001> no neighbours
+[00:00:06,147] WARN  {GradientComp} <nid:62,oid:12000001> no partners - not shuffling
+[00:00:06,147] WARN  {TreeGradientComp} <nid:62,oid:13000001> no partners - not shuffling
+[00:00:06,150] WARN  {CroupierComp} <nid:63,oid:11000001> no neighbours
+[00:00:06,150] WARN  {GradientComp} <nid:63,oid:12000001> no partners - not shuffling
+[00:00:06,150] WARN  {TreeGradientComp} <nid:63,oid:13000001> no partners - not shuffling
+[00:00:06,152] WARN  {CroupierComp} <nid:64,oid:11000001> no neighbours
+[00:00:06,152] WARN  {GradientComp} <nid:64,oid:12000001> no partners - not shuffling
+[00:00:06,152] WARN  {TreeGradientComp} <nid:64,oid:13000001> no partners - not shuffling
+[00:00:06,155] WARN  {CroupierComp} <nid:65,oid:11000001> no neighbours
+[00:00:06,155] WARN  {GradientComp} <nid:65,oid:12000001> no partners - not shuffling
+[00:00:06,155] WARN  {TreeGradientComp} <nid:65,oid:13000001> no partners - not shuffling
+[00:00:06,160] WARN  {CroupierComp} <nid:66,oid:11000001> no neighbours
+[00:00:06,160] WARN  {GradientComp} <nid:66,oid:12000001> no partners - not shuffling
+[00:00:06,160] WARN  {TreeGradientComp} <nid:66,oid:13000001> no partners - not shuffling
+[00:00:06,164] WARN  {CroupierComp} <nid:67,oid:11000001> no neighbours
+[00:00:06,164] WARN  {GradientComp} <nid:67,oid:12000001> no partners - not shuffling
+[00:00:06,164] WARN  {TreeGradientComp} <nid:67,oid:13000001> no partners - not shuffling
+[00:00:06,167] WARN  {CroupierComp} <nid:68,oid:11000001> no neighbours
+[00:00:06,167] WARN  {GradientComp} <nid:68,oid:12000001> no partners - not shuffling
+[00:00:06,167] WARN  {TreeGradientComp} <nid:68,oid:13000001> no partners - not shuffling
+[00:00:06,167] WARN  {CroupierComp} <nid:69,oid:11000001> no neighbours
+[00:00:06,167] WARN  {GradientComp} <nid:69,oid:12000001> no partners - not shuffling
+[00:00:06,167] WARN  {TreeGradientComp} <nid:69,oid:13000001> no partners - not shuffling
+[00:00:06,169] WARN  {CroupierComp} <nid:70,oid:11000001> no neighbours
+[00:00:06,169] WARN  {GradientComp} <nid:70,oid:12000001> no partners - not shuffling
+[00:00:06,169] WARN  {TreeGradientComp} <nid:70,oid:13000001> no partners - not shuffling
+[00:00:06,171] WARN  {CroupierComp} <nid:71,oid:11000001> no neighbours
+[00:00:06,171] WARN  {GradientComp} <nid:71,oid:12000001> no partners - not shuffling
+[00:00:06,171] WARN  {TreeGradientComp} <nid:71,oid:13000001> no partners - not shuffling
+[00:00:06,172] WARN  {CroupierComp} <nid:72,oid:11000001> no neighbours
+[00:00:06,172] WARN  {GradientComp} <nid:72,oid:12000001> no partners - not shuffling
+[00:00:06,172] WARN  {TreeGradientComp} <nid:72,oid:13000001> no partners - not shuffling
+[00:00:06,173] WARN  {CroupierComp} <nid:73,oid:11000001> no neighbours
+[00:00:06,173] WARN  {GradientComp} <nid:73,oid:12000001> no partners - not shuffling
+[00:00:06,173] WARN  {TreeGradientComp} <nid:73,oid:13000001> no partners - not shuffling
+[00:00:06,177] WARN  {CroupierComp} <nid:74,oid:11000001> no neighbours
+[00:00:06,177] WARN  {GradientComp} <nid:74,oid:12000001> no partners - not shuffling
+[00:00:06,177] WARN  {TreeGradientComp} <nid:74,oid:13000001> no partners - not shuffling
+[00:00:06,179] WARN  {CroupierComp} <nid:75,oid:11000001> no neighbours
+[00:00:06,179] WARN  {GradientComp} <nid:75,oid:12000001> no partners - not shuffling
+[00:00:06,179] WARN  {TreeGradientComp} <nid:75,oid:13000001> no partners - not shuffling
+[00:00:06,183] WARN  {CroupierComp} <nid:76,oid:11000001> no neighbours
+[00:00:06,183] WARN  {GradientComp} <nid:76,oid:12000001> no partners - not shuffling
+[00:00:06,183] WARN  {TreeGradientComp} <nid:76,oid:13000001> no partners - not shuffling
+[00:00:06,185] WARN  {CroupierComp} <nid:77,oid:11000001> no neighbours
+[00:00:06,185] WARN  {GradientComp} <nid:77,oid:12000001> no partners - not shuffling
+[00:00:06,185] WARN  {TreeGradientComp} <nid:77,oid:13000001> no partners - not shuffling
+[00:00:06,186] WARN  {CroupierComp} <nid:78,oid:11000001> no neighbours
+[00:00:06,186] WARN  {GradientComp} <nid:78,oid:12000001> no partners - not shuffling
+[00:00:06,186] WARN  {TreeGradientComp} <nid:78,oid:13000001> no partners - not shuffling
+[00:00:06,189] WARN  {CroupierComp} <nid:79,oid:11000001> no neighbours
+[00:00:06,189] WARN  {GradientComp} <nid:79,oid:12000001> no partners - not shuffling
+[00:00:06,189] WARN  {TreeGradientComp} <nid:79,oid:13000001> no partners - not shuffling
+[00:00:06,193] WARN  {CroupierComp} <nid:80,oid:11000001> no neighbours
+[00:00:06,193] WARN  {GradientComp} <nid:80,oid:12000001> no partners - not shuffling
+[00:00:06,193] WARN  {TreeGradientComp} <nid:80,oid:13000001> no partners - not shuffling
+[00:00:06,193] WARN  {CroupierComp} <nid:81,oid:11000001> no neighbours
+[00:00:06,193] WARN  {GradientComp} <nid:81,oid:12000001> no partners - not shuffling
+[00:00:06,193] WARN  {TreeGradientComp} <nid:81,oid:13000001> no partners - not shuffling
+[00:00:06,195] WARN  {CroupierComp} <nid:82,oid:11000001> no neighbours
+[00:00:06,195] WARN  {GradientComp} <nid:82,oid:12000001> no partners - not shuffling
+[00:00:06,195] WARN  {TreeGradientComp} <nid:82,oid:13000001> no partners - not shuffling
+[00:00:06,197] WARN  {CroupierComp} <nid:83,oid:11000001> no neighbours
+[00:00:06,197] WARN  {GradientComp} <nid:83,oid:12000001> no partners - not shuffling
+[00:00:06,197] WARN  {TreeGradientComp} <nid:83,oid:13000001> no partners - not shuffling
+[00:00:06,202] WARN  {CroupierComp} <nid:84,oid:11000001> no neighbours
+[00:00:06,202] WARN  {GradientComp} <nid:84,oid:12000001> no partners - not shuffling
+[00:00:06,202] WARN  {TreeGradientComp} <nid:84,oid:13000001> no partners - not shuffling
+[00:00:06,206] WARN  {CroupierComp} <nid:85,oid:11000001> no neighbours
+[00:00:06,206] WARN  {GradientComp} <nid:85,oid:12000001> no partners - not shuffling
+[00:00:06,206] WARN  {TreeGradientComp} <nid:85,oid:13000001> no partners - not shuffling
+[00:00:06,206] WARN  {CroupierComp} <nid:86,oid:11000001> no neighbours
+[00:00:06,206] WARN  {GradientComp} <nid:86,oid:12000001> no partners - not shuffling
+[00:00:06,206] WARN  {TreeGradientComp} <nid:86,oid:13000001> no partners - not shuffling
+[00:00:06,210] WARN  {CroupierComp} <nid:87,oid:11000001> no neighbours
+[00:00:06,210] WARN  {GradientComp} <nid:87,oid:12000001> no partners - not shuffling
+[00:00:06,210] WARN  {TreeGradientComp} <nid:87,oid:13000001> no partners - not shuffling
+[00:00:06,214] WARN  {CroupierComp} <nid:88,oid:11000001> no neighbours
+[00:00:06,214] WARN  {GradientComp} <nid:88,oid:12000001> no partners - not shuffling
+[00:00:06,214] WARN  {TreeGradientComp} <nid:88,oid:13000001> no partners - not shuffling
+[00:00:06,216] WARN  {CroupierComp} <nid:89,oid:11000001> no neighbours
+[00:00:06,216] WARN  {GradientComp} <nid:89,oid:12000001> no partners - not shuffling
+[00:00:06,216] WARN  {TreeGradientComp} <nid:89,oid:13000001> no partners - not shuffling
+[00:00:06,219] WARN  {CroupierComp} <nid:90,oid:11000001> no neighbours
+[00:00:06,219] WARN  {GradientComp} <nid:90,oid:12000001> no partners - not shuffling
+[00:00:06,219] WARN  {TreeGradientComp} <nid:90,oid:13000001> no partners - not shuffling
+[00:00:06,220] WARN  {CroupierComp} <nid:91,oid:11000001> no neighbours
+[00:00:06,220] WARN  {GradientComp} <nid:91,oid:12000001> no partners - not shuffling
+[00:00:06,220] WARN  {TreeGradientComp} <nid:91,oid:13000001> no partners - not shuffling
+[00:00:06,223] WARN  {CroupierComp} <nid:92,oid:11000001> no neighbours
+[00:00:06,223] WARN  {GradientComp} <nid:92,oid:12000001> no partners - not shuffling
+[00:00:06,223] WARN  {TreeGradientComp} <nid:92,oid:13000001> no partners - not shuffling
+[00:00:06,226] WARN  {CroupierComp} <nid:93,oid:11000001> no neighbours
+[00:00:06,226] WARN  {GradientComp} <nid:93,oid:12000001> no partners - not shuffling
+[00:00:06,226] WARN  {TreeGradientComp} <nid:93,oid:13000001> no partners - not shuffling
+[00:00:06,228] WARN  {CroupierComp} <nid:94,oid:11000001> no neighbours
+[00:00:06,228] WARN  {GradientComp} <nid:94,oid:12000001> no partners - not shuffling
+[00:00:06,228] WARN  {TreeGradientComp} <nid:94,oid:13000001> no partners - not shuffling
+[00:00:06,228] WARN  {CroupierComp} <nid:95,oid:11000001> no neighbours
+[00:00:06,228] WARN  {GradientComp} <nid:95,oid:12000001> no partners - not shuffling
+[00:00:06,228] WARN  {TreeGradientComp} <nid:95,oid:13000001> no partners - not shuffling
+[00:00:06,233] WARN  {GradientComp} <nid:96,oid:12000001> no partners - not shuffling
+[00:00:06,233] WARN  {TreeGradientComp} <nid:96,oid:13000001> no partners - not shuffling
+[00:00:06,235] WARN  {CroupierComp} <nid:97,oid:11000001> no neighbours
+[00:00:06,235] WARN  {GradientComp} <nid:97,oid:12000001> no partners - not shuffling
+[00:00:06,235] WARN  {TreeGradientComp} <nid:97,oid:13000001> no partners - not shuffling
+[00:00:06,240] WARN  {CroupierComp} <nid:98,oid:11000001> no neighbours
+[00:00:06,240] WARN  {GradientComp} <nid:98,oid:12000001> no partners - not shuffling
+[00:00:06,240] WARN  {TreeGradientComp} <nid:98,oid:13000001> no partners - not shuffling
+[00:00:06,243] WARN  {CroupierComp} <nid:99,oid:11000001> no neighbours
+[00:00:06,243] WARN  {GradientComp} <nid:99,oid:12000001> no partners - not shuffling
+[00:00:06,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no partners - not shuffling
+[00:00:06,248] WARN  {CroupierComp} <nid:100,oid:11000001> no neighbours
+[00:00:06,248] WARN  {GradientComp} <nid:100,oid:12000001> no partners - not shuffling
+[00:00:06,248] WARN  {TreeGradientComp} <nid:100,oid:13000001> no partners - not shuffling
+[00:00:08,000] WARN  {GradientComp} <nid:1,oid:12000001> no partners - not shuffling
+[00:00:08,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no partners - not shuffling
+[00:00:08,003] WARN  {GradientComp} <nid:2,oid:12000001> no partners - not shuffling
+[00:00:08,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no partners - not shuffling
+[00:00:08,008] WARN  {GradientComp} <nid:3,oid:12000001> no partners - not shuffling
+[00:00:08,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no partners - not shuffling
+[00:00:08,012] WARN  {GradientComp} <nid:4,oid:12000001> no partners - not shuffling
+[00:00:08,012] WARN  {TreeGradientComp} <nid:4,oid:13000001> no partners - not shuffling
+[00:00:08,014] WARN  {GradientComp} <nid:5,oid:12000001> no partners - not shuffling
+[00:00:08,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no partners - not shuffling
+[00:00:08,016] WARN  {GradientComp} <nid:6,oid:12000001> no partners - not shuffling
+[00:00:08,016] WARN  {TreeGradientComp} <nid:6,oid:13000001> no partners - not shuffling
+[00:00:08,017] WARN  {GradientComp} <nid:7,oid:12000001> no partners - not shuffling
+[00:00:08,017] WARN  {TreeGradientComp} <nid:7,oid:13000001> no partners - not shuffling
+[00:00:08,019] WARN  {GradientComp} <nid:8,oid:12000001> no partners - not shuffling
+[00:00:08,019] WARN  {TreeGradientComp} <nid:8,oid:13000001> no partners - not shuffling
+[00:00:08,022] WARN  {GradientComp} <nid:9,oid:12000001> no partners - not shuffling
+[00:00:08,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no partners - not shuffling
+[00:00:08,027] WARN  {GradientComp} <nid:10,oid:12000001> no partners - not shuffling
+[00:00:08,027] WARN  {TreeGradientComp} <nid:10,oid:13000001> no partners - not shuffling
+[00:00:08,027] WARN  {GradientComp} <nid:11,oid:12000001> no partners - not shuffling
+[00:00:08,027] WARN  {TreeGradientComp} <nid:11,oid:13000001> no partners - not shuffling
+[00:00:08,029] WARN  {GradientComp} <nid:12,oid:12000001> no partners - not shuffling
+[00:00:08,029] WARN  {TreeGradientComp} <nid:12,oid:13000001> no partners - not shuffling
+[00:00:08,029] WARN  {GradientComp} <nid:13,oid:12000001> no partners - not shuffling
+[00:00:08,029] WARN  {TreeGradientComp} <nid:13,oid:13000001> no partners - not shuffling
+[00:00:08,029] WARN  {GradientComp} <nid:14,oid:12000001> no partners - not shuffling
+[00:00:08,029] WARN  {TreeGradientComp} <nid:14,oid:13000001> no partners - not shuffling
+[00:00:08,030] WARN  {GradientComp} <nid:15,oid:12000001> no partners - not shuffling
+[00:00:08,030] WARN  {TreeGradientComp} <nid:15,oid:13000001> no partners - not shuffling
+[00:00:08,034] WARN  {GradientComp} <nid:16,oid:12000001> no partners - not shuffling
+[00:00:08,034] WARN  {TreeGradientComp} <nid:16,oid:13000001> no partners - not shuffling
+[00:00:08,035] WARN  {GradientComp} <nid:17,oid:12000001> no partners - not shuffling
+[00:00:08,035] WARN  {TreeGradientComp} <nid:17,oid:13000001> no partners - not shuffling
+[00:00:08,036] WARN  {GradientComp} <nid:18,oid:12000001> no partners - not shuffling
+[00:00:08,036] WARN  {TreeGradientComp} <nid:18,oid:13000001> no partners - not shuffling
+[00:00:08,038] WARN  {GradientComp} <nid:19,oid:12000001> no partners - not shuffling
+[00:00:08,038] WARN  {TreeGradientComp} <nid:19,oid:13000001> no partners - not shuffling
+[00:00:08,042] WARN  {GradientComp} <nid:20,oid:12000001> no partners - not shuffling
+[00:00:08,042] WARN  {TreeGradientComp} <nid:20,oid:13000001> no partners - not shuffling
+[00:00:08,043] WARN  {GradientComp} <nid:21,oid:12000001> no partners - not shuffling
+[00:00:08,043] WARN  {TreeGradientComp} <nid:21,oid:13000001> no partners - not shuffling
+[00:00:08,045] WARN  {GradientComp} <nid:22,oid:12000001> no partners - not shuffling
+[00:00:08,045] WARN  {TreeGradientComp} <nid:22,oid:13000001> no partners - not shuffling
+[00:00:08,045] WARN  {GradientComp} <nid:23,oid:12000001> no partners - not shuffling
+[00:00:08,045] WARN  {TreeGradientComp} <nid:23,oid:13000001> no partners - not shuffling
+[00:00:08,048] WARN  {GradientComp} <nid:24,oid:12000001> no partners - not shuffling
+[00:00:08,048] WARN  {TreeGradientComp} <nid:24,oid:13000001> no partners - not shuffling
+[00:00:08,052] WARN  {GradientComp} <nid:25,oid:12000001> no partners - not shuffling
+[00:00:08,052] WARN  {TreeGradientComp} <nid:25,oid:13000001> no partners - not shuffling
+[00:00:08,056] WARN  {GradientComp} <nid:26,oid:12000001> no partners - not shuffling
+[00:00:08,056] WARN  {TreeGradientComp} <nid:26,oid:13000001> no partners - not shuffling
+[00:00:08,058] WARN  {GradientComp} <nid:27,oid:12000001> no partners - not shuffling
+[00:00:08,058] WARN  {TreeGradientComp} <nid:27,oid:13000001> no partners - not shuffling
+[00:00:08,059] WARN  {GradientComp} <nid:28,oid:12000001> no partners - not shuffling
+[00:00:08,059] WARN  {TreeGradientComp} <nid:28,oid:13000001> no partners - not shuffling
+[00:00:08,062] WARN  {GradientComp} <nid:29,oid:12000001> no partners - not shuffling
+[00:00:08,062] WARN  {TreeGradientComp} <nid:29,oid:13000001> no partners - not shuffling
+[00:00:08,065] WARN  {GradientComp} <nid:30,oid:12000001> no partners - not shuffling
+[00:00:08,065] WARN  {TreeGradientComp} <nid:30,oid:13000001> no partners - not shuffling
+[00:00:08,069] WARN  {GradientComp} <nid:31,oid:12000001> no partners - not shuffling
+[00:00:08,069] WARN  {TreeGradientComp} <nid:31,oid:13000001> no partners - not shuffling
+[00:00:08,071] WARN  {GradientComp} <nid:32,oid:12000001> no partners - not shuffling
+[00:00:08,071] WARN  {TreeGradientComp} <nid:32,oid:13000001> no partners - not shuffling
+[00:00:08,072] WARN  {GradientComp} <nid:33,oid:12000001> no partners - not shuffling
+[00:00:08,072] WARN  {TreeGradientComp} <nid:33,oid:13000001> no partners - not shuffling
+[00:00:08,073] WARN  {GradientComp} <nid:34,oid:12000001> no partners - not shuffling
+[00:00:08,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no partners - not shuffling
+[00:00:08,078] WARN  {GradientComp} <nid:35,oid:12000001> no partners - not shuffling
+[00:00:08,078] WARN  {TreeGradientComp} <nid:35,oid:13000001> no partners - not shuffling
+[00:00:08,078] WARN  {GradientComp} <nid:36,oid:12000001> no partners - not shuffling
+[00:00:08,078] WARN  {TreeGradientComp} <nid:36,oid:13000001> no partners - not shuffling
+[00:00:08,082] WARN  {GradientComp} <nid:37,oid:12000001> no partners - not shuffling
+[00:00:08,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no partners - not shuffling
+[00:00:08,082] WARN  {GradientComp} <nid:38,oid:12000001> no partners - not shuffling
+[00:00:08,082] WARN  {TreeGradientComp} <nid:38,oid:13000001> no partners - not shuffling
+[00:00:08,084] WARN  {GradientComp} <nid:39,oid:12000001> no partners - not shuffling
+[00:00:08,084] WARN  {TreeGradientComp} <nid:39,oid:13000001> no partners - not shuffling
+[00:00:08,088] WARN  {GradientComp} <nid:40,oid:12000001> no partners - not shuffling
+[00:00:08,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no partners - not shuffling
+[00:00:08,090] WARN  {GradientComp} <nid:41,oid:12000001> no partners - not shuffling
+[00:00:08,090] WARN  {TreeGradientComp} <nid:41,oid:13000001> no partners - not shuffling
+[00:00:08,094] WARN  {GradientComp} <nid:42,oid:12000001> no partners - not shuffling
+[00:00:08,094] WARN  {TreeGradientComp} <nid:42,oid:13000001> no partners - not shuffling
+[00:00:08,099] WARN  {GradientComp} <nid:43,oid:12000001> no partners - not shuffling
+[00:00:08,099] WARN  {TreeGradientComp} <nid:43,oid:13000001> no partners - not shuffling
+[00:00:08,103] WARN  {GradientComp} <nid:44,oid:12000001> no partners - not shuffling
+[00:00:08,103] WARN  {TreeGradientComp} <nid:44,oid:13000001> no partners - not shuffling
+[00:00:08,106] WARN  {GradientComp} <nid:45,oid:12000001> no partners - not shuffling
+[00:00:08,106] WARN  {TreeGradientComp} <nid:45,oid:13000001> no partners - not shuffling
+[00:00:08,107] WARN  {GradientComp} <nid:46,oid:12000001> no partners - not shuffling
+[00:00:08,107] WARN  {TreeGradientComp} <nid:46,oid:13000001> no partners - not shuffling
+[00:00:08,108] WARN  {GradientComp} <nid:47,oid:12000001> no partners - not shuffling
+[00:00:08,108] WARN  {TreeGradientComp} <nid:47,oid:13000001> no partners - not shuffling
+[00:00:08,112] WARN  {GradientComp} <nid:48,oid:12000001> no partners - not shuffling
+[00:00:08,112] WARN  {TreeGradientComp} <nid:48,oid:13000001> no partners - not shuffling
+[00:00:08,113] WARN  {GradientComp} <nid:49,oid:12000001> no partners - not shuffling
+[00:00:08,113] WARN  {TreeGradientComp} <nid:49,oid:13000001> no partners - not shuffling
+[00:00:08,115] WARN  {GradientComp} <nid:50,oid:12000001> no partners - not shuffling
+[00:00:08,115] WARN  {TreeGradientComp} <nid:50,oid:13000001> no partners - not shuffling
+[00:00:08,116] WARN  {GradientComp} <nid:51,oid:12000001> no partners - not shuffling
+[00:00:08,116] WARN  {TreeGradientComp} <nid:51,oid:13000001> no partners - not shuffling
+[00:00:08,117] WARN  {GradientComp} <nid:52,oid:12000001> no partners - not shuffling
+[00:00:08,117] WARN  {TreeGradientComp} <nid:52,oid:13000001> no partners - not shuffling
+[00:00:08,120] WARN  {GradientComp} <nid:53,oid:12000001> no partners - not shuffling
+[00:00:08,120] WARN  {TreeGradientComp} <nid:53,oid:13000001> no partners - not shuffling
+[00:00:08,124] WARN  {GradientComp} <nid:54,oid:12000001> no partners - not shuffling
+[00:00:08,124] WARN  {TreeGradientComp} <nid:54,oid:13000001> no partners - not shuffling
+[00:00:08,125] WARN  {GradientComp} <nid:55,oid:12000001> no partners - not shuffling
+[00:00:08,125] WARN  {TreeGradientComp} <nid:55,oid:13000001> no partners - not shuffling
+[00:00:08,130] WARN  {GradientComp} <nid:56,oid:12000001> no partners - not shuffling
+[00:00:08,130] WARN  {TreeGradientComp} <nid:56,oid:13000001> no partners - not shuffling
+[00:00:08,133] WARN  {GradientComp} <nid:57,oid:12000001> no partners - not shuffling
+[00:00:08,133] WARN  {TreeGradientComp} <nid:57,oid:13000001> no partners - not shuffling
+[00:00:08,134] WARN  {GradientComp} <nid:58,oid:12000001> no partners - not shuffling
+[00:00:08,134] WARN  {TreeGradientComp} <nid:58,oid:13000001> no partners - not shuffling
+[00:00:08,139] WARN  {GradientComp} <nid:59,oid:12000001> no partners - not shuffling
+[00:00:08,139] WARN  {TreeGradientComp} <nid:59,oid:13000001> no partners - not shuffling
+[00:00:08,140] WARN  {GradientComp} <nid:60,oid:12000001> no partners - not shuffling
+[00:00:08,140] WARN  {TreeGradientComp} <nid:60,oid:13000001> no partners - not shuffling
+[00:00:08,144] WARN  {GradientComp} <nid:61,oid:12000001> no partners - not shuffling
+[00:00:08,144] WARN  {TreeGradientComp} <nid:61,oid:13000001> no partners - not shuffling
+[00:00:08,147] WARN  {GradientComp} <nid:62,oid:12000001> no partners - not shuffling
+[00:00:08,147] WARN  {TreeGradientComp} <nid:62,oid:13000001> no partners - not shuffling
+[00:00:08,150] WARN  {GradientComp} <nid:63,oid:12000001> no partners - not shuffling
+[00:00:08,150] WARN  {TreeGradientComp} <nid:63,oid:13000001> no partners - not shuffling
+[00:00:08,152] WARN  {GradientComp} <nid:64,oid:12000001> no partners - not shuffling
+[00:00:08,152] WARN  {TreeGradientComp} <nid:64,oid:13000001> no partners - not shuffling
+[00:00:08,155] WARN  {GradientComp} <nid:65,oid:12000001> no partners - not shuffling
+[00:00:08,155] WARN  {TreeGradientComp} <nid:65,oid:13000001> no partners - not shuffling
+[00:00:08,160] WARN  {GradientComp} <nid:66,oid:12000001> no partners - not shuffling
+[00:00:08,160] WARN  {TreeGradientComp} <nid:66,oid:13000001> no partners - not shuffling
+[00:00:08,164] WARN  {GradientComp} <nid:67,oid:12000001> no partners - not shuffling
+[00:00:08,164] WARN  {TreeGradientComp} <nid:67,oid:13000001> no partners - not shuffling
+[00:00:08,167] WARN  {GradientComp} <nid:68,oid:12000001> no partners - not shuffling
+[00:00:08,167] WARN  {TreeGradientComp} <nid:68,oid:13000001> no partners - not shuffling
+[00:00:08,167] WARN  {GradientComp} <nid:69,oid:12000001> no partners - not shuffling
+[00:00:08,167] WARN  {TreeGradientComp} <nid:69,oid:13000001> no partners - not shuffling
+[00:00:08,169] WARN  {GradientComp} <nid:70,oid:12000001> no partners - not shuffling
+[00:00:08,169] WARN  {TreeGradientComp} <nid:70,oid:13000001> no partners - not shuffling
+[00:00:08,171] WARN  {GradientComp} <nid:71,oid:12000001> no partners - not shuffling
+[00:00:08,171] WARN  {TreeGradientComp} <nid:71,oid:13000001> no partners - not shuffling
+[00:00:08,172] WARN  {GradientComp} <nid:72,oid:12000001> no partners - not shuffling
+[00:00:08,172] WARN  {TreeGradientComp} <nid:72,oid:13000001> no partners - not shuffling
+[00:00:08,173] WARN  {GradientComp} <nid:73,oid:12000001> no partners - not shuffling
+[00:00:08,173] WARN  {TreeGradientComp} <nid:73,oid:13000001> no partners - not shuffling
+[00:00:08,177] WARN  {GradientComp} <nid:74,oid:12000001> no partners - not shuffling
+[00:00:08,177] WARN  {TreeGradientComp} <nid:74,oid:13000001> no partners - not shuffling
+[00:00:08,179] WARN  {GradientComp} <nid:75,oid:12000001> no partners - not shuffling
+[00:00:08,179] WARN  {TreeGradientComp} <nid:75,oid:13000001> no partners - not shuffling
+[00:00:08,183] WARN  {GradientComp} <nid:76,oid:12000001> no partners - not shuffling
+[00:00:08,183] WARN  {TreeGradientComp} <nid:76,oid:13000001> no partners - not shuffling
+[00:00:08,185] WARN  {GradientComp} <nid:77,oid:12000001> no partners - not shuffling
+[00:00:08,185] WARN  {TreeGradientComp} <nid:77,oid:13000001> no partners - not shuffling
+[00:00:08,186] WARN  {GradientComp} <nid:78,oid:12000001> no partners - not shuffling
+[00:00:08,186] WARN  {TreeGradientComp} <nid:78,oid:13000001> no partners - not shuffling
+[00:00:08,189] WARN  {GradientComp} <nid:79,oid:12000001> no partners - not shuffling
+[00:00:08,189] WARN  {TreeGradientComp} <nid:79,oid:13000001> no partners - not shuffling
+[00:00:08,193] WARN  {GradientComp} <nid:80,oid:12000001> no partners - not shuffling
+[00:00:08,193] WARN  {TreeGradientComp} <nid:80,oid:13000001> no partners - not shuffling
+[00:00:08,193] WARN  {GradientComp} <nid:81,oid:12000001> no partners - not shuffling
+[00:00:08,193] WARN  {TreeGradientComp} <nid:81,oid:13000001> no partners - not shuffling
+[00:00:08,195] WARN  {GradientComp} <nid:82,oid:12000001> no partners - not shuffling
+[00:00:08,195] WARN  {TreeGradientComp} <nid:82,oid:13000001> no partners - not shuffling
+[00:00:08,197] WARN  {GradientComp} <nid:83,oid:12000001> no partners - not shuffling
+[00:00:08,197] WARN  {TreeGradientComp} <nid:83,oid:13000001> no partners - not shuffling
+[00:00:08,202] WARN  {GradientComp} <nid:84,oid:12000001> no partners - not shuffling
+[00:00:08,202] WARN  {TreeGradientComp} <nid:84,oid:13000001> no partners - not shuffling
+[00:00:08,206] WARN  {GradientComp} <nid:85,oid:12000001> no partners - not shuffling
+[00:00:08,206] WARN  {TreeGradientComp} <nid:85,oid:13000001> no partners - not shuffling
+[00:00:08,206] WARN  {GradientComp} <nid:86,oid:12000001> no partners - not shuffling
+[00:00:08,206] WARN  {TreeGradientComp} <nid:86,oid:13000001> no partners - not shuffling
+[00:00:08,210] WARN  {GradientComp} <nid:87,oid:12000001> no partners - not shuffling
+[00:00:08,210] WARN  {TreeGradientComp} <nid:87,oid:13000001> no partners - not shuffling
+[00:00:08,214] WARN  {GradientComp} <nid:88,oid:12000001> no partners - not shuffling
+[00:00:08,214] WARN  {TreeGradientComp} <nid:88,oid:13000001> no partners - not shuffling
+[00:00:08,216] WARN  {GradientComp} <nid:89,oid:12000001> no partners - not shuffling
+[00:00:08,216] WARN  {TreeGradientComp} <nid:89,oid:13000001> no partners - not shuffling
+[00:00:08,219] WARN  {GradientComp} <nid:90,oid:12000001> no partners - not shuffling
+[00:00:08,219] WARN  {TreeGradientComp} <nid:90,oid:13000001> no partners - not shuffling
+[00:00:08,220] WARN  {GradientComp} <nid:91,oid:12000001> no partners - not shuffling
+[00:00:08,220] WARN  {TreeGradientComp} <nid:91,oid:13000001> no partners - not shuffling
+[00:00:08,223] WARN  {GradientComp} <nid:92,oid:12000001> no partners - not shuffling
+[00:00:08,223] WARN  {TreeGradientComp} <nid:92,oid:13000001> no partners - not shuffling
+[00:00:08,226] WARN  {GradientComp} <nid:93,oid:12000001> no partners - not shuffling
+[00:00:08,226] WARN  {TreeGradientComp} <nid:93,oid:13000001> no partners - not shuffling
+[00:00:08,228] WARN  {GradientComp} <nid:94,oid:12000001> no partners - not shuffling
+[00:00:08,228] WARN  {TreeGradientComp} <nid:94,oid:13000001> no partners - not shuffling
+[00:00:08,228] WARN  {GradientComp} <nid:95,oid:12000001> no partners - not shuffling
+[00:00:08,228] WARN  {TreeGradientComp} <nid:95,oid:13000001> no partners - not shuffling
+[00:00:08,233] WARN  {TreeGradientComp} <nid:96,oid:13000001> no rank yet
+[00:00:08,235] WARN  {GradientComp} <nid:97,oid:12000001> no partners - not shuffling
+[00:00:08,235] WARN  {TreeGradientComp} <nid:97,oid:13000001> no partners - not shuffling
+[00:00:08,240] WARN  {GradientComp} <nid:98,oid:12000001> no partners - not shuffling
+[00:00:08,240] WARN  {TreeGradientComp} <nid:98,oid:13000001> no partners - not shuffling
+[00:00:08,243] WARN  {GradientComp} <nid:99,oid:12000001> no partners - not shuffling
+[00:00:08,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no partners - not shuffling
+[00:00:08,248] WARN  {GradientComp} <nid:100,oid:12000001> no partners - not shuffling
+[00:00:08,248] WARN  {TreeGradientComp} <nid:100,oid:13000001> no partners - not shuffling
+[00:00:10,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no rank yet
+[00:00:10,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no rank yet
+[00:00:10,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no rank yet
+[00:00:10,012] WARN  {TreeGradientComp} <nid:4,oid:13000001> no rank yet
+[00:00:10,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no rank yet
+[00:00:10,016] WARN  {TreeGradientComp} <nid:6,oid:13000001> no rank yet
+[00:00:10,017] WARN  {TreeGradientComp} <nid:7,oid:13000001> no rank yet
+[00:00:10,019] WARN  {TreeGradientComp} <nid:8,oid:13000001> no rank yet
+[00:00:10,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no rank yet
+[00:00:10,027] WARN  {TreeGradientComp} <nid:10,oid:13000001> no rank yet
+[00:00:10,027] WARN  {TreeGradientComp} <nid:11,oid:13000001> no rank yet
+[00:00:10,029] WARN  {TreeGradientComp} <nid:12,oid:13000001> no rank yet
+[00:00:10,029] WARN  {TreeGradientComp} <nid:13,oid:13000001> no rank yet
+[00:00:10,029] WARN  {TreeGradientComp} <nid:14,oid:13000001> no rank yet
+[00:00:10,030] WARN  {TreeGradientComp} <nid:15,oid:13000001> no rank yet
+[00:00:10,034] WARN  {TreeGradientComp} <nid:16,oid:13000001> no rank yet
+[00:00:10,035] WARN  {TreeGradientComp} <nid:17,oid:13000001> no rank yet
+[00:00:10,036] WARN  {TreeGradientComp} <nid:18,oid:13000001> no rank yet
+[00:00:10,038] WARN  {TreeGradientComp} <nid:19,oid:13000001> no rank yet
+[00:00:10,042] WARN  {TreeGradientComp} <nid:20,oid:13000001> no rank yet
+[00:00:10,043] WARN  {TreeGradientComp} <nid:21,oid:13000001> no rank yet
+[00:00:10,045] WARN  {TreeGradientComp} <nid:22,oid:13000001> no rank yet
+[00:00:10,045] WARN  {TreeGradientComp} <nid:23,oid:13000001> no rank yet
+[00:00:10,048] WARN  {TreeGradientComp} <nid:24,oid:13000001> no rank yet
+[00:00:10,052] WARN  {TreeGradientComp} <nid:25,oid:13000001> no rank yet
+[00:00:10,056] WARN  {TreeGradientComp} <nid:26,oid:13000001> no rank yet
+[00:00:10,058] WARN  {TreeGradientComp} <nid:27,oid:13000001> no rank yet
+[00:00:10,059] WARN  {TreeGradientComp} <nid:28,oid:13000001> no rank yet
+[00:00:10,062] WARN  {TreeGradientComp} <nid:29,oid:13000001> no rank yet
+[00:00:10,065] WARN  {TreeGradientComp} <nid:30,oid:13000001> no rank yet
+[00:00:10,069] WARN  {TreeGradientComp} <nid:31,oid:13000001> no rank yet
+[00:00:10,071] WARN  {TreeGradientComp} <nid:32,oid:13000001> no rank yet
+[00:00:10,072] WARN  {TreeGradientComp} <nid:33,oid:13000001> no rank yet
+[00:00:10,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no rank yet
+[00:00:10,078] WARN  {TreeGradientComp} <nid:35,oid:13000001> no rank yet
+[00:00:10,078] WARN  {TreeGradientComp} <nid:36,oid:13000001> no rank yet
+[00:00:10,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no rank yet
+[00:00:10,082] WARN  {TreeGradientComp} <nid:38,oid:13000001> no rank yet
+[00:00:10,084] WARN  {TreeGradientComp} <nid:39,oid:13000001> no rank yet
+[00:00:10,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no rank yet
+[00:00:10,090] WARN  {TreeGradientComp} <nid:41,oid:13000001> no rank yet
+[00:00:10,094] WARN  {TreeGradientComp} <nid:42,oid:13000001> no rank yet
+[00:00:10,099] WARN  {TreeGradientComp} <nid:43,oid:13000001> no rank yet
+[00:00:10,103] WARN  {TreeGradientComp} <nid:44,oid:13000001> no rank yet
+[00:00:10,106] WARN  {TreeGradientComp} <nid:45,oid:13000001> no rank yet
+[00:00:10,107] WARN  {TreeGradientComp} <nid:46,oid:13000001> no rank yet
+[00:00:10,108] WARN  {TreeGradientComp} <nid:47,oid:13000001> no rank yet
+[00:00:10,112] WARN  {TreeGradientComp} <nid:48,oid:13000001> no rank yet
+[00:00:10,113] WARN  {TreeGradientComp} <nid:49,oid:13000001> no rank yet
+[00:00:10,115] WARN  {TreeGradientComp} <nid:50,oid:13000001> no rank yet
+[00:00:10,116] WARN  {TreeGradientComp} <nid:51,oid:13000001> no rank yet
+[00:00:10,117] WARN  {TreeGradientComp} <nid:52,oid:13000001> no rank yet
+[00:00:10,120] WARN  {TreeGradientComp} <nid:53,oid:13000001> no rank yet
+[00:00:10,124] WARN  {TreeGradientComp} <nid:54,oid:13000001> no rank yet
+[00:00:10,125] WARN  {TreeGradientComp} <nid:55,oid:13000001> no rank yet
+[00:00:10,130] WARN  {TreeGradientComp} <nid:56,oid:13000001> no rank yet
+[00:00:10,133] WARN  {TreeGradientComp} <nid:57,oid:13000001> no rank yet
+[00:00:10,134] WARN  {TreeGradientComp} <nid:58,oid:13000001> no rank yet
+[00:00:10,139] WARN  {TreeGradientComp} <nid:59,oid:13000001> no rank yet
+[00:00:10,140] WARN  {TreeGradientComp} <nid:60,oid:13000001> no rank yet
+[00:00:10,144] WARN  {TreeGradientComp} <nid:61,oid:13000001> no rank yet
+[00:00:10,147] WARN  {TreeGradientComp} <nid:62,oid:13000001> no rank yet
+[00:00:10,150] WARN  {TreeGradientComp} <nid:63,oid:13000001> no rank yet
+[00:00:10,152] WARN  {TreeGradientComp} <nid:64,oid:13000001> no rank yet
+[00:00:10,155] WARN  {TreeGradientComp} <nid:65,oid:13000001> no rank yet
+[00:00:10,160] WARN  {TreeGradientComp} <nid:66,oid:13000001> no rank yet
+[00:00:10,164] WARN  {TreeGradientComp} <nid:67,oid:13000001> no rank yet
+[00:00:10,167] WARN  {TreeGradientComp} <nid:68,oid:13000001> no rank yet
+[00:00:10,167] WARN  {TreeGradientComp} <nid:69,oid:13000001> no rank yet
+[00:00:10,169] WARN  {TreeGradientComp} <nid:70,oid:13000001> no rank yet
+[00:00:10,171] WARN  {TreeGradientComp} <nid:71,oid:13000001> no rank yet
+[00:00:10,172] WARN  {TreeGradientComp} <nid:72,oid:13000001> no rank yet
+[00:00:10,173] WARN  {TreeGradientComp} <nid:73,oid:13000001> no rank yet
+[00:00:10,177] WARN  {TreeGradientComp} <nid:74,oid:13000001> no rank yet
+[00:00:10,179] WARN  {TreeGradientComp} <nid:75,oid:13000001> no rank yet
+[00:00:10,183] WARN  {TreeGradientComp} <nid:76,oid:13000001> no rank yet
+[00:00:10,185] WARN  {TreeGradientComp} <nid:77,oid:13000001> no rank yet
+[00:00:10,186] WARN  {TreeGradientComp} <nid:78,oid:13000001> no rank yet
+[00:00:10,189] WARN  {TreeGradientComp} <nid:79,oid:13000001> no rank yet
+[00:00:10,193] WARN  {TreeGradientComp} <nid:80,oid:13000001> no rank yet
+[00:00:10,193] WARN  {TreeGradientComp} <nid:81,oid:13000001> no rank yet
+[00:00:10,195] WARN  {TreeGradientComp} <nid:82,oid:13000001> no rank yet
+[00:00:10,197] WARN  {TreeGradientComp} <nid:83,oid:13000001> no rank yet
+[00:00:10,202] WARN  {TreeGradientComp} <nid:84,oid:13000001> no rank yet
+[00:00:10,206] WARN  {TreeGradientComp} <nid:85,oid:13000001> no rank yet
+[00:00:10,206] WARN  {TreeGradientComp} <nid:86,oid:13000001> no rank yet
+[00:00:10,210] WARN  {TreeGradientComp} <nid:87,oid:13000001> no rank yet
+[00:00:10,214] WARN  {TreeGradientComp} <nid:88,oid:13000001> no rank yet
+[00:00:10,216] WARN  {TreeGradientComp} <nid:89,oid:13000001> no rank yet
+[00:00:10,219] WARN  {TreeGradientComp} <nid:90,oid:13000001> no rank yet
+[00:00:10,220] WARN  {TreeGradientComp} <nid:91,oid:13000001> no rank yet
+[00:00:10,223] WARN  {TreeGradientComp} <nid:92,oid:13000001> no rank yet
+[00:00:10,226] WARN  {TreeGradientComp} <nid:93,oid:13000001> no rank yet
+[00:00:10,228] WARN  {TreeGradientComp} <nid:94,oid:13000001> no rank yet
+[00:00:10,228] WARN  {TreeGradientComp} <nid:95,oid:13000001> no rank yet
+[00:00:10,235] WARN  {TreeGradientComp} <nid:97,oid:13000001> no rank yet
+[00:00:10,240] WARN  {TreeGradientComp} <nid:98,oid:13000001> no rank yet
+[00:00:10,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no rank yet
+[00:00:10,248] WARN  {TreeGradientComp} <nid:100,oid:13000001> no rank yet
+[00:00:12,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no rank yet
+[00:00:12,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no rank yet
+[00:00:12,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no rank yet
+[00:00:12,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no rank yet
+[00:00:12,016] WARN  {TreeGradientComp} <nid:6,oid:13000001> no rank yet
+[00:00:12,017] WARN  {TreeGradientComp} <nid:7,oid:13000001> no rank yet
+[00:00:12,019] WARN  {TreeGradientComp} <nid:8,oid:13000001> no rank yet
+[00:00:12,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no rank yet
+[00:00:12,027] WARN  {TreeGradientComp} <nid:10,oid:13000001> no rank yet
+[00:00:12,027] WARN  {TreeGradientComp} <nid:11,oid:13000001> no rank yet
+[00:00:12,029] WARN  {TreeGradientComp} <nid:12,oid:13000001> no rank yet
+[00:00:12,029] WARN  {TreeGradientComp} <nid:13,oid:13000001> no rank yet
+[00:00:12,034] WARN  {TreeGradientComp} <nid:16,oid:13000001> no rank yet
+[00:00:12,035] WARN  {TreeGradientComp} <nid:17,oid:13000001> no rank yet
+[00:00:12,036] WARN  {TreeGradientComp} <nid:18,oid:13000001> no rank yet
+[00:00:12,042] WARN  {TreeGradientComp} <nid:20,oid:13000001> no rank yet
+[00:00:12,043] WARN  {TreeGradientComp} <nid:21,oid:13000001> no rank yet
+[00:00:12,048] WARN  {TreeGradientComp} <nid:24,oid:13000001> no rank yet
+[00:00:12,052] WARN  {TreeGradientComp} <nid:25,oid:13000001> no rank yet
+[00:00:12,062] WARN  {TreeGradientComp} <nid:29,oid:13000001> no rank yet
+[00:00:12,069] WARN  {TreeGradientComp} <nid:31,oid:13000001> no rank yet
+[00:00:12,071] WARN  {TreeGradientComp} <nid:32,oid:13000001> no rank yet
+[00:00:12,072] WARN  {TreeGradientComp} <nid:33,oid:13000001> no rank yet
+[00:00:12,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no rank yet
+[00:00:12,078] WARN  {TreeGradientComp} <nid:35,oid:13000001> no rank yet
+[00:00:12,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no rank yet
+[00:00:12,082] WARN  {TreeGradientComp} <nid:38,oid:13000001> no rank yet
+[00:00:12,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no rank yet
+[00:00:12,090] WARN  {TreeGradientComp} <nid:41,oid:13000001> no rank yet
+[00:00:12,094] WARN  {TreeGradientComp} <nid:42,oid:13000001> no rank yet
+[00:00:12,099] WARN  {TreeGradientComp} <nid:43,oid:13000001> no rank yet
+[00:00:12,106] WARN  {TreeGradientComp} <nid:45,oid:13000001> no rank yet
+[00:00:12,107] WARN  {TreeGradientComp} <nid:46,oid:13000001> no rank yet
+[00:00:12,133] WARN  {TreeGradientComp} <nid:57,oid:13000001> no rank yet
+[00:00:12,139] WARN  {TreeGradientComp} <nid:59,oid:13000001> no rank yet
+[00:00:12,140] WARN  {TreeGradientComp} <nid:60,oid:13000001> no rank yet
+[00:00:12,144] WARN  {TreeGradientComp} <nid:61,oid:13000001> no rank yet
+[00:00:12,147] WARN  {TreeGradientComp} <nid:62,oid:13000001> no rank yet
+[00:00:12,150] WARN  {TreeGradientComp} <nid:63,oid:13000001> no rank yet
+[00:00:12,152] WARN  {TreeGradientComp} <nid:64,oid:13000001> no rank yet
+[00:00:12,155] WARN  {TreeGradientComp} <nid:65,oid:13000001> no rank yet
+[00:00:12,167] WARN  {TreeGradientComp} <nid:68,oid:13000001> no rank yet
+[00:00:12,171] WARN  {TreeGradientComp} <nid:71,oid:13000001> no rank yet
+[00:00:12,193] WARN  {TreeGradientComp} <nid:81,oid:13000001> no rank yet
+[00:00:12,202] WARN  {TreeGradientComp} <nid:84,oid:13000001> no rank yet
+[00:00:12,216] WARN  {TreeGradientComp} <nid:89,oid:13000001> no rank yet
+[00:00:12,240] WARN  {TreeGradientComp} <nid:98,oid:13000001> no rank yet
+[00:00:12,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no rank yet
+[00:00:14,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no rank yet
+[00:00:14,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no rank yet
+[00:00:14,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no rank yet
+[00:00:14,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no rank yet
+[00:00:14,017] WARN  {TreeGradientComp} <nid:7,oid:13000001> no rank yet
+[00:00:14,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no rank yet
+[00:00:14,027] WARN  {TreeGradientComp} <nid:10,oid:13000001> no rank yet
+[00:00:14,029] WARN  {TreeGradientComp} <nid:12,oid:13000001> no rank yet
+[00:00:14,029] WARN  {TreeGradientComp} <nid:13,oid:13000001> no rank yet
+[00:00:14,034] WARN  {TreeGradientComp} <nid:16,oid:13000001> no rank yet
+[00:00:14,036] WARN  {TreeGradientComp} <nid:18,oid:13000001> no rank yet
+[00:00:14,042] WARN  {TreeGradientComp} <nid:20,oid:13000001> no rank yet
+[00:00:14,043] WARN  {TreeGradientComp} <nid:21,oid:13000001> no rank yet
+[00:00:14,069] WARN  {TreeGradientComp} <nid:31,oid:13000001> no rank yet
+[00:00:14,071] WARN  {TreeGradientComp} <nid:32,oid:13000001> no rank yet
+[00:00:14,072] WARN  {TreeGradientComp} <nid:33,oid:13000001> no rank yet
+[00:00:14,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no rank yet
+[00:00:14,078] WARN  {TreeGradientComp} <nid:35,oid:13000001> no rank yet
+[00:00:14,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no rank yet
+[00:00:14,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no rank yet
+[00:00:14,090] WARN  {TreeGradientComp} <nid:41,oid:13000001> no rank yet
+[00:00:14,094] WARN  {TreeGradientComp} <nid:42,oid:13000001> no rank yet
+[00:00:14,099] WARN  {TreeGradientComp} <nid:43,oid:13000001> no rank yet
+[00:00:14,106] WARN  {TreeGradientComp} <nid:45,oid:13000001> no rank yet
+[00:00:14,133] WARN  {TreeGradientComp} <nid:57,oid:13000001> no rank yet
+[00:00:14,144] WARN  {TreeGradientComp} <nid:61,oid:13000001> no rank yet
+[00:00:14,147] WARN  {TreeGradientComp} <nid:62,oid:13000001> no rank yet
+[00:00:14,150] WARN  {TreeGradientComp} <nid:63,oid:13000001> no rank yet
+[00:00:14,155] WARN  {TreeGradientComp} <nid:65,oid:13000001> no rank yet
+[00:00:14,193] WARN  {TreeGradientComp} <nid:81,oid:13000001> no rank yet
+[00:00:14,216] WARN  {TreeGradientComp} <nid:89,oid:13000001> no rank yet
+[00:00:14,240] WARN  {TreeGradientComp} <nid:98,oid:13000001> no rank yet
+[00:00:14,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no rank yet
+[00:00:16,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no rank yet
+[00:00:16,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no rank yet
+[00:00:16,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no rank yet
+[00:00:16,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no rank yet
+[00:00:16,017] WARN  {TreeGradientComp} <nid:7,oid:13000001> no rank yet
+[00:00:16,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no rank yet
+[00:00:16,029] WARN  {TreeGradientComp} <nid:12,oid:13000001> no rank yet
+[00:00:16,029] WARN  {TreeGradientComp} <nid:13,oid:13000001> no rank yet
+[00:00:16,069] WARN  {TreeGradientComp} <nid:31,oid:13000001> no rank yet
+[00:00:16,072] WARN  {TreeGradientComp} <nid:33,oid:13000001> no rank yet
+[00:00:16,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no rank yet
+[00:00:16,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no rank yet
+[00:00:16,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no rank yet
+[00:00:16,090] WARN  {TreeGradientComp} <nid:41,oid:13000001> no rank yet
+[00:00:16,099] WARN  {TreeGradientComp} <nid:43,oid:13000001> no rank yet
+[00:00:16,133] WARN  {TreeGradientComp} <nid:57,oid:13000001> no rank yet
+[00:00:16,144] WARN  {TreeGradientComp} <nid:61,oid:13000001> no rank yet
+[00:00:16,147] WARN  {TreeGradientComp} <nid:62,oid:13000001> no rank yet
+[00:00:16,150] WARN  {TreeGradientComp} <nid:63,oid:13000001> no rank yet
+[00:00:16,155] WARN  {TreeGradientComp} <nid:65,oid:13000001> no rank yet
+[00:00:16,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no rank yet
+[00:00:18,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no rank yet
+[00:00:18,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no rank yet
+[00:00:18,008] WARN  {TreeGradientComp} <nid:3,oid:13000001> no rank yet
+[00:00:18,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no rank yet
+[00:00:18,022] WARN  {TreeGradientComp} <nid:9,oid:13000001> no rank yet
+[00:00:18,073] WARN  {TreeGradientComp} <nid:34,oid:13000001> no rank yet
+[00:00:18,082] WARN  {TreeGradientComp} <nid:37,oid:13000001> no rank yet
+[00:00:18,088] WARN  {TreeGradientComp} <nid:40,oid:13000001> no rank yet
+[00:00:18,243] WARN  {TreeGradientComp} <nid:99,oid:13000001> no rank yet
+[00:00:18,248] INFO  {LeaderSelectComp} <nid:100>I want to be the leader!!!:{}
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 9 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 8 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 7 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 6 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 5 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 4 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 3 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 2 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 1 remaining :)
+[00:00:18,248] DEBUG {LeaderSelectComp} <nid:100> Someone disagrees :(
+[00:00:20,000] WARN  {TreeGradientComp} <nid:1,oid:13000001> no rank yet
+[00:00:20,003] WARN  {TreeGradientComp} <nid:2,oid:13000001> no rank yet
+[00:00:20,014] WARN  {TreeGradientComp} <nid:5,oid:13000001> no rank yet
+[00:00:26,248] INFO  {LeaderSelectComp} <nid:100>I want to be the leader!!!:{}
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 9 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 8 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 7 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 6 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 5 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 4 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 3 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 2 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 1 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100> Someone agrees, 0 remaining :)
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:100>I AM THE LEADER!
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:89> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:89> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:91> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:91> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:92> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:92> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:93> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:93> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:94> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:94> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:95> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:95> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:96> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:96> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:97> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:97> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:98> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:98> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:99> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:99> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:45> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:45> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:13> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:13> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:31> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:31> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:65> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:65> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:17> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:17> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:19> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:19> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:4> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:4> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:5> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:5> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:69> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:69> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:90> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:90> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:41> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:41> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:64> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:64> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:80> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:80> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:1> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:1> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:18> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:18> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:68> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:68> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:53> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:53> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:23> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:23> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:12> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:12> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:32> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:32> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:37> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:37> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:40> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:40> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:8> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:8> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:46> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:46> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:50> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:50> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:67> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:67> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:56> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:56> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:24> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:24> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:11> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:11> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:75> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:75> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:29> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:29> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:78> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:78> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:38> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:38> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:27> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:27> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:14> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:14> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:3> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:3> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:36> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:36> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:86> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:86> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:25> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:25> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:10> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:10> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:43> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:43> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:33> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:33> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:87> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:87> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:49> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:49> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:2> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:2> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:35> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:35> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:70> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:70> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:54> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:54> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:88> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:88> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:57> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:57> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:58> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:58> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:44> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:44> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:63> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:63> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:81> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:81> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:83> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:83> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:85> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:85> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:71> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:71> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:73> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:73> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:16> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:16> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:20> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:20> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:21> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:21> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:47> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:47> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:48> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:48> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:51> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:51> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:52> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:52> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:55> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:55> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:15> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:15> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:22> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:22> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:9> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:9> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:34> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:34> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:39> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:39> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:42> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:42> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:62> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:62> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:66> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:66> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:72> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:72> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:74> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:74> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:84> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:84> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:26> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:26> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:59> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:59> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:30> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:30> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:28> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:28> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:76> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:76> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:6> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:6> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:7> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:7> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:77> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:77> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:79> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:79> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:82> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:82> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:61> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:61> timeout set 1
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:60> First leader update received
+[00:00:26,248] DEBUG {LeaderSelectComp} <nid:60> timeout set 1
+[00:14:52,000] INFO  {NewsComp} <nid:1>Final log, received: 0, sent: 1
+[00:14:52,003] INFO  {NewsComp} <nid:2>Final log, received: 0, sent: 1
+[00:14:52,008] INFO  {NewsComp} <nid:3>Final log, received: 0, sent: 1
+[00:14:52,012] INFO  {NewsComp} <nid:4>Final log, received: 0, sent: 1
+[00:14:52,014] INFO  {NewsComp} <nid:5>Final log, received: 0, sent: 1
+[00:14:52,016] INFO  {NewsComp} <nid:6>Final log, received: 0, sent: 1
+[00:14:52,017] INFO  {NewsComp} <nid:7>Final log, received: 0, sent: 1
+[00:14:52,019] INFO  {NewsComp} <nid:8>Final log, received: 0, sent: 1
+[00:14:52,022] INFO  {NewsComp} <nid:9>Final log, received: 0, sent: 1
+[00:14:52,027] INFO  {NewsComp} <nid:10>Final log, received: 0, sent: 1
+[00:14:52,027] INFO  {NewsComp} <nid:11>Final log, received: 0, sent: 1
+[00:14:52,029] INFO  {NewsComp} <nid:12>Final log, received: 0, sent: 1
+[00:14:52,029] INFO  {NewsComp} <nid:13>Final log, received: 0, sent: 1
+[00:14:52,029] INFO  {NewsComp} <nid:14>Final log, received: 0, sent: 1
+[00:14:52,030] INFO  {NewsComp} <nid:15>Final log, received: 100, sent: 1
+[00:14:52,034] INFO  {NewsComp} <nid:16>Final log, received: 0, sent: 1
+[00:14:52,035] INFO  {NewsComp} <nid:17>Final log, received: 0, sent: 1
+[00:14:52,036] INFO  {NewsComp} <nid:18>Final log, received: 0, sent: 1
+[00:14:52,038] INFO  {NewsComp} <nid:19>Final log, received: 0, sent: 1
+[00:14:52,042] INFO  {NewsComp} <nid:20>Final log, received: 0, sent: 1
+[00:14:52,043] INFO  {NewsComp} <nid:21>Final log, received: 0, sent: 1
+[00:14:52,045] INFO  {NewsComp} <nid:22>Final log, received: 100, sent: 1
+[00:14:52,045] INFO  {NewsComp} <nid:23>Final log, received: 99, sent: 1
+[00:14:52,048] INFO  {NewsComp} <nid:24>Final log, received: 0, sent: 1
+[00:14:52,052] INFO  {NewsComp} <nid:25>Final log, received: 0, sent: 1
+[00:14:52,056] INFO  {NewsComp} <nid:26>Final log, received: 0, sent: 1
+[00:14:52,058] INFO  {NewsComp} <nid:27>Final log, received: 0, sent: 1
+[00:14:52,059] INFO  {NewsComp} <nid:28>Final log, received: 100, sent: 1
+[00:14:52,062] INFO  {NewsComp} <nid:29>Final log, received: 0, sent: 1
+[00:14:52,065] INFO  {NewsComp} <nid:30>Final log, received: 0, sent: 1
+[00:14:52,069] INFO  {NewsComp} <nid:31>Final log, received: 99, sent: 1
+[00:14:52,071] INFO  {NewsComp} <nid:32>Final log, received: 0, sent: 1
+[00:14:52,072] INFO  {NewsComp} <nid:33>Final log, received: 0, sent: 1
+[00:14:52,073] INFO  {NewsComp} <nid:34>Final log, received: 0, sent: 1
+[00:14:52,078] INFO  {NewsComp} <nid:35>Final log, received: 0, sent: 1
+[00:14:52,078] INFO  {NewsComp} <nid:36>Final log, received: 0, sent: 1
+[00:14:52,082] INFO  {NewsComp} <nid:37>Final log, received: 100, sent: 1
+[00:14:52,082] INFO  {NewsComp} <nid:38>Final log, received: 0, sent: 1
+[00:14:52,084] INFO  {NewsComp} <nid:39>Final log, received: 0, sent: 1
+[00:14:52,088] INFO  {NewsComp} <nid:40>Final log, received: 100, sent: 1
+[00:14:52,090] INFO  {NewsComp} <nid:41>Final log, received: 0, sent: 1
+[00:14:52,094] INFO  {NewsComp} <nid:42>Final log, received: 0, sent: 1
+[00:14:52,099] INFO  {NewsComp} <nid:43>Final log, received: 0, sent: 1
+[00:14:52,103] INFO  {NewsComp} <nid:44>Final log, received: 0, sent: 1
+[00:14:52,106] INFO  {NewsComp} <nid:45>Final log, received: 0, sent: 1
+[00:14:52,107] INFO  {NewsComp} <nid:46>Final log, received: 0, sent: 1
+[00:14:52,108] INFO  {NewsComp} <nid:47>Final log, received: 0, sent: 1
+[00:14:52,112] INFO  {NewsComp} <nid:48>Final log, received: 100, sent: 1
+[00:14:52,113] INFO  {NewsComp} <nid:49>Final log, received: 0, sent: 1
+[00:14:52,115] INFO  {NewsComp} <nid:50>Final log, received: 0, sent: 1
+[00:14:52,116] INFO  {NewsComp} <nid:51>Final log, received: 0, sent: 1
+[00:14:52,117] INFO  {NewsComp} <nid:52>Final log, received: 0, sent: 1
+[00:14:52,120] INFO  {NewsComp} <nid:53>Final log, received: 0, sent: 1
+[00:14:52,124] INFO  {NewsComp} <nid:54>Final log, received: 0, sent: 1
+[00:14:52,125] INFO  {NewsComp} <nid:55>Final log, received: 0, sent: 1
+[00:14:52,130] INFO  {NewsComp} <nid:56>Final log, received: 0, sent: 1
+[00:14:52,133] INFO  {NewsComp} <nid:57>Final log, received: 0, sent: 1
+[00:14:52,134] INFO  {NewsComp} <nid:58>Final log, received: 0, sent: 1
+[00:14:52,139] INFO  {NewsComp} <nid:59>Final log, received: 0, sent: 1
+[00:14:52,140] INFO  {NewsComp} <nid:60>Final log, received: 0, sent: 1
+[00:14:52,144] INFO  {NewsComp} <nid:61>Final log, received: 0, sent: 1
+[00:14:52,147] INFO  {NewsComp} <nid:62>Final log, received: 0, sent: 1
+[00:14:52,150] INFO  {NewsComp} <nid:63>Final log, received: 0, sent: 1
+[00:14:52,152] INFO  {NewsComp} <nid:64>Final log, received: 0, sent: 1
+[00:14:52,155] INFO  {NewsComp} <nid:65>Final log, received: 0, sent: 1
+[00:14:52,160] INFO  {NewsComp} <nid:66>Final log, received: 0, sent: 1
+[00:14:52,164] INFO  {NewsComp} <nid:67>Final log, received: 0, sent: 1
+[00:14:52,167] INFO  {NewsComp} <nid:68>Final log, received: 0, sent: 1
+[00:14:52,167] INFO  {NewsComp} <nid:69>Final log, received: 0, sent: 1
+[00:14:52,169] INFO  {NewsComp} <nid:70>Final log, received: 0, sent: 1
+[00:14:52,171] INFO  {NewsComp} <nid:71>Final log, received: 0, sent: 1
+[00:14:52,172] INFO  {NewsComp} <nid:72>Final log, received: 0, sent: 1
+[00:14:52,173] INFO  {NewsComp} <nid:73>Final log, received: 0, sent: 1
+[00:14:52,177] INFO  {NewsComp} <nid:74>Final log, received: 100, sent: 1
+[00:14:52,179] INFO  {NewsComp} <nid:75>Final log, received: 0, sent: 1
+[00:14:52,183] INFO  {NewsComp} <nid:76>Final log, received: 0, sent: 1
+[00:14:52,185] INFO  {NewsComp} <nid:77>Final log, received: 0, sent: 1
+[00:14:52,186] INFO  {NewsComp} <nid:78>Final log, received: 0, sent: 1
+[00:14:52,189] INFO  {NewsComp} <nid:79>Final log, received: 100, sent: 1
+[00:14:52,193] INFO  {NewsComp} <nid:80>Final log, received: 0, sent: 1
+[00:14:52,193] INFO  {NewsComp} <nid:81>Final log, received: 0, sent: 1
+[00:14:52,195] INFO  {NewsComp} <nid:82>Final log, received: 0, sent: 1
+[00:14:52,197] INFO  {NewsComp} <nid:83>Final log, received: 0, sent: 1
+[00:14:52,202] INFO  {NewsComp} <nid:84>Final log, received: 0, sent: 1
+[00:14:52,206] INFO  {NewsComp} <nid:85>Final log, received: 0, sent: 1
+[00:14:52,206] INFO  {NewsComp} <nid:86>Final log, received: 1, sent: 1
+[00:14:52,210] INFO  {NewsComp} <nid:87>Final log, received: 0, sent: 1
+[00:14:52,214] INFO  {NewsComp} <nid:88>Final log, received: 0, sent: 1
+[00:14:52,216] INFO  {NewsComp} <nid:89>Final log, received: 0, sent: 1
+[00:14:52,219] INFO  {NewsComp} <nid:90>Final log, received: 100, sent: 1
+[00:14:52,220] INFO  {NewsComp} <nid:91>Final log, received: 100, sent: 1
+[00:14:52,223] INFO  {NewsComp} <nid:92>Final log, received: 100, sent: 1
+[00:14:52,226] INFO  {NewsComp} <nid:93>Final log, received: 100, sent: 1
+[00:14:52,228] INFO  {NewsComp} <nid:94>Final log, received: 100, sent: 1
+[00:14:52,228] INFO  {NewsComp} <nid:95>Final log, received: 100, sent: 1
+[00:14:52,233] INFO  {NewsComp} <nid:96>Final log, received: 100, sent: 1
+[00:14:52,235] INFO  {NewsComp} <nid:97>Final log, received: 100, sent: 1
+[00:14:52,240] INFO  {NewsComp} <nid:98>Final log, received: 100, sent: 1
+[00:14:52,243] INFO  {NewsComp} <nid:99>Final log, received: 100, sent: 1
+[00:14:52,248] INFO  {NewsComp} <nid:100>Final log, received: 100, sent: 1

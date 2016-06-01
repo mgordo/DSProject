@@ -157,6 +157,43 @@ public static final	int nodeId = 100;
                 KAddress selfAdr;
 
                 {
+                    selfAdr = ScenarioSetup.getNodeAdr(nodeId+100);
+                }
+
+                @Override
+                public Address getNodeAddress() {
+                    return selfAdr;
+                }
+
+                @Override
+                public Class getComponentDefinition() {
+                    return HostMngrComp.class;
+                }
+
+                @Override
+                public HostMngrComp.Init getComponentInit() {
+                    return new HostMngrComp.Init(selfAdr, ScenarioSetup.bootstrapServer, ScenarioSetup.newsOverlayId);
+                }
+
+                @Override
+                public Map<String, Object> initConfigUpdate() {
+                    Map<String, Object> nodeConfig = new HashMap<>();
+                    nodeConfig.put("system.id", nodeId);
+                    nodeConfig.put("system.seed", ScenarioSetup.getNodeSeed(nodeId+100));
+                    nodeConfig.put("system.port", ScenarioSetup.appPort);
+                    return nodeConfig;
+                }
+            };
+        }
+    };
+    static Operation1<StartNodeEvent, Integer> startNodeOp2 = new Operation1<StartNodeEvent, Integer>() {
+
+        @Override
+        public StartNodeEvent generate(final Integer nodeId) {
+            return new StartNodeEvent() {
+                KAddress selfAdr;
+
+                {
                     selfAdr = ScenarioSetup.getNodeAdr(nodeId);
                 }
 
@@ -210,7 +247,14 @@ public static final	int nodeId = 100;
                         raise(100, startNodeOp, new BasicIntSequentialDistribution(1));
                     }//How many peers are in the simulation
                 };
-                
+                StochasticProcess startPeers2 = new StochasticProcess() {
+                    {
+//                        eventInterArrivalTime(uniform(0, 0));
+                        eventInterArrivalTime(uniform(0, 5));
+//                        eventInterArrivalTime(uniform(1000, 1100));
+                        raise(5, startNodeOp2, new BasicIntSequentialDistribution(1));
+                    }//How many peers are in the simulation
+                };
                 SimulationScenario.StochasticProcess killLeader = new StochasticProcess() {
                     {
                         eventInterArrivalTime(constant(0));
@@ -221,6 +265,7 @@ public static final	int nodeId = 100;
                 systemSetup.start();
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                //startPeers2.startAfterTerminationOf(1000*60, startPeers);
                 //killLeader.startAfterTerminationOf(1000*300, startPeers);
                 terminateAfterTerminationOf(1000*900, startPeers);
             }
