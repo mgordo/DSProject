@@ -44,6 +44,8 @@ import se.sics.kompics.timer.SchedulePeriodicTimeout;
 import se.sics.kompics.timer.Timeout;
 //import se.sics.kompics.simulator.network.identifier.Identifier;
 import se.sics.kompics.timer.Timer;
+import se.sics.ktoolbox.croupier.CroupierPort;
+import se.sics.ktoolbox.croupier.event.CroupierSample;
 import se.sics.ktoolbox.gradient.GradientPort;
 import se.sics.ktoolbox.gradient.event.TGradientSample;
 import se.sics.ktoolbox.gradient.util.GradientContainer;
@@ -67,6 +69,7 @@ public class LeaderSelectComp extends ComponentDefinition {
     //*******************************CONNECTIONS********************************
     Positive<Timer> timerPort = requires(Timer.class);
     Positive<Network> networkPort = requires(Network.class);
+	Positive<CroupierPort> croupierPort = requires(CroupierPort.class);
     Positive<GradientPort> gradientPort = requires(GradientPort.class);
     Negative<LeaderSelectPort> leaderUpdate = provides(LeaderSelectPort.class);
     //*******************************EXTERNAL_STATE*****************************
@@ -78,7 +81,11 @@ public class LeaderSelectComp extends ComponentDefinition {
     private ArrayList<Identifier> neighborList;
     private TGradientSample lastSample;
     private boolean isFirstTimeLeader=false;
+
+	private ArrayList<KAddress> peerlist = new ArrayList<KAddress>(); //Croupier
     
+	
+
     public LeaderSelectComp(Init init) {
         selfAdr = init.selfAdr;
         logPrefix = "<nid:" + selfAdr.getId() + ">";
@@ -88,6 +95,7 @@ public class LeaderSelectComp extends ComponentDefinition {
         myComparator = new NewsViewComparator();
 
         subscribe(handleStart, control);
+		subscribe(handleCroupierSample, croupierPort);
         subscribe(handleGradientSample, gradientPort);
         subscribe(handleAmILeader, networkPort);
         subscribe(handleAmILeaderResponse, networkPort);
@@ -250,7 +258,7 @@ public class LeaderSelectComp extends ComponentDefinition {
 
     	leaderPushId++;
 
-		LOG.debug("{} Pushing new leaderUpdate {}", logPrefix, leaderPushId);
+//		LOG.debug("{} Pushing new leaderUpdate {}", logPrefix, leaderPushId);
     	Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
     	while (neighbourIt.hasNext()) { // Send it to all neighbours
 
@@ -259,10 +267,22 @@ public class LeaderSelectComp extends ComponentDefinition {
     		KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
     		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId, newLeader));
     		trigger(msg, networkPort);
-			LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, current_container.getSource());
+			//LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, current_container.getSource());
     	}
-		LOG.info("{}LeaderUpdatePush {} fingers:", logPrefix, leaderPushId);
+//		LOG.info("{}LeaderUpdatePush {} fingers:", logPrefix, leaderPushId);
 
+
+		//LOG.info("{}LeaderUpdatePush x {} peerlist:", logPrefix, leaderPushId);
+		for (KAddress address : peerlist){
+			//LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, address);
+
+			KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+    		KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(selfAdr, leaderPushId, newLeader));
+			trigger(msg, networkPort);
+		}
+
+
+/** FINGERS NOT WORKING, REPLACED WITH A CROUPIER SAMPLE
     	Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
     	while (fingerIt.hasNext()) { // Send it to all fingers
 
@@ -273,6 +293,7 @@ public class LeaderSelectComp extends ComponentDefinition {
     		trigger(msg, networkPort);
 			LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, leaderPushId, current_container.getSource());
     	}
+*/
     }
 
     ClassMatchedHandler<AmILeaderResponse, KContentMsg<?, ?, AmILeaderResponse>> handleAmILeaderResponse 
@@ -376,10 +397,23 @@ public class LeaderSelectComp extends ComponentDefinition {
 				KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
 				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id, update.newLeader));
 				trigger(msg, networkPort);
-				LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, current_container.getSource());
+			//	LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, current_container.getSource());
 			}
 
-			LOG.info("{}LeaderUpdatePush {} fingers:", logPrefix, update.id);
+
+			//LOG.info("{}LeaderUpdatePush {} peerlist:", logPrefix, update.id);
+			for (KAddress address : peerlist){
+				//LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, address);
+				numSent++;
+
+				KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id, update.newLeader));
+				trigger(msg, networkPort);
+			}
+			
+/** FINGERS NOT WORKING, REPLACED WITH A CROUPIER SAMPLE
+
+			//LOG.info("{}LeaderUpdatePush {} fingers:", logPrefix, update.id);
 			Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
 			while (fingerIt.hasNext()) { // Send it to all fingers
 				numSent++;
@@ -389,10 +423,12 @@ public class LeaderSelectComp extends ComponentDefinition {
 				KHeader header = new BasicHeader(selfAdr, current_container.getSource(), Transport.UDP);
 				KContentMsg msg = new BasicContentMsg(header, new LeaderUpdatePush(update.leaderAdr, update.id, update.newLeader));
 				trigger(msg, networkPort);
-				LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, current_container.getSource());
+			//	LOG.info("{}LeaderUpdatePush {} sent to {}", logPrefix, update.id, current_container.getSource());
 			}
 
-			LOG.info("{}received LeaderUpdatePush {}, leader is: {}, sent to {} nodes", logPrefix, update.id, update.leaderAdr, numSent);
+			//LOG.info("{}received LeaderUpdatePush {}, leader is: {}, sent to {} nodes", logPrefix, update.id, update.leaderAdr, numSent);
+			 
+*/
 
 		}
 	};
@@ -434,7 +470,23 @@ public class LeaderSelectComp extends ComponentDefinition {
 			lastSeenPushIdTimeout=lastLeaderPushId;
 		}
 	};
-    
+
+	Handler handleCroupierSample = new Handler<CroupierSample<NewsView>>() {
+		@Override
+		public void handle(CroupierSample<NewsView> castSample) {
+
+			if (castSample.publicSample.isEmpty()) {
+				return;
+			}
+			Iterator<Identifier> it = castSample.publicSample.keySet().iterator();
+			//KAddress partner = castSample.publicSample.get(it.next()).getSource();
+			peerlist = new ArrayList<KAddress>();
+			while(it.hasNext()){
+				peerlist.add(castSample.publicSample.get(it.next()).getSource());
+			}
+		}
+	};
+
     
     public static class Init extends se.sics.kompics.Init<LeaderSelectComp> {
 

@@ -87,6 +87,7 @@ public class NewsComp extends ComponentDefinition {
 	private NewsView localNewsView;
 	private boolean hasSent = false;//TODO This is preliminary
 	private int sentMessages = 0;
+	private int sentMessagesId = 0;
 	
 	private boolean iAmLeader = false;
 	private boolean sentNews = false; //TODO temporary for testing
@@ -169,16 +170,13 @@ public class NewsComp extends ComponentDefinition {
 				peerlist.add(castSample.publicSample.get(it.next()).getSource());
 			}
 
-			//TODO Temporary send news
+			sendNews();
 			/**
 			if (hasSent==false){
 				hasSent = true;
 				sendNews();
 			}
 			*/
-
-
-
 
 			/*KHeader header = new BasicHeader(selfAdr, partner, Transport.UDP);
             KContentMsg msg = new BasicContentMsg(header, new Ping());
@@ -191,11 +189,12 @@ public class NewsComp extends ComponentDefinition {
 	private void sendNews() {
 		//localNewsView = new NewsView(selfAdr.getId(), localNewsView.localNewsCount + 1);//THIS CHANGES NUMBER OF NODES IN GRADIENT
 		
-		/*if (sentNews) //TODO: temporary testing
-			return;*/
+		if (sentNews) //TODO: temporary testing for sending only one news per node
+			return;
 
 		//LOG.debug("{} about to send a news", logPrefix);
-		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessages);
+		sentMessagesId++;
+		News newNew = new News(selfAdr.getIp().toString()+"_"+sentMessagesId);
 		//newshash.add(newNew.getNewsId());
 		seenMessages.add(newNew.getNewsId());
 		pendingNews.add(newNew);
@@ -208,7 +207,6 @@ public class NewsComp extends ComponentDefinition {
 				KContentMsg msg = new BasicContentMsg(header, nw);
 
 				trigger(msg, networkPort);
-				break; //TODO temporary, testing
 			}
 			pendingNews.clear();
 			sentNews = true;
@@ -307,8 +305,8 @@ public class NewsComp extends ComponentDefinition {
 				News newNew = new News(news);
 				seenMessages.add(news.getNewsId());
 				newNew.decreaseTTL();
-				if(newNew.getTTL() >= 19){
-				//if(newNew.getTTL()>0){ //TODO:return back
+				if(newNew.getTTL()>0)
+				{
 					
 					Iterator<Identifier> neighbourIt = lastSample.getGradientNeighbours().iterator();
 			    	while (neighbourIt.hasNext()) { // Send it to all neighbours
@@ -320,7 +318,15 @@ public class NewsComp extends ComponentDefinition {
 			    		KContentMsg msg = new BasicContentMsg(header, new News(newNew));
 			    		trigger(msg, networkPort);
 			    	}
+			    	for (KAddress address : peerlist){
+						//LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
+						KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
+			    		KContentMsg msg = new BasicContentMsg(header, new News(newNew));
+						trigger(msg, networkPort);
 
+					}
+
+/** FINGERS NOT WORKING, REPLACED WITH A CROUPIER SAMPLE
 			    	Iterator<Identifier> fingerIt = lastSample.getGradientFingers().iterator();
 			    	while (fingerIt.hasNext()) { // Send it to all fingers
 
@@ -331,15 +337,7 @@ public class NewsComp extends ComponentDefinition {
 			    		//KContentMsg msg = new BasicContentMsg(header, newNew);
 			    		trigger(msg, networkPort);
 			    	}
-			    	/**
-			    	for(KAddress address : peerlist){
-						//LOG.info("{}forwarding news to:{}", logPrefix, address.toString());
-						KHeader header = new BasicHeader(selfAdr, address, Transport.UDP);
-						KContentMsg msg = new BasicContentMsg(header, newNew);
-						trigger(msg, networkPort);
-
-					}
-					*/
+*/
 					/*for( current : lastSample.getGradientNeighbours()){
 						GradientContainer<NewsView> nw = (GradientContainer<NewsView>)current.selfView;
 						
@@ -390,7 +388,6 @@ public class NewsComp extends ComponentDefinition {
 
 			LOG.info("{}received SendAllMessages from:{}", logPrefix, container.getHeader().getSource());
 
-			// TODO: now
 			for (News news : newsList){
 
 				News sendNews = new News(news);

@@ -104,6 +104,7 @@ public class AppMngrComp extends ComponentDefinition {
         leaderSelectComp = create(LeaderSelectComp.class, new LeaderSelectComp.Init(selfAdr, new NewsViewComparator()));
         connect(leaderSelectComp.getNegative(Timer.class), extPorts.timerPort, Channel.TWO_WAY);
         connect(leaderSelectComp.getNegative(Network.class), extPorts.networkPort, Channel.TWO_WAY);
+        connect(leaderSelectComp.getNegative(CroupierPort.class), extPorts.croupierPort, Channel.TWO_WAY);
         connect(leaderSelectComp.getNegative(GradientPort.class), extPorts.gradientPort, Channel.TWO_WAY);
     }
 
