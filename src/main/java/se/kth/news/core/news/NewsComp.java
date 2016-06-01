@@ -290,16 +290,13 @@ public class NewsComp extends ComponentDefinition {
 	Handler handleLeader = new Handler<LeaderUpdate>() {
 		@Override
 		public void handle(LeaderUpdate event) {
-			
-			if (leaderAddress == null && event.leaderAdr != null)
 
 			leaderAddress = event.leaderAdr;
 			
 			if (event.leaderAdr != null && event.leaderAdr.equals(selfAdr)) { // I am the leader, save this information
 				iAmLeader = true;
 			}
-			else
-			{
+			else {
 				iAmLeader = false;
 			}
 		}

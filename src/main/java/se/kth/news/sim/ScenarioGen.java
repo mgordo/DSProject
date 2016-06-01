@@ -30,14 +30,79 @@ import se.sics.kompics.simulator.events.system.SetupEvent;
 import se.sics.kompics.simulator.events.system.StartNodeEvent;
 import se.sics.kompics.simulator.network.identifier.IdentifierExtractor;
 import se.sics.ktoolbox.omngr.bootstrap.BootstrapServerComp;
+import se.sics.ktoolbox.util.identifiable.basic.IntIdentifier;
 import se.sics.ktoolbox.util.network.KAddress;
 import se.sics.ktoolbox.util.overlays.id.OverlayIdRegistry;
+import se.sics.kompics.simulator.events.system.KillNodeEvent;
+import se.sics.ktoolbox.util.network.basic.BasicAddress;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * @author Alex Ormenisan <aaor@kth.se>
  */
 public class ScenarioGen {
+    public static final int appPort = 12345;
+public static final	int nodeId = 100;
 
+	static Operation killLeaderOp = new Operation<KillNodeEvent>() {
+        @Override
+        public KillNodeEvent generate() {
+					return new KillNodeEvent() {
+					        BasicAddress selfAdr;
+
+					        {
+								try {
+										//selfAdr = BasicAddress(InetAddress.getByName("193.0.0.100"), 12345, new IntIdentifier(100));
+					        	selfAdr = new BasicAddress(InetAddress.getByName("193.0.0." + nodeId), appPort, new IntIdentifier(nodeId));
+								} catch (UnknownHostException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+								}
+					        }
+
+					        @Override
+					        public Address getNodeAddress() {
+					                return selfAdr;
+					        }
+
+					        @Override
+					        public String toString() {
+					                return "KillPonger<" + selfAdr.toString() + ">";
+					        }
+					};
+        }
+};	
+	
+	
+/**
+	static Operation1 killPongerOp = new Operation1<KillNodeEvent, Integer>() {
+        @Override
+        public KillNodeEvent generate(final Integer self) {
+                return new KillNodeEvent() {
+                        TAddress selfAdr;
+
+                        {
+                                try {
+                                        selfAdr = new TAddress(InetAddress.getByName("192.193.0." + self), 10000);
+                                } catch (UnknownHostException ex) {
+                                        throw new RuntimeException(ex);
+                                }
+                        }
+
+                        @Override
+                        public Address getNodeAddress() {
+                                return selfAdr;
+                        }
+
+                        @Override
+                        public String toString() {
+                                return "KillPonger<" + selfAdr.toString() + ">";
+                        }
+                };
+        }
+};
+*/
     static Operation<SetupEvent> systemSetupOp = new Operation<SetupEvent>() {
         @Override
         public SetupEvent generate() {
@@ -145,10 +210,18 @@ public class ScenarioGen {
                         raise(100, startNodeOp, new BasicIntSequentialDistribution(1));
                     }//How many peers are in the simulation
                 };
+                
+                SimulationScenario.StochasticProcess killLeader = new StochasticProcess() {
+                    {
+                        eventInterArrivalTime(constant(0));
+                        raise(1, killLeaderOp);
+                    }  
+                };
 
                 systemSetup.start();
                 startBootstrapServer.startAfterTerminationOf(1000, systemSetup);
                 startPeers.startAfterTerminationOf(1000, startBootstrapServer);
+                //killLeader.startAfterTerminationOf(1000*300, startPeers);
                 terminateAfterTerminationOf(1000*900, startPeers);
             }
         };

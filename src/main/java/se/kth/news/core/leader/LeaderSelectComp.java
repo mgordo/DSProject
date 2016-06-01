@@ -452,7 +452,8 @@ public class LeaderSelectComp extends ComponentDefinition {
 			}
 
 			if(!timeoutSet){
-				LOG.debug("{} timeout set {}", logPrefix, lastLeaderPushId); // TODO: debug
+				LOG.debug("{} timeout set {}, leader {}", logPrefix, lastLeaderPushId, update.leaderAdr);
+				//LOG.debug("{} timeout set {}, leader {}", logPrefix, lastLeaderPushId, leaderAddress);
 				SchedulePeriodicTimeout spt = new SchedulePeriodicTimeout(0, 1000*LEADER_TIMEOUT_DETECTION);
 				UpdateTimeout timeout = new UpdateTimeout(spt);
 				spt.setTimeoutEvent(timeout);
