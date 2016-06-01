@@ -103,7 +103,11 @@ public class NewsComp extends ComponentDefinition {
     private TGradientSample lastSample;
     private static final double  SEND_MESSSAGE_PROBABILITY = 0.6;
     private boolean isFirstTimeLeader=false;
-
+    private long firstTimeSeen=0;
+    private long lastTimeSeen=0;
+    private long averageTimeSeen=0;
+    private long leaderPushRoundsSeen=0;
+    
 	public NewsComp(Init init) {
 		selfAdr = init.selfAdr;
 		logPrefix = "<nid:" + selfAdr.getId() + ">";
@@ -111,7 +115,7 @@ public class NewsComp extends ComponentDefinition {
 
 		gradientOId = init.gradientOId;
 		localNewsView = new NewsView(selfAdr.getId(), 0);
-		
+		firstTimeSeen = System.currentTimeMillis();
 		lastSample = null;
 		leaderAddress = null;
 		pendingNews = new ArrayList<News>();
@@ -291,6 +295,10 @@ public class NewsComp extends ComponentDefinition {
 		@Override
 		public void handle(LeaderUpdate event) {
 
+			lastTimeSeen = System.currentTimeMillis();
+			averageTimeSeen = lastTimeSeen - firstTimeSeen;
+			leaderPushRoundsSeen++;
+			
 			leaderAddress = event.leaderAdr;
 			
 			if (event.leaderAdr != null && event.leaderAdr.equals(selfAdr)) { // I am the leader, save this information
@@ -476,7 +484,7 @@ public class NewsComp extends ComponentDefinition {
 			count++;
 
 			//TODO: skipping debug
-/**
+
 			PrintWriter file=null;
 
 			try {
@@ -491,7 +499,20 @@ public class NewsComp extends ComponentDefinition {
 				System.out.println("Error creating file");
 				e.printStackTrace();
 			}
-			*/
+			
+			
+			try {
+				file = new PrintWriter("C:\\Users\\Miguel\\git\\DSProject\\logs\\"+selfAdr.getId()+"AVERAGE.txt", "UTF-8");
+				System.out.println("Successfully printed to file the average of times for rounds");
+				file.println(averageTimeSeen/leaderPushRoundsSeen);
+				
+				file.close();
+			} catch (FileNotFoundException | UnsupportedEncodingException e) {
+				System.out.println("Error creating file");
+				e.printStackTrace();
+			}
+			
+			
 		}
 	};
 	
