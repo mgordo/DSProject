@@ -1,0 +1,128 @@
+[00:01:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 2
+[00:01:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 3
+[00:02:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 4
+[00:02:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 5
+[00:03:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 6
+[00:03:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 7
+[00:04:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 8
+[00:04:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 9
+[00:05:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 10
+[00:05:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 11
+[00:06:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 12
+[00:06:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 13
+[00:07:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 14
+[00:07:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 15
+[00:08:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 16
+[00:08:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 17
+[00:09:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 18
+[00:09:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 19
+[00:10:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 20
+[00:10:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 21
+[00:11:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 22
+[00:11:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 23
+[00:12:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 24
+[00:12:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 25
+[00:13:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 26
+[00:13:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 27
+[00:14:02,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 28
+[00:14:32,248] DEBUG {LeaderSelectComp} <nid:100> Pushing new leaderUpdate 29
+[00:14:52,000] INFO  {NewsComp} <nid:1>Final log, received: 1998, sent: 27
+[00:14:52,003] INFO  {NewsComp} <nid:2>Final log, received: 1998, sent: 25
+[00:14:52,008] INFO  {NewsComp} <nid:3>Final log, received: 1998, sent: 33
+[00:14:52,012] INFO  {NewsComp} <nid:4>Final log, received: 1998, sent: 20
+[00:14:52,014] INFO  {NewsComp} <nid:5>Final log, received: 1998, sent: 13
+[00:14:52,016] INFO  {NewsComp} <nid:6>Final log, received: 1998, sent: 16
+[00:14:52,017] INFO  {NewsComp} <nid:7>Final log, received: 1998, sent: 19
+[00:14:52,019] INFO  {NewsComp} <nid:8>Final log, received: 1998, sent: 21
+[00:14:52,022] INFO  {NewsComp} <nid:9>Final log, received: 1998, sent: 12
+[00:14:52,027] INFO  {NewsComp} <nid:10>Final log, received: 1998, sent: 35
+[00:14:52,027] INFO  {NewsComp} <nid:11>Final log, received: 1998, sent: 10
+[00:14:52,029] INFO  {NewsComp} <nid:12>Final log, received: 1998, sent: 12
+[00:14:52,029] INFO  {NewsComp} <nid:13>Final log, received: 1998, sent: 27
+[00:14:52,029] INFO  {NewsComp} <nid:14>Final log, received: 1998, sent: 18
+[00:14:52,030] INFO  {NewsComp} <nid:15>Final log, received: 1998, sent: 40
+[00:14:52,034] INFO  {NewsComp} <nid:16>Final log, received: 1998, sent: 17
+[00:14:52,035] INFO  {NewsComp} <nid:17>Final log, received: 1998, sent: 10
+[00:14:52,036] INFO  {NewsComp} <nid:18>Final log, received: 1998, sent: 23
+[00:14:52,038] INFO  {NewsComp} <nid:19>Final log, received: 1998, sent: 23
+[00:14:52,042] INFO  {NewsComp} <nid:20>Final log, received: 1998, sent: 26
+[00:14:52,043] INFO  {NewsComp} <nid:21>Final log, received: 1998, sent: 31
+[00:14:52,045] INFO  {NewsComp} <nid:22>Final log, received: 1998, sent: 16
+[00:14:52,045] INFO  {NewsComp} <nid:23>Final log, received: 1998, sent: 33
+[00:14:52,048] INFO  {NewsComp} <nid:24>Final log, received: 1998, sent: 12
+[00:14:52,052] INFO  {NewsComp} <nid:25>Final log, received: 1998, sent: 41
+[00:14:52,056] INFO  {NewsComp} <nid:26>Final log, received: 1998, sent: 26
+[00:14:52,058] INFO  {NewsComp} <nid:27>Final log, received: 1998, sent: 21
+[00:14:52,059] INFO  {NewsComp} <nid:28>Final log, received: 1998, sent: 21
+[00:14:52,062] INFO  {NewsComp} <nid:29>Final log, received: 1998, sent: 14
+[00:14:52,065] INFO  {NewsComp} <nid:30>Final log, received: 1998, sent: 10
+[00:14:52,069] INFO  {NewsComp} <nid:31>Final log, received: 1998, sent: 26
+[00:14:52,071] INFO  {NewsComp} <nid:32>Final log, received: 1998, sent: 14
+[00:14:52,072] INFO  {NewsComp} <nid:33>Final log, received: 1998, sent: 17
+[00:14:52,073] INFO  {NewsComp} <nid:34>Final log, received: 1998, sent: 14
+[00:14:52,078] INFO  {NewsComp} <nid:35>Final log, received: 1998, sent: 15
+[00:14:52,078] INFO  {NewsComp} <nid:36>Final log, received: 1998, sent: 18
+[00:14:52,082] INFO  {NewsComp} <nid:37>Final log, received: 1998, sent: 10
+[00:14:52,082] INFO  {NewsComp} <nid:38>Final log, received: 1998, sent: 16
+[00:14:52,084] INFO  {NewsComp} <nid:39>Final log, received: 1998, sent: 25
+[00:14:52,088] INFO  {NewsComp} <nid:40>Final log, received: 1998, sent: 16
+[00:14:52,090] INFO  {NewsComp} <nid:41>Final log, received: 1998, sent: 26
+[00:14:52,094] INFO  {NewsComp} <nid:42>Final log, received: 1998, sent: 16
+[00:14:52,099] INFO  {NewsComp} <nid:43>Final log, received: 1998, sent: 19
+[00:14:52,103] INFO  {NewsComp} <nid:44>Final log, received: 1998, sent: 7
+[00:14:52,106] INFO  {NewsComp} <nid:45>Final log, received: 1998, sent: 19
+[00:14:52,107] INFO  {NewsComp} <nid:46>Final log, received: 1998, sent: 41
+[00:14:52,108] INFO  {NewsComp} <nid:47>Final log, received: 1998, sent: 19
+[00:14:52,112] INFO  {NewsComp} <nid:48>Final log, received: 1998, sent: 27
+[00:14:52,113] INFO  {NewsComp} <nid:49>Final log, received: 1998, sent: 26
+[00:14:52,115] INFO  {NewsComp} <nid:50>Final log, received: 1998, sent: 35
+[00:14:52,116] INFO  {NewsComp} <nid:51>Final log, received: 1998, sent: 9
+[00:14:52,117] INFO  {NewsComp} <nid:52>Final log, received: 1998, sent: 23
+[00:14:52,120] INFO  {NewsComp} <nid:53>Final log, received: 1998, sent: 18
+[00:14:52,124] INFO  {NewsComp} <nid:54>Final log, received: 1998, sent: 21
+[00:14:52,125] INFO  {NewsComp} <nid:55>Final log, received: 1998, sent: 28
+[00:14:52,130] INFO  {NewsComp} <nid:56>Final log, received: 1998, sent: 19
+[00:14:52,133] INFO  {NewsComp} <nid:57>Final log, received: 1998, sent: 14
+[00:14:52,134] INFO  {NewsComp} <nid:58>Final log, received: 1998, sent: 18
+[00:14:52,139] INFO  {NewsComp} <nid:59>Final log, received: 1998, sent: 40
+[00:14:52,140] INFO  {NewsComp} <nid:60>Final log, received: 1998, sent: 11
+[00:14:52,144] INFO  {NewsComp} <nid:61>Final log, received: 1998, sent: 32
+[00:14:52,147] INFO  {NewsComp} <nid:62>Final log, received: 1998, sent: 17
+[00:14:52,150] INFO  {NewsComp} <nid:63>Final log, received: 1998, sent: 17
+[00:14:52,152] INFO  {NewsComp} <nid:64>Final log, received: 1998, sent: 16
+[00:14:52,155] INFO  {NewsComp} <nid:65>Final log, received: 1998, sent: 13
+[00:14:52,160] INFO  {NewsComp} <nid:66>Final log, received: 1998, sent: 17
+[00:14:52,164] INFO  {NewsComp} <nid:67>Final log, received: 1998, sent: 22
+[00:14:52,167] INFO  {NewsComp} <nid:68>Final log, received: 1998, sent: 17
+[00:14:52,167] INFO  {NewsComp} <nid:69>Final log, received: 1998, sent: 14
+[00:14:52,169] INFO  {NewsComp} <nid:70>Final log, received: 1998, sent: 19
+[00:14:52,171] INFO  {NewsComp} <nid:71>Final log, received: 1998, sent: 28
+[00:14:52,172] INFO  {NewsComp} <nid:72>Final log, received: 1998, sent: 33
+[00:14:52,173] INFO  {NewsComp} <nid:73>Final log, received: 1998, sent: 21
+[00:14:52,177] INFO  {NewsComp} <nid:74>Final log, received: 1998, sent: 11
+[00:14:52,179] INFO  {NewsComp} <nid:75>Final log, received: 1998, sent: 20
+[00:14:52,183] INFO  {NewsComp} <nid:76>Final log, received: 1998, sent: 19
+[00:14:52,185] INFO  {NewsComp} <nid:77>Final log, received: 1998, sent: 16
+[00:14:52,186] INFO  {NewsComp} <nid:78>Final log, received: 1998, sent: 28
+[00:14:52,189] INFO  {NewsComp} <nid:79>Final log, received: 1998, sent: 10
+[00:14:52,193] INFO  {NewsComp} <nid:80>Final log, received: 1998, sent: 8
+[00:14:52,193] INFO  {NewsComp} <nid:81>Final log, received: 1998, sent: 21
+[00:14:52,195] INFO  {NewsComp} <nid:82>Final log, received: 1998, sent: 13
+[00:14:52,197] INFO  {NewsComp} <nid:83>Final log, received: 1998, sent: 18
+[00:14:52,202] INFO  {NewsComp} <nid:84>Final log, received: 1998, sent: 18
+[00:14:52,206] INFO  {NewsComp} <nid:85>Final log, received: 1998, sent: 21
+[00:14:52,206] INFO  {NewsComp} <nid:86>Final log, received: 1998, sent: 21
+[00:14:52,210] INFO  {NewsComp} <nid:87>Final log, received: 1998, sent: 27
+[00:14:52,214] INFO  {NewsComp} <nid:88>Final log, received: 1988, sent: 12
+[00:14:52,216] INFO  {NewsComp} <nid:89>Final log, received: 1998, sent: 16
+[00:14:52,219] INFO  {NewsComp} <nid:90>Final log, received: 1998, sent: 13
+[00:14:52,220] INFO  {NewsComp} <nid:91>Final log, received: 1998, sent: 11
+[00:14:52,223] INFO  {NewsComp} <nid:92>Final log, received: 1998, sent: 17
+[00:14:52,226] INFO  {NewsComp} <nid:93>Final log, received: 1998, sent: 29
+[00:14:52,228] INFO  {NewsComp} <nid:94>Final log, received: 1998, sent: 17
+[00:14:52,228] INFO  {NewsComp} <nid:95>Final log, received: 1998, sent: 31
+[00:14:52,233] INFO  {NewsComp} <nid:96>Final log, received: 1998, sent: 11
+[00:14:52,235] INFO  {NewsComp} <nid:97>Final log, received: 1998, sent: 14
+[00:14:52,240] INFO  {NewsComp} <nid:98>Final log, received: 1998, sent: 19
+[00:14:52,243] INFO  {NewsComp} <nid:99>Final log, received: 1998, sent: 12
+[00:14:52,248] INFO  {NewsComp} <nid:100>Final log, received: 1998, sent: 20

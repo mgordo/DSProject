@@ -9,7 +9,7 @@ import re
 from sets import Set
 '''Change and add to the list as needed. Should contain path to archives'''
 auxroute='C:/Users/Miguel/git/DSProject/'
-archives = [auxroute+'plots/ttl2.log', auxroute+'plots/ttl5.log',auxroute+'plots/ttl20.log']
+archives = [auxroute+'plots/ttl2.log', auxroute+'plots/ttl5.log',auxroute+'plots/ttl20.log', auxroute+'plots/ttl20final.log']
 data=[]
 count=0
 seenLeader = False
@@ -55,6 +55,7 @@ for ele in archives:
     plt.bar(range(0,len(percentages)),percentages)
     plt.xlabel("Node")
     plt.ylabel("Percentage")
+    plt.xlim(0,100)
     plt.savefig(auxroute+'plots/nodes_'+str(count)+'.png')
     count+=1
     data.append(percentages)
@@ -75,9 +76,11 @@ print "Finished first part"
 
 listas=[]
 allmessages=Set([])
-
+roundMax=-9999
+average=0
+countAverageFiles=0
 for fi in sorted(os.listdir(os.path.normpath(auxroute+'\logs')),key=natural_keys):
-    if fi.endswith(".txt"):
+    if fi.endswith(".txt") and "AVERAGE" not in fi:
         f=open(os.path.normpath(auxroute+'logs/'+fi))
         lista=[]
         for line in f:
@@ -94,7 +97,22 @@ for fi in sorted(os.listdir(os.path.normpath(auxroute+'\logs')),key=natural_keys
         listas.append(lista)
         
         f.close()
-
+    
+    if fi.endswith(".txt") and "AVERAGE" in fi:
+        f=open(os.path.normpath(auxroute+'logs/'+fi))
+        for line in f:
+            number = int(line)
+            if(number>roundMax):
+                roundMax=number
+            average+=number
+        f.close()
+        countAverageFiles+=1
+        
+average = float(average) / countAverageFiles;
+        
+print "Average time between Leader push rounds is "+str(average)+" ms. Maximum round was "   + str(roundMax)    
+    
+    
 for message in allmessages:
     
     recipients=[]
